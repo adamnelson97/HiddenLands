@@ -1,5 +1,6 @@
 package architecture;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 import pieces.GamePiece;
@@ -59,9 +60,9 @@ public class GameEngine {
 		for (int j = 0; j < BOARD_SIZE; j++) {
 			for (int i = 0; i < BOARD_SIZE; i++) {
 				// Ensure player is always drawn
-				if (i == player.getLocation()) 
+				if (new Point(j, i) == player.getLocation()) 
 					player.draw();
-				else if (pieces[i] == null)
+				else if (pieces[j][i] == null)
 					System.out.print(' ');
 				else
 					pieces[j][i].draw();

@@ -33,7 +33,7 @@ public class Player implements Drawable {
 	}
 	private static Difficulty difficulty;
 
-	public Player(int location) {
+	public Player(Point location) {
 		//Constructor calls method to reset player stats each level
 		setDifficulty(); //Only called once
 		resetLevel(location);
@@ -127,6 +127,7 @@ public class Player implements Drawable {
 			} catch (NumberFormatException e) {
 				System.out.println("Must enter a number, please retry");
 			}
+			scan.close();
 		}
 		return playerChoice;
 	}
@@ -148,6 +149,10 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(int option) {
 		//TODO: Complete updatePlayerLocationMethod
+		int newLocation =-1;
+		if (option == 1 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
+			newLocation = location.setLocation(location.getX() + 1, location.getY());
+		}
 	}
 	
 	public Point getLocation() {
