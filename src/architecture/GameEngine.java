@@ -122,6 +122,11 @@ public class GameEngine {
 	}
 	
 	//TODO: write doOneLevel
+	
+	public void setNumLevels() {
+		Difficulty diff = player.getDifficulty();
+	}
+	
 	//TODO: write playGame
 	
 	public static void main(String[] args) {

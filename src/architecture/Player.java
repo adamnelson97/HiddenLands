@@ -28,9 +28,7 @@ public class Player implements Drawable {
 	 * Hard: Two hardcoded levels, two random levels
 	 * Hardcore: Same as hard, but the player has only one hit point.
 	 */
-	public enum Difficulty {
-		EASY, MEDIUM, HARD, HARDCORE;
-	}
+
 	private static Difficulty difficulty;
 
 	public Player(Point location) {
