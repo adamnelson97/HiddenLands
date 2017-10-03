@@ -60,7 +60,7 @@ public class Player implements Drawable {
 		}
 	}
 	
-	public void resetLevel(int Location) {
+	public void resetLevel(Point location) {
 		//Called every level to reset player stats
 		playerStatus = PlayerStatus.OK;
 		this.location = location;
