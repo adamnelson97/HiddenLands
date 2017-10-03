@@ -125,6 +125,20 @@ public class GameEngine {
 	
 	public void setNumLevels() {
 		Difficulty diff = player.getDifficulty();
+		switch(diff) {
+		case EASY:
+			numLevels = 2;
+			break;
+		case MEDIUM:
+			numLevels = 3;
+			break;
+		case HARD:
+			numLevels = 4;
+			break;
+		case HARDCORE:
+			numLevels = 4;
+			break;
+		}
 	}
 	
 	//TODO: write playGame
