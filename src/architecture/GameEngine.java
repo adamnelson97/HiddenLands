@@ -1,5 +1,7 @@
 package architecture;
 
+import java.util.ArrayList;
+
 /*
  * This class contains the main method, initiates LevelEngine,
  * contains the method to display the board to the console,
@@ -20,6 +22,18 @@ public class GameEngine {
 	 * All other levels are randomly generated.
 	 */
 	public static int numLevels;
+	//Track the current level
+	private int currentLevel;
+	//GameEngine has one instance of LevelEngine
+	private LevelEngine levels;
+	//Create the game board
+	private Drawable[][] pieces;
+	//Track which pieces can move
+	private ArrayList<Moveable> movingPieces;
+	//Track which pieces interact with the player
+	private ArrayList<GamePiece> interactingPieces;
+	//GameEngine has one instance of Player
+	private Player player;
 	
 	
 	

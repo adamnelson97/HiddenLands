@@ -3,8 +3,6 @@ package architecture;
 import java.util.Scanner;
 import architecture.GameEngine;
 
-import architecture.GameEngine.Difficulty;
-
 /*
  * This class contains all data and methods relative to the player,
  * such as health, status, and location.
@@ -90,7 +88,7 @@ public class Player implements Drawable {
 	}
 
 	public void takeDamage() {
-		if (GameEngine.getDifficulty() = Difficulty.HARDCORE) { killed(); }
+		if (difficulty == Difficulty.HARDCORE) { killed(); }
 		else { damagePoints++; }
 	}
 
