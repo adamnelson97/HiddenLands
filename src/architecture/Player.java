@@ -94,6 +94,7 @@ public class Player implements Drawable {
 		return playerChoice;
 	}
 	
+	//This method is private because it will only be called from within getPlayerChoice
 	private void displayMenu() {
 		System.out.println();
 		System.out.println("1: Move right");
@@ -105,6 +106,11 @@ public class Player implements Drawable {
 		System.out.println("7: Jump up");
 		System.out.println("8: Jump down");
 		System.out.println("9: Stay put");
+	}
+	
+	//This method is private because it will only be called from within doMove
+	private boolean updatePlayerLocation(int option) {
+		//TODO: Complete updatePlayerLocationMethod
 	}
 
 
