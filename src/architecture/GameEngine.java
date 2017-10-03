@@ -64,7 +64,7 @@ public class GameEngine {
 				else if (pieces[i] == null)
 					System.out.print(' ');
 				else
-					pieces[i].draw();
+					pieces[j][i].draw();
 				System.out.print('|');
 			}
 		}

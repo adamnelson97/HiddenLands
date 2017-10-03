@@ -1,5 +1,6 @@
 package architecture;
 
+import java.awt.Point;
 import java.util.Scanner;
 import architecture.GameEngine;
 
@@ -12,7 +13,7 @@ public class Player implements Drawable {
 	public static final int POINTS_TO_ADVANCE = 3;
 	public static final int POINTS_TO_DIE = 3;
 
-	private int location;
+	private Point location;
 	private int advancePoints;
 	private int damagePoints;
 	public enum PlayerStatus {
@@ -147,6 +148,10 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(int option) {
 		//TODO: Complete updatePlayerLocationMethod
+	}
+	
+	public Point getLocation() {
+		return location;
 	}
 
 
