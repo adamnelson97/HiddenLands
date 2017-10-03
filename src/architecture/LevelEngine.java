@@ -7,5 +7,10 @@ package architecture;
  */
 
 public class LevelEngine {
+	//TODO: write createLevel
+	//TODO: write getPieces
+	//TODO: write getMovingPieces
+	//TODO: write getInteractingPieces
+	//TODO: write getPlayerStartLoc
 
 } //End of Class

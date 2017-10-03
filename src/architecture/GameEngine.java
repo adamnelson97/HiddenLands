@@ -3,6 +3,8 @@ package architecture;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import gameEngine.InteractionResult;
+import gameEngine.Moveable;
 import pieces.GamePiece;
 
 /*
@@ -72,8 +74,43 @@ public class GameEngine {
 		System.out.println();
 	}
 
-	//TODO: write movePieces
-	//TODO: write interaction
+	public void movePieces() {
+		for (Moveable piece : movingPieces) {
+			piece.move(pieces, player.getLocation());		
+		}	
+	}
+	
+	public void interaction() {
+		for (GamePiece piece : interactingPieces) {
+			InteractionResult result = piece.interact(pieces, player.getLocation());		
+			if (result == InteractionResult.GET_POINT) {
+				player.addPoint(); 
+				System.out.println("\nYou just won a prize!\n");
+			}
+			if (result == InteractionResult.HIT) {
+				player.takeDamage();
+				System.out.println("\nYou just took a hit!\n");
+				if (player.isDead()) {
+					System.out.println("Too many hits, you are dead");
+					// can only be killed once
+					break;
+				}
+			}
+			if (result == InteractionResult.KILL) {
+				player.killed();
+				System.out.println("\nSomething just killed you!\n");
+				// can only be killed once
+				break;
+			}
+			if (result == InteractionResult.ADVANCE) {
+				player.wonAdvance();
+				System.out.println("\nGood news, you have won an advance!\n");
+				// can only advance once
+				break;
+			}
+		}			
+	}
+	
 	//TODO: write levelFinished
 	//TODO: write doOneLevel
 	//TODO: write playGame
