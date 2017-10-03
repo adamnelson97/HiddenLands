@@ -1,5 +1,7 @@
 package architecture;
 
+import java.awt.Point;
+
 /*
  * Moveable extends Drawable because ALL pieces must be able to
  * be shown. 
@@ -16,6 +18,6 @@ public interface Moveable extends Drawable{
 	 * this method could be modified to return the new location, with
 	 * additional calls in GameEngine to move the piece. 
 	 */
-	public void move(Drawable[] pieces, int playerLocation);
+	public void move(Drawable[][] pieces, Point playerLocation);
 
 }

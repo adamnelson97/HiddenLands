@@ -72,8 +72,14 @@ public class GameEngine {
 		System.out.println();
 	}
 
+	//TODO: write movePieces
+	//TODO: write interaction
+	//TODO: write levelFinished
+	//TODO: write doOneLevel
+	//TODO: write playGame
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		//TODO: write main
 
 	}
 
