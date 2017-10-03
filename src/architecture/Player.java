@@ -148,11 +148,56 @@ public class Player implements Drawable {
 	
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(int option) {
-		//TODO: Complete updatePlayerLocationMethod
-		int newLocation =-1;
+		boolean moved = false;
+		//Move right
 		if (option == 1 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
-			newLocation = location.setLocation(location.getX() + 1, location.getY());
+			location.translate(1, 0);
+			moved = true;
 		}
+		//Move left
+		if (option == 2 && location.getX() > 0) {
+			location.translate(-1, 0);
+			moved = true;
+		}
+		//Jump Right
+		if (option == 3 && location.getX() < (GameEngine.BOARD_SIZE - 2)) {
+			location.translate(2, 0);
+			moved = true;
+		}
+		//Jump Left
+		if (option == 4 && location.getX() > 1) {
+			location.translate(-2, 0);
+			moved = true;
+		}
+		//Move Up
+		if (option == 5 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
+			location.translate(0, 1);
+			moved = true;
+		}
+		//Move Down
+		if (option == 6 && location.getY() > 0) {
+			location.translate(0, -1);
+			moved = true;
+		}
+		//Jump Up
+		if (option == 7 && location.getY() < (GameEngine.BOARD_SIZE - 2)) {
+			location.translate(0, 2);
+			moved = true;
+		}
+		//Jump Down
+		if (option == 8 && location.getY() > 1) {
+			location.translate(0, -2);
+			moved = true;
+		}
+		//Stay put
+		if (option == 9) { moved = true; }
+		
+		if (!moved) {
+			System.out.println("Invalid option, please retry");
+			return false;
+		}
+		
+		return true; //Returns true if a valid option is chosen
 	}
 	
 	public Point getLocation() {
