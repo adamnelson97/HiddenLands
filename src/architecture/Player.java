@@ -60,6 +60,10 @@ public class Player implements Drawable {
 		}
 	}
 	
+	public Difficulty getDifficulty() {
+		return difficulty;
+	}
+	
 	public void resetLevel(Point location) {
 		//Called every level to reset player stats
 		playerStatus = PlayerStatus.OK;
@@ -203,14 +207,5 @@ public class Player implements Drawable {
 	public Point getLocation() {
 		return location;
 	}
-
-
-
-
-
-
-
-
-
 
 } //End of Class

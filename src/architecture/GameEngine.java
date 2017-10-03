@@ -3,8 +3,6 @@ package architecture;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import gameEngine.InteractionResult;
-import gameEngine.Moveable;
 import pieces.GamePiece;
 
 /*
@@ -111,7 +109,18 @@ public class GameEngine {
 		}			
 	}
 	
-	//TODO: write levelFinished
+	public boolean levelFinished() {
+		if (player.canAdvance()) {
+			if (currentLevel <  numLevels)
+				System.out.println("Advancing to next level...\n");
+			return true;
+		}
+		if (player.isDead()) {
+			return true;
+		}
+		return false;	
+	}
+	
 	//TODO: write doOneLevel
 	//TODO: write playGame
 	
