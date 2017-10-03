@@ -1,6 +1,9 @@
 package architecture;
 
 import java.util.Scanner;
+import architecture.GameEngine;
+
+import architecture.GameEngine.Difficulty;
 
 /*
  * This class contains all data and methods relative to the player,
@@ -18,12 +21,46 @@ public class Player implements Drawable {
 		DEAD, ADVANCING, OK;
 	}
 	private PlayerStatus playerStatus;
+	
+	/*
+	 * The difficulty is as follows:
+	 * Easy: Two hardcoded levels
+	 * Medium: Two hardcoded levels, one random level
+	 * Hard: Two hardcoded levels, two random levels
+	 * Hardcore: Same as hard, but the player has only one hit point.
+	 */
+	public enum Difficulty {
+		EASY, MEDIUM, HARD, HARDCORE;
+	}
+	private static Difficulty difficulty;
 
 	public Player(int location) {
 		//Constructor calls method to reset player stats each level
+		setDifficulty(); //Only called once
 		resetLevel(location);
 	}
 
+	private void setDifficulty() {
+		System.out.println();
+		System.out.println("Choose a Difficulty:");
+		System.out.println("1: EASY\n2: MEDIUM\n3: HARD\n4: HARDCORE");
+		int choice = getPlayerChoice(4);
+		switch(choice) {
+		case 1:
+			difficulty = Difficulty.EASY;
+			break;
+		case 2:
+			difficulty = Difficulty.MEDIUM;
+			break;
+		case 3:
+			difficulty = Difficulty.HARD;
+			break;
+		case 4:
+			difficulty = Difficulty.HARDCORE;
+			break;
+		}
+	}
+	
 	public void resetLevel(int Location) {
 		//Called every level to reset player stats
 		playerStatus = PlayerStatus.OK;
@@ -53,7 +90,8 @@ public class Player implements Drawable {
 	}
 
 	public void takeDamage() {
-		damagePoints++;
+		if (GameEngine.getDifficulty() = Difficulty.HARDCORE) { killed(); }
+		else { damagePoints++; }
 	}
 
 	public void killed() {
@@ -68,7 +106,7 @@ public class Player implements Drawable {
 	public void doMove(Drawable[][] pieces) {
 		boolean moved = false;
 		while (!moved) {
-			int choice = getPlayerChoice();
+			int choice = getPlayerChoice(9);
 			moved = updatePlayerLocation(choice);
 		}
 	}
@@ -77,14 +115,14 @@ public class Player implements Drawable {
 	 * This method is private because it will only be called from
 	 * within doMove.
 	 */
-	private int getPlayerChoice() {
+	private int getPlayerChoice(int MAX_OPTIONS) {
 		int playerChoice = 0; //This is what's returned
-		while (playerChoice < 1 || playerChoice > 9) {
+		while (playerChoice < 1 || playerChoice > MAX_OPTIONS) {
 			displayMenu(); //Calls function to display movement options
 			Scanner scan = new Scanner(System.in);
 			try {
 				playerChoice = scan.nextInt();
-				if (playerChoice < 1 || playerChoice > 9) {
+				if (playerChoice < 1 || playerChoice > MAX_OPTIONS) {
 					System.out.println("Invalid option, please retry");
 				} 
 			} catch (NumberFormatException e) {
