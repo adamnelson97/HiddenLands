@@ -24,15 +24,18 @@ public class Dragon extends GamePiece {
 
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
-		if (counter == 0) {
-			System.out.println("\nA sleeping dragon lays ahead! Tread lightly, adventurer.\n");
-			counter++; //Increases counter so the next encounter the player gets a different interaction
-			return InteractionResult.NONE;
+		if (playerLocation == getLocation()) {
+			if (counter == 0) {
+				System.out.println("\nA sleeping dragon lays ahead! Tread lightly, adventurer.\n");
+				counter++; //Increases counter so the next encounter the player gets a different interaction
+				return InteractionResult.NONE;
+			}
+			else if (counter == 1 ){
+				System.out.println("You have awoken the dragon! He sets you ablaze with his flames!");
+				return InteractionResult.KILL;
+			}
 		}
-		else {
-			System.out.println("You have awoken the dragon! He sets you ablaze with his flames!");
-			return InteractionResult.KILL;
-		}
+		return InteractionResult.NONE; //Returns none if player is not on the same space
 	}
-	
+
 } //End of Class
