@@ -3,6 +3,8 @@ package architecture;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import gameEngine.Drawable;
+import gameEngine.Moveable;
 import pieces.GamePiece;
 
 /*
@@ -17,7 +19,7 @@ public class LevelEngine {
 	//The board is stored as a 2D array of pieces
 	private Drawable[][] levelPieces;
 	private ArrayList<Moveable> movingPieces;
-	private ArrayList<GamePiece> interactringPieces;
+	private ArrayList<GamePiece> interactingPieces;
 	private Point startingLocation;
 	
 	//Constructor
@@ -25,9 +27,7 @@ public class LevelEngine {
 		super();
 	}
 	
-	//TODO: write createLevel
 	public void createLevel(int levelNum) {
-		//clearBoard();
 		switch (levelNum) {
 		case 1:
 			//TODO: write levelOne();
@@ -46,9 +46,21 @@ public class LevelEngine {
 			break;
 		}
 	}
-	//TODO: write getPieces
-	//TODO: write getMovingPieces
-	//TODO: write getInteractingPieces
-	//TODO: write getPlayerStartLoc
+	
+	public Drawable[][] getPieces() {
+		return levelPieces;
+	}
+	
+	public ArrayList<Moveable> getMovingPieces() {
+		return movingPieces;
+	}
 
+	public ArrayList<GamePiece> getInteractingPieces() {
+		return interactingPieces;
+	}
+	
+	public Point getPlayerStartLoc() {
+		return startingLocation;
+	}
+	
 } //End of Class
