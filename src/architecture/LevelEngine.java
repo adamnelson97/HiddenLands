@@ -30,16 +30,16 @@ public class LevelEngine {
 	public void createLevel(int levelNum) {
 		switch (levelNum) {
 		case 1:
-			//TODO: write levelOne();
+			//levelOne();
 			break;
 		case 2:
-			//TODO: write levelTwo();
+			//levelTwo();
 			break;
 		case 3:
-			//TODO: write randLevel();
+			//randLevel();
 			break;
 		case 4:
-			//TODO: write randLevel();
+			//randLevel();
 			break;
 		default:
 			System.out.println("Error: Level " + levelNum + " not found.");
@@ -64,8 +64,24 @@ public class LevelEngine {
 	}
 	
 	//Level Constructors
+	
+	//TODO: Write levelOne()
 	public void levelOne() {
+		System.out.println("=====H I D D E N  L A N D S=====");
+		System.out.println("Welcome Adventurer! You are about to embark on a quest filled");
+		System.out.println("with danger, mysterious creatures, and treasure! Good luck!\n");
+		System.out.println("-----LEVEL ONE-----");
+		
+		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
+		startingLocation = new Point(7, 7);
+		
 		
 	}
+	
+	//TODO: Write levelTwo();
+	
+	//TODO: Write randLevel();
 	
 } //End of Class
