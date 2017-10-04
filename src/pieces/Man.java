@@ -17,6 +17,7 @@ public class Man extends GamePiece {
 	 * and the number of points they need to advance. Has a 1/3 chance of appearing somewhere on the board.
 	 */
 
+	//Constructor
 	public Man(char symbol, Point location) {
 		super(symbol, location);
 	}
