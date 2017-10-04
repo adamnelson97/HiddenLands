@@ -3,6 +3,8 @@ package architecture;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import gameEngine.GameEngine;
+import gameEngine.Player;
 import pieces.GamePiece;
 
 /*
@@ -141,11 +143,36 @@ public class GameEngine {
 		}
 	}
 	
-	//TODO: write playGame
+	public void doOneLevel() {
+		while (!levelFinished()) {
+			displayBoard();
+			// prompt and update the player's location
+			player.doMove(pieces);
+			interaction();
+			movePieces();
+		}
+	}
+	
+	public void playGame() {
+		// Give player a default location of (0,0)
+		player = new Player(new Point(0,0));
+		while (currentLevel < numLevels && !player.isDead()) {
+			currentLevel++;
+			setupLevel(currentLevel);
+			doOneLevel();
+		}
+		// If reach this point, either all levels were completed OR
+		// player is dead
+		if (player.isDead())
+			System.out.println("Too bad, you lose...");
+		else
+			System.out.println("Congratulations, you won!");
+		System.exit(0);
+	}
 	
 	public static void main(String[] args) {
-		//TODO: write main
-
+		GameEngine game = new GameEngine();
+		game.playGame();
 	}
 
 } //End of Class
