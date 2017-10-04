@@ -13,6 +13,7 @@ public class Player implements Drawable {
 	public static final int POINTS_TO_ADVANCE = 3;
 	public static final int POINTS_TO_DIE = 3;
 
+	private String name;
 	private Point location;
 	private int advancePoints;
 	private int damagePoints;
@@ -25,10 +26,18 @@ public class Player implements Drawable {
 
 	public Player(Point location) {
 		//Constructor calls method to reset player stats each level
+		setName();
 		setDifficulty(); //Only called once
 		resetLevel(location);
 	}
 
+	private void setName() {
+		System.out.println("What is your name, Adventurer? : ");
+		Scanner scan = new Scanner(System.in);
+		name = scan.next();
+		scan.close();
+	}
+	
 	private void setDifficulty() {
 		System.out.println();
 		System.out.println("Choose a Difficulty:");
@@ -196,6 +205,26 @@ public class Player implements Drawable {
 	
 	public Point getLocation() {
 		return location;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getAdvancePoints() {
+		return advancePoints;
+	}
+
+	public int getDamagePoints() {
+		return damagePoints;
+	}
+
+	public void setAdvancePoints(int advancePoints) {
+		this.advancePoints = advancePoints;
+	}
+
+	public void setDamagePoints(int damagePoints) {
+		this.damagePoints = damagePoints;
 	}
 
 } //End of Class

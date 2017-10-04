@@ -5,6 +5,7 @@ import java.awt.Point;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
+import architecture.Player;
 
 public class Knight extends GamePiece implements Moveable {
 
@@ -23,7 +24,8 @@ public class Knight extends GamePiece implements Moveable {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
 		if (playerLocation == getLocation()) {
 			System.out.println("\nYou encounter a Knight! He finds you honorable, and assists you in your quest.");
 			return InteractionResult.ADVANCE;

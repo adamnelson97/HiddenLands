@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import architecture.Drawable;
 import architecture.InteractionResult;
+import architecture.Player;
 
 public class Dragon extends GamePiece {
 
@@ -24,7 +25,8 @@ public class Dragon extends GamePiece {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
 		if (playerLocation == getLocation()) {
 			if (counter == 0) {
 				System.out.println("\nA sleeping dragon lays ahead! Tread lightly, adventurer.\n");

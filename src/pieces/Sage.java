@@ -6,6 +6,7 @@ import java.util.Random;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
+import architecture.Player;
 
 public class Sage extends GamePiece implements Moveable {
 
@@ -14,7 +15,8 @@ public class Sage extends GamePiece implements Moveable {
 	 * 
 	 * Motion: Randomly chooses a direction and moves one space.
 	 * 
-	 * Interaction: NONE. Randomly informs player about other pieces' interaction results.
+	 * Interaction: NONE. Randomly informs player about other pieces' interaction results
+	 * if they have at least two points.
 	 */
 
 	//Constructor
@@ -23,21 +25,30 @@ public class Sage extends GamePiece implements Moveable {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
-		Random rand = new Random();
-		int n = rand.nextInt(3) + 1;
-		
-		System.out.println("You encounter a wise sage! Listen to his helpful words...");
-		if (n == 1) {
-			System.out.println("The Elves, Men, and Sages will neither help nor hinder your quest.");
-			System.out.println("However, they may tell you a tale worth listening to...");
-		}
-		else if (n == 2) {
-			System.out.println("The Dwarves and Knights are kind folk and will aid you in your quest.");
-		}
-		else if (n == 3) {
-			System.out.println("Their are many dangerous creatures in these lands, including");
-			System.out.println("Dragons, Witches, and Wizards! Be wary of them.");
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
+
+		if (playerLocation == getLocation()) {
+			if (player.getAdvancePoints() >= 2) {
+				Random rand = new Random();
+				int n = rand.nextInt(3) + 1;
+
+				System.out.println("You encounter a wise sage! Listen to his helpful words...");
+				if (n == 1) {
+					System.out.println("The Elves, Men, and Sages will neither help nor hinder your quest.");
+					System.out.println("However, they may tell you a tale worth listening to...");
+				}
+				else if (n == 2) {
+					System.out.println("The Dwarves and Knights are kind folk and will aid you in your quest.");
+				}
+				else if (n == 3) {
+					System.out.println("There are many dangerous creatures in these lands, including");
+					System.out.println("Dragons, Witches, and Wizards! Be wary of them.");
+				}
+			}
+			else {
+				System.out.println("You are too inexperienced for my wisdom! Come back later.");
+			}
 		}
 		return InteractionResult.NONE;
 	}

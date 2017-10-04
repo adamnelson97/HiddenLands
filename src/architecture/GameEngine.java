@@ -83,7 +83,7 @@ public class GameEngine {
 	
 	public void interaction() {
 		for (GamePiece piece : interactingPieces) {
-			InteractionResult result = piece.interact(pieces, player.getLocation());		
+			InteractionResult result = piece.interact(pieces, player);		
 			if (result == InteractionResult.GET_POINT) {
 				player.addPoint(); 
 				System.out.println("\nYou just won a prize!\n");
@@ -165,14 +165,31 @@ public class GameEngine {
 		// If reach this point, either all levels were completed OR
 		// player is dead
 		if (player.isDead())
-			System.out.println("Too bad, you lose...");
+			System.out.println("Too bad, " + player.getName() + ", you lose...");
 		else
-			System.out.println("Congratulations, you won!");
+			System.out.println("Congratulations, " + player.getName() + ", you won!");
 		System.exit(0);
+	}
+	
+	public void intro() {
+		System.out.println("=====H I D D E N  L A N D S=====");
+		System.out.println("   ------by Adam Nelson------");
+		System.out.println("Welcome Adventurer! You are about to embark on a quest filled\n" +
+				"with danger, mysterious creatures, and treasure! Good luck!\n\n" + 
+				"Whilst traveling across the land, you see a village on the horizon.\n" + 
+				"Traveling to the village, you arrive at dusk. You enter the local inn, and order an ale.\n" +
+				"A wounded old man notices your sword, and approaches you.\n" +
+				"'Are you a warrior?' he asks. You nod your head in compliance.\n" +
+				"Maybe you can help us!' he exclaims. Every winter, we are ravaged by a terrible beast,\n" +
+				"and have to rebuild our homes from his terrible destruction. We are too poor to move\n" +
+				"somewhere else, and our finest warriors have never returned. Please help us!\n" +
+				"\nHe offers you gold, but you turn it down, saying the honor of helping them is reward enough.\n" +
+				"What will you find on your journey? Glory? Love? Power? There is only one way to find out...\n");
 	}
 	
 	public static void main(String[] args) {
 		GameEngine game = new GameEngine();
+		game.intro(); //Prints opening text, does not affect gameplay
 		game.playGame();
 	}
 

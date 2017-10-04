@@ -6,6 +6,7 @@ import java.util.Random;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
+import architecture.Player;
 
 public class Dwarf extends GamePiece implements Moveable {
 
@@ -26,7 +27,8 @@ public class Dwarf extends GamePiece implements Moveable {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
 		if (playerLocation == getLocation()) {
 			System.out.println("\nYou encounter a Dwarf! You offer him ale, and he thanks you with treasure!");
 			return InteractionResult.GET_POINT;

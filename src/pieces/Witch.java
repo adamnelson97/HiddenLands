@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import architecture.Drawable;
 import architecture.InteractionResult;
+import architecture.Player;
 
 public class Witch extends GamePiece {
 
@@ -21,7 +22,8 @@ public class Witch extends GamePiece {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
 		double playerX = playerLocation.getX();
 		double playerY = playerLocation.getY();
 		double witchX = getLocation().getX();

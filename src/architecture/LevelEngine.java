@@ -68,9 +68,6 @@ public class LevelEngine {
 	//TODO: Write levelOne()
 	
 	public void levelOne() {
-		System.out.println("=====H I D D E N  L A N D S=====");
-		System.out.println("Welcome Adventurer! You are about to embark on a quest filled");
-		System.out.println("with danger, mysterious creatures, and treasure! Good luck!\n");
 		System.out.println("-----LEVEL ONE-----");
 		
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];

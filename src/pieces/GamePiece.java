@@ -5,6 +5,7 @@ import java.awt.Point;
 import architecture.Drawable;
 import architecture.GameEngine;
 import architecture.InteractionResult;
+import architecture.Player;
 
 /*
  * Abstract class that defines the information and methods that unique child pieces will use
@@ -31,7 +32,7 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	// Abstract classes should have at least one abstract method
-	public abstract InteractionResult interact(Drawable [][] pieces, Point playerLocation);
+	public abstract InteractionResult interact(Drawable [][] pieces, Player player);
 
 	public Point getLocation() {
 		return location;

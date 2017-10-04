@@ -5,6 +5,7 @@ import java.util.Random;
 
 import architecture.Drawable;
 import architecture.InteractionResult;
+import architecture.Player;
 
 public class Artifact extends GamePiece {
 
@@ -20,7 +21,8 @@ public class Artifact extends GamePiece {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
 		if (playerLocation == getLocation()) {
 			System.out.println("You encounter an ancient artifact! Upon inspecting it, it begins to glow.");
 			System.out.println("----F L A S H----");

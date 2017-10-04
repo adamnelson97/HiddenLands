@@ -23,7 +23,8 @@ public class Man extends GamePiece {
 	}
 
 	@Override
-	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
+	public InteractionResult interact(Drawable[][] pieces, Player player) {
+		Point playerLocation = player.getLocation();
 		if (playerLocation == getLocation()) {
 			System.out.println("\nYou encounter a Man! You ask him some questions to aid you in your quest.");
 			System.out.println("Man: 'You can take a maximum of " + Player.POINTS_TO_DIE + " hits before you die.'");
