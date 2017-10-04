@@ -43,24 +43,24 @@ public class Dwarf extends GamePiece implements Moveable {
 		if (lastDirection == 1) {
 			if (n == 1) {
 				//Corresponds to moving Right
-				if (getLocation().getX() + 1 != playerLocation.getX()
-						&& pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
+				if (getLocation().getX() + 2 != playerLocation.getX()
+						&& pieces[(int) getLocation().getX() + 2][(int) getLocation().getY()] == null) {
 
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 					Point temp = getLocation(); //Copies location to new point
-					temp.translate(1, 0); //Moves the new point in the desired direction
+					temp.translate(2, 0); //Moves the new point in the desired direction
 					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
 			else if (n == 2) {
 				//Corresponds to moving Left
-				if (getLocation().getX() - 1 != playerLocation.getX()
-						&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
+				if (getLocation().getX() - 2 != playerLocation.getX()
+						&& pieces[(int) getLocation().getX() - 2][(int) getLocation().getY()] == null) {
 
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 					Point temp = getLocation(); //Copies location to new point
-					temp.translate(-1, 0); //Moves the new point in the desired direction
+					temp.translate(-2, 0); //Moves the new point in the desired direction
 					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
