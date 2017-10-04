@@ -61,14 +61,15 @@ public class GameEngine {
 	public void displayBoard() {
 		for (int j = 0; j < BOARD_SIZE; j++) {
 			for (int i = 0; i < BOARD_SIZE; i++) {
-				// Ensure player is always drawn
+				System.out.print('[');
+				//Ensure player is always drawn
 				if (new Point(j, i) == player.getLocation()) 
 					player.draw();
 				else if (pieces[j][i] == null)
 					System.out.print(' ');
 				else
 					pieces[j][i].draw();
-				System.out.print('|');
+				System.out.print(']');
 			}
 		}
 		System.out.println();
