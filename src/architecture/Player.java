@@ -32,18 +32,28 @@ public class Player implements Drawable {
 	}
 
 	private void setName() {
-		System.out.println("What is your name, Adventurer? : ");
+		System.out.print("What is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
 		name = scan.next();
 		scan.close();
 	}
-	
+
 	private void setDifficulty() {
 		System.out.println();
 		System.out.println("Choose a Difficulty:");
 		System.out.println("1: EASY\n2: MEDIUM\n3: HARD\n4: HARDCORE");
-		int choice = getPlayerChoice(4);
-		switch(choice) {
+
+		int playerChoice = 0;
+		do {
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("Enter a difficulty: ");
+			playerChoice = scanner.nextInt();
+			if (playerChoice < 1 || playerChoice > 4) {
+				System.out.println("Invalid Option");
+			}
+		} while (playerChoice < 1 || playerChoice > 4);
+
+		switch(playerChoice) {
 		case 1:
 			difficulty = Difficulty.EASY;
 			break;
@@ -58,11 +68,11 @@ public class Player implements Drawable {
 			break;
 		}
 	}
-	
+
 	public Difficulty getDifficulty() {
 		return difficulty;
 	}
-	
+
 	public void resetLevel(Point location) {
 		//Called every level to reset player stats
 		playerStatus = PlayerStatus.OK;
@@ -108,7 +118,7 @@ public class Player implements Drawable {
 	public void doMove(Drawable[][] pieces) {
 		boolean moved = false;
 		while (!moved) {
-			int choice = getPlayerChoice(9);
+			int choice = getPlayerChoice();
 			moved = updatePlayerLocation(choice);
 		}
 	}
@@ -117,24 +127,24 @@ public class Player implements Drawable {
 	 * This method is private because it will only be called from
 	 * within doMove.
 	 */
-	private int getPlayerChoice(int MAX_OPTIONS) {
-		int playerChoice = 0; //This is what's returned
-		while (playerChoice < 1 || playerChoice > MAX_OPTIONS) {
-			displayMenu(); //Calls function to display movement options
+	private int getPlayerChoice() {
+		int playerChoice = 0;
+		do {
+			displayMenu();
 			Scanner scan = new Scanner(System.in);
+			String choiceStr = scan.next();
 			try {
-				playerChoice = scan.nextInt();
-				if (playerChoice < 1 || playerChoice > MAX_OPTIONS) {
+				playerChoice = Integer.parseInt(choiceStr);
+				if (playerChoice < 1 || playerChoice > 9) {
 					System.out.println("Invalid option, please retry");
-				} 
+				}					
 			} catch (NumberFormatException e) {
 				System.out.println("Must enter a number, please retry");
 			}
-			scan.close();
-		}
+		} while (playerChoice < 1 || playerChoice > 9);
 		return playerChoice;
 	}
-	
+
 	//This method is private because it will only be called from within getPlayerChoice
 	private void displayMenu() {
 		System.out.println();
@@ -148,7 +158,7 @@ public class Player implements Drawable {
 		System.out.println("8: Jump down");
 		System.out.println("9: Stay put");
 	}
-	
+
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(int option) {
 		boolean moved = false;
@@ -194,15 +204,15 @@ public class Player implements Drawable {
 		}
 		//Stay put
 		if (option == 9) { moved = true; }
-		
+
 		if (!moved) {
 			System.out.println("Invalid option, please retry");
 			return false;
 		}
-		
+
 		return true; //Returns true if a valid option is chosen
 	}
-	
+
 	public Point getLocation() {
 		return location;
 	}
