@@ -7,25 +7,38 @@ import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
 
-public class Elf extends GamePiece implements Moveable {
+public class Sage extends GamePiece implements Moveable {
 
 	/*
-	 * Symbol: 'E'
+	 * Symbol: 'S'
 	 * 
 	 * Motion: Randomly chooses a direction and moves one space.
 	 * 
-	 * Interaction: NONE.
+	 * Interaction: NONE. Randomly informs player about other pieces' interaction results.
 	 */
 
 	//Constructor
-	public Elf(char symbol, Point location) {
+	public Sage(char symbol, Point location) {
 		super(symbol, location);
 	}
 
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Point playerLocation) {
-		if (playerLocation == getLocation())
-			System.out.println("\nYou encounter an Elf! He seems too interested in the trees to talk to you.");
+		Random rand = new Random();
+		int n = rand.nextInt(3) + 1;
+		
+		System.out.println("You encounter a wise sage! Listen to his helpful words...");
+		if (n == 1) {
+			System.out.println("The Elves, Men, and Sages will neither help nor hinder your quest.");
+			System.out.println("However, they may tell you a tale worth listening to...");
+		}
+		else if (n == 2) {
+			System.out.println("The Dwarves and Knights are kind folk and will aid you in your quest.");
+		}
+		else if (n == 3) {
+			System.out.println("Their are many dangerous creatures in these lands, including");
+			System.out.println("Dragons, Witches, and Wizards! Be wary of them.");
+		}
 		return InteractionResult.NONE;
 	}
 
@@ -83,8 +96,7 @@ public class Elf extends GamePiece implements Moveable {
 				}
 			}
 
-		} catch (ArrayIndexOutOfBoundsException e) {}
+		} catch (ArrayIndexOutOfBoundsException e) {}		
 	}
 
-
-} //End of Class
+}
