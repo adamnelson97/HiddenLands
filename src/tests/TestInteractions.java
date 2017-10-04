@@ -1,4 +1,6 @@
+/*
 package tests;
+
 
 import static org.junit.Assert.*;
 import pieces.Dwarf;
@@ -127,4 +129,6 @@ public class TestInteractions {
 		assertEquals(InteractionResult.NONE, wizard.interact(pieces, 13)); //3 spaces left of player
 	}
 
-} //End of Class	
+} //End of Class
+
+	*/

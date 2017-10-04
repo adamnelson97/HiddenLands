@@ -1,6 +1,7 @@
 package architecture;
 
 import java.awt.Point;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import architecture.GameEngine;
 
@@ -40,19 +41,11 @@ public class Player implements Drawable {
 
 	private void setDifficulty() {
 		System.out.println();
-		System.out.println("Choose a Difficulty:");
-		System.out.println("1: EASY\n2: MEDIUM\n3: HARD\n4: HARDCORE");
+		System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
+		System.out.print("Choose a Difficulty: ");
 
 		//TODO: Fix this fucker
-		int playerChoice = 0;
-		do {
-			Scanner scanner = new Scanner(System.in);
-			System.out.print("Enter a difficulty: ");
-			playerChoice = scanner.nextInt();
-			if (playerChoice < 1 || playerChoice > 4) {
-				System.out.println("Invalid Option");
-			}
-		} while (playerChoice < 1 || playerChoice > 4);
+		int playerChoice = getPlayerChoice2();
 
 		switch(playerChoice) {
 		case 1:
@@ -68,6 +61,24 @@ public class Player implements Drawable {
 			difficulty = Difficulty.HARDCORE;
 			break;
 		}
+	}
+	
+	private int getPlayerChoice2() {
+		int playerChoice = 0;
+		do {
+			//displayMenu();
+			Scanner scan = new Scanner(System.in);
+			String choiceStr = scan.next();
+			try {
+				playerChoice = Integer.parseInt(choiceStr);
+				if (playerChoice < 1 || playerChoice > 4) {
+					System.out.println("Invalid option, please retry");
+				}					
+			} catch (NoSuchElementException e) {
+				System.out.println("Must enter a number, please retry");
+			}
+		} while (playerChoice < 1 || playerChoice > 4);
+		return playerChoice;
 	}
 
 	public Difficulty getDifficulty() {

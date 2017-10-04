@@ -1,4 +1,6 @@
+/*
 package tests;
+
 
 import static org.junit.Assert.*;
 
@@ -98,3 +100,5 @@ public class TestMovingPieces {
 		assertEquals(GameEngine.BOARD_SIZE - 1, knight.getLocation());
 	}
 } //End of Class
+
+*/
