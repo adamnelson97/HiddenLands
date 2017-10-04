@@ -42,7 +42,7 @@ public class Player implements Drawable {
 	private void setDifficulty() {
 		System.out.println();
 		System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
-		System.out.print("Choose a Difficulty: ");
+		System.out.println("Choose a Difficulty: ");
 
 		//TODO: Fix this fucker
 		int playerChoice = getPlayerChoice2();
