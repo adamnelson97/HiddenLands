@@ -14,6 +14,8 @@ import architecture.InteractionResult;
 import org.junit.Test;
 
 public class TestInteractions {
+	
+	//TODO: Update tests for 2D
 
 	//Dragon Test
 	//Dragon has no interaction, no test necessary

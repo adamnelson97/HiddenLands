@@ -13,6 +13,8 @@ import pieces.Knight;
 
 public class TestMovingPieces {
 
+	//TODO: Update tests for 2D
+	
 	//Dragon Test
 	//Dragon does not move, no test necessary
 
