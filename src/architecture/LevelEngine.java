@@ -81,7 +81,16 @@ public class LevelEngine {
 	}
 	
 	//TODO: Write levelTwo();
-	
+	public void levelTwo() {
+		System.out.println("\nYou continue your adventure, coming into the Dark Realm.");
+		System.out.println("This land is known for more dangerous monsters. Beware!\n");
+		System.out.println("-----LEVEL TWO-----");
+		
+		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
+		startingLocation = new Point(7, 7);
+	}
 	//TODO: Write randLevel();
 	
 } //End of Class
