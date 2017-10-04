@@ -12,7 +12,8 @@ public class Dragon extends GamePiece {
 	 * 
 	 * Motion: None
 	 * 
-	 * Interaction: KILL. Dragon is initially sleeping, and gives warning. If the player lands on that space again they die
+	 * Interaction: KILL. Dragon is initially sleeping, and gives warning.
+	 * If the player lands on that space again they die.
 	 */
 
 	int counter;

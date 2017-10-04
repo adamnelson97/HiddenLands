@@ -39,61 +39,63 @@ public class Dwarf extends GamePiece implements Moveable {
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();
 		int n = rand.nextInt(2) + 1; //Chooses a number between 1 and 2
-		
-		if (lastDirection == 1) {
-			if (n == 1) {
-				//Corresponds to moving Right
-				if (getLocation().getX() + 2 != playerLocation.getX()
-						&& pieces[(int) getLocation().getX() + 2][(int) getLocation().getY()] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(2, 0); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-				}
-			}
-			else if (n == 2) {
-				//Corresponds to moving Left
-				if (getLocation().getX() - 2 != playerLocation.getX()
-						&& pieces[(int) getLocation().getX() - 2][(int) getLocation().getY()] == null) {
+		try {
+			if (lastDirection == 1) {
+				if (n == 1) {
+					//Corresponds to moving Right
+					if (getLocation().getX() + 2 != playerLocation.getX()
+							&& pieces[(int) getLocation().getX() + 2][(int) getLocation().getY()] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(-2, 0); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+						Point temp = getLocation(); //Copies location to new point
+						temp.translate(2, 0); //Moves the new point in the desired direction
+						setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					}
 				}
-			}
-			lastDirection = 0;
-		}
-		else if (lastDirection == 1) {
-			if (n == 1) {
-				//Corresponds to moving Up
-				if (getLocation().getY() + 1 != playerLocation.getY()
-						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
+				else if (n == 2) {
+					//Corresponds to moving Left
+					if (getLocation().getX() - 2 != playerLocation.getX()
+							&& pieces[(int) getLocation().getX() - 2][(int) getLocation().getY()] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(0, 1); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+						Point temp = getLocation(); //Copies location to new point
+						temp.translate(-2, 0); //Moves the new point in the desired direction
+						setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					}
 				}
+				lastDirection = 0;
 			}
-			else if (n == 2) {
-				//Corresponds to moving Down
-				if (getLocation().getY() - 1 != playerLocation.getY()
-						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
+			else if (lastDirection == 1) {
+				if (n == 1) {
+					//Corresponds to moving Up
+					if (getLocation().getY() + 1 != playerLocation.getY()
+							&& pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(0, -1); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+						Point temp = getLocation(); //Copies location to new point
+						temp.translate(0, 1); //Moves the new point in the desired direction
+						setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					}
 				}
+				else if (n == 2) {
+					//Corresponds to moving Down
+					if (getLocation().getY() - 1 != playerLocation.getY()
+							&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
+
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+						Point temp = getLocation(); //Copies location to new point
+						temp.translate(0, -1); //Moves the new point in the desired direction
+						setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+						pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					}
+				}
+				lastDirection = 1;
 			}
-			lastDirection = 1;
-		}
+		} catch (ArrayIndexOutOfBoundsException e) {}
 	}
 
 } //End of Class
