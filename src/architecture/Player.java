@@ -43,6 +43,7 @@ public class Player implements Drawable {
 		System.out.println("Choose a Difficulty:");
 		System.out.println("1: EASY\n2: MEDIUM\n3: HARD\n4: HARDCORE");
 
+		//TODO: Fix this fucker
 		int playerChoice = 0;
 		do {
 			Scanner scanner = new Scanner(System.in);
