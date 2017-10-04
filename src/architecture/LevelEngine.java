@@ -3,8 +3,8 @@ package architecture;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import gameEngine.Drawable;
-import gameEngine.Moveable;
+import architecture.Drawable;
+import architecture.Moveable;
 import pieces.GamePiece;
 
 /*
@@ -61,6 +61,11 @@ public class LevelEngine {
 	
 	public Point getPlayerStartLoc() {
 		return startingLocation;
+	}
+	
+	//Level Constructors
+	public void levelOne() {
+		
 	}
 	
 } //End of Class

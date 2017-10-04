@@ -20,14 +20,6 @@ public class Player implements Drawable {
 		DEAD, ADVANCING, OK;
 	}
 	private PlayerStatus playerStatus;
-	
-	/*
-	 * The difficulty is as follows:
-	 * Easy: Two hardcoded levels
-	 * Medium: Two hardcoded levels, one random level
-	 * Hard: Two hardcoded levels, two random levels
-	 * Hardcore: Same as hard, but the player has only one hit point.
-	 */
 
 	private static Difficulty difficulty;
 
