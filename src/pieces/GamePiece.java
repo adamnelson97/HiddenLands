@@ -31,7 +31,7 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	// Abstract classes should have at least one abstract method
-	public abstract InteractionResult interact(Drawable [] pieces, int playerLocation);
+	public abstract InteractionResult interact(Drawable [][] pieces, Point playerLocation);
 
 	public Point getLocation() {
 		return location;

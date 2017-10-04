@@ -3,8 +3,8 @@ package architecture;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import gameEngine.GameEngine;
-import gameEngine.Player;
+import architecture.GameEngine;
+import architecture.Player;
 import pieces.GamePiece;
 
 /*
