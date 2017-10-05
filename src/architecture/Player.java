@@ -27,26 +27,20 @@ public class Player implements Drawable {
 
 	public Player(Point location) {
 		//Constructor calls method to reset player stats each level
-		setName();
-		setDifficulty(); //Only called once
+		setNameDiff();
 		resetLevel(location);
 	}
 
-	private void setName() {
+	private void setNameDiff() {
 		System.out.print("What is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
 		name = scan.next();
-		scan.close();
-	}
-
-	private void setDifficulty() {
+		
 		System.out.println();
 		System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
 		System.out.println("Choose a Difficulty: ");
 
-		//TODO: Fix this fucker
-		int playerChoice = getPlayerChoice2();
-
+		int playerChoice = scan.nextInt();
 		switch(playerChoice) {
 		case 1:
 			difficulty = Difficulty.EASY;
@@ -61,6 +55,7 @@ public class Player implements Drawable {
 			difficulty = Difficulty.HARDCORE;
 			break;
 		}
+		scan.close();
 	}
 	
 	private int getPlayerChoice2() {
