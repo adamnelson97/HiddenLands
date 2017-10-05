@@ -41,12 +41,16 @@ public class Knight extends GamePiece implements Moveable {
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		try {
 			if (getLocation().getY() == 0 && pieces[(int) getLocation().getX()][GameEngine.BOARD_SIZE - 1] == null) {
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 				int temp = (int) getLocation().getX(); //Copies location to new point
 				setLocation(new Point(temp, GameEngine.BOARD_SIZE - 1)); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 			}
 			else if (getLocation().getX() == 0 && pieces[GameEngine.BOARD_SIZE - 1][(int) getLocation().getY()] == null) {
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 				int temp = (int) getLocation().getY();
 				setLocation(new Point(GameEngine.BOARD_SIZE - 1, temp));
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 			}
 			else if (getLocation().getY() - 1 != playerLocation.getY()
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
