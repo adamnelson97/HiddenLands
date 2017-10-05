@@ -172,7 +172,7 @@ public class GameEngine {
 	}
 	
 	public void intro() {
-		System.out.println("=====H I D D E N  L A N D S=====");
+		System.out.println("\n\n\n=====H I D D E N  L A N D S=====");
 		System.out.println("   ------by Adam Nelson------");
 		System.out.println("Welcome Adventurer! You are about to embark on a quest filled\n" +
 				"with danger, mysterious creatures, and treasure! Good luck!\n\n" + 
