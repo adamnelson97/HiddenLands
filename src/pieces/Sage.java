@@ -28,7 +28,7 @@ public class Sage extends GamePiece implements Moveable {
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
 
-		if (playerLocation == getLocation()) {
+		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			if (player.getAdvancePoints() >= 2) {
 				Random rand = new Random();
 				int n = rand.nextInt(3) + 1;

@@ -59,6 +59,7 @@ public class GameEngine {
 	}
 
 	public void displayBoard() {
+		printTitle(currentLevel);
 		for (int i = 0; i < BOARD_SIZE; i++) {
 			System.out.print('|');
 			for (int j = 0; j < BOARD_SIZE; j++) {
@@ -76,6 +77,23 @@ public class GameEngine {
 			System.out.println();
 		}
 		System.out.println();
+	}
+
+	public void printTitle(int numLevel) {
+		switch(numLevel) {
+		case 1:
+			System.out.println("      -----LEVEL ONE-----");
+			break;
+		case 2:
+			System.out.println("      -----LEVEL TWO-----");
+			break;
+		case 3:
+			System.out.println("      ----LEVEL THREE----");
+			break;
+		case 4:
+			System.out.println("      -----LEVEL FOUR----");
+			break;
+		}
 	}
 
 	public void movePieces() {

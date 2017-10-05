@@ -27,7 +27,7 @@ public class Dragon extends GamePiece {
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
-		if (playerLocation == getLocation()) {
+		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			if (counter == 0) {
 				System.out.println("\nA sleeping dragon lays ahead! Tread lightly, adventurer.\n");
 				counter++; //Increases counter so the next encounter the player gets a different interaction

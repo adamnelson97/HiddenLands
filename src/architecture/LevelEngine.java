@@ -70,16 +70,15 @@ public class LevelEngine {
 	//TODO: Write levelOne()
 
 	public void levelOne() {
-		System.out.println("-----LEVEL ONE-----");
-
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
-		startingLocation = new Point(7, 7);
+		startingLocation = new Point(5, 1);
 
 		//Pieces
 		levelPieces[5][0] = new Dragon('F', new Point(5,0));
-		levelPieces[5][3] = new Knight('K', new Point(5,3));
+		levelPieces[3][0] = new Knight('K', new Point(3,0));
+
 		
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {

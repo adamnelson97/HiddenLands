@@ -26,7 +26,7 @@ public class Elf extends GamePiece implements Moveable {
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
-		if (playerLocation == getLocation())
+		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY())
 			System.out.println("\nYou encounter an Elf! He seems too interested in the trees to talk to you.");
 		return InteractionResult.NONE;
 	}

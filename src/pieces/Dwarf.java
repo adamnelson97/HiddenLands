@@ -29,7 +29,7 @@ public class Dwarf extends GamePiece implements Moveable {
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
-		if (playerLocation == getLocation()) {
+		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			System.out.println("\nYou encounter a Dwarf! You offer him ale, and he thanks you with treasure!");
 			return InteractionResult.GET_POINT;
 		}

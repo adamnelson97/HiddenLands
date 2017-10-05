@@ -29,7 +29,7 @@ public class Knight extends GamePiece implements Moveable {
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
-		if (playerLocation == getLocation()) {
+		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			System.out.println("\nYou encounter a Knight! He finds you honorable, and assists you in your quest.");
 			return InteractionResult.ADVANCE;
 		}

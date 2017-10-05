@@ -24,7 +24,7 @@ public class Maiden extends GamePiece {
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
-		if (playerLocation == getLocation()) {
+		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			System.out.println("\nYou encounter a fair Maiden! She takes you to a cottage to rest,");
 			System.out.println("giving you bread, meat, and ale. You fall asleep...");
 			System.out.println("You awaken rejuvenated, but the maiden is gone...");
