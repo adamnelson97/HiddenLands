@@ -1,10 +1,10 @@
-Hidden Lands Piece Legend
+===Hidden Lands Piece Legend===
 Note: ALL pieces only move if their destination is unoccupied by
 both the player and other pieces.If there is another piece there,
 the piece (that is to be moved) stays put and waits to move next turn.
 
 
-Neutral Pieces
+----Neutral Pieces---
 
 Elf:
 Symbol: 'E'
@@ -19,16 +19,16 @@ can take, and the number of points they need to advance. Has a 1/3
 chance of appearing somewhere on the board.
 
 Maiden:
-Symbol: ‘M’
+Symbol: 'M'
 Motion: None
 Interaction: NONE. Heals the player, then disappears.
 
 Sage:
-Symbol: ‘S’
+Symbol: 'S'
 Motion: Randomly chooses a direction and moves one space.
-Interaction: NONE. Randomly informs player about the other piece’s
+Interaction: NONE. Randomly informs player about the other pieces'
 interaction results if they have at least two points.
-
+---------------------------------------------------------------------
 
 Friendly Pieces
 
@@ -45,18 +45,17 @@ by another piece. If still occupied, moves one pace up.
 Interaction: ADVANCE. Only interacts on same space.
 
 Artifact:
-Symbol: ‘A’
+Symbol: 'A'
 Motion: None
 Interaction: ADVANCE/KILL. Has a 50% chance of either interaction.
-
+---------------------------------------------------------------------
 
 Enemy Pieces
 
 Wizard:
 Symbol: 'W'. Used to confuse player as it is the same as the Witch.
 Motion: None
-Interaction: HIT. Has range of +/- 2 spaces from current space, i.e.
-if the Wizard is on space (3,0), he can hit a target on spaces (1,0)-(5,0).
+Interaction: HIT. Has range of +/- 2 spaces from current space.
 
 Witch:
 Symbol: 'W'. Used to confuse player as it is the same as the Wizard.
@@ -69,3 +68,4 @@ Symbol: 'F'. Uses 'F' for 'Fire' since Dwarves use 'D'.
 Motion: None
 Interaction: KILL. Dragon is initially sleeping, and gives warning.
 If the player lands on that space again they die.
+---------------------------------------------------------------------
