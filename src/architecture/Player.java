@@ -35,12 +35,17 @@ public class Player implements Drawable {
 		System.out.print("What is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
 		name = scan.next();
-		
-		System.out.println();
-		System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
-		System.out.println("Choose a Difficulty: ");
 
-		int playerChoice = scan.nextInt();
+		int playerChoice = 0;
+
+		do {
+			System.out.println();
+			System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
+			System.out.println("Choose a Difficulty: ");
+			playerChoice = scan.nextInt();
+			if (playerChoice < 1 || playerChoice > 4) System.out.println("Invalid option. Please retry.");
+		} while(playerChoice < 1 || playerChoice > 4);
+
 		switch(playerChoice) {
 		case 1:
 			difficulty = Difficulty.EASY;
