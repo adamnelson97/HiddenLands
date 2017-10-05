@@ -149,15 +149,15 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within getPlayerChoice
 	private void displayMenu() {
 		System.out.println();
-		System.out.println("1: Move right");
-		System.out.println("2: Move left");
-		System.out.println("3: Jump right");
-		System.out.println("4: Jump left");
-		System.out.println("5: Move up");
-		System.out.println("6: Move down");
-		System.out.println("7: Jump up");
-		System.out.println("8: Jump down");
-		System.out.println("9: Stay put");
+		System.out.println("8: Move Up");
+		System.out.println("2: Move Down");
+		System.out.println("4: Move Left");
+		System.out.println("6: Move Right");
+		System.out.println("7: Jump Up");
+		System.out.println("9: Jump down");
+		System.out.println("1: Jump Left");
+		System.out.println("3: Jump Right");
+		System.out.println("5: Stay Put");
 		System.out.print("Choose a movement: ");
 	}
 
@@ -166,12 +166,12 @@ public class Player implements Drawable {
 		boolean moved = false;
 		//(-U +D / -L +R)
 		//Move Right
-		if (option == 1 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
+		if (option == 6 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
 			location.translate(0, 1);
 			moved = true;
 		}
 		//Move Left
-		if (option == 2 && location.getY() > 0) {
+		if (option == 4 && location.getY() > 0) {
 			location.translate(0, -1);
 			moved = true;
 		}
@@ -181,17 +181,17 @@ public class Player implements Drawable {
 			moved = true;
 		}
 		//Jump Left
-		if (option == 4 && location.getY() > 1) {
+		if (option == 1 && location.getY() > 1) {
 			location.translate(0, -2);
 			moved = true;
 		}
 		//Move Up
-		if (option == 5 && location.getX() > 0) {
+		if (option == 8 && location.getX() > 0) {
 			location.translate(-1, 0);
 			moved = true;
 		}
 		//Move Down
-		if (option == 6 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
+		if (option == 2 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
 			location.translate(1, 0);
 			moved = true;
 		}
@@ -201,12 +201,12 @@ public class Player implements Drawable {
 			moved = true;
 		}
 		//Jump Down
-		if (option == 8 && location.getX() < (GameEngine.BOARD_SIZE - 2)) {
+		if (option == 9 && location.getX() < (GameEngine.BOARD_SIZE - 2)) {
 			location.translate(2, 0);
 			moved = true;
 		}
 		//Stay put
-		if (option == 9) { moved = true; }
+		if (option == 5) { moved = true; }
 
 		if (!moved) {
 			System.out.println("Invalid option, please retry");
