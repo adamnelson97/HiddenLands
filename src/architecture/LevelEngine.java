@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import architecture.Drawable;
 import architecture.Moveable;
+import pieces.Dragon;
 import pieces.GamePiece;
 import pieces.Knight;
 
@@ -77,7 +78,8 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 
 		//Pieces
-		levelPieces[5][5] = new Knight('K', new Point(5,5));
+		levelPieces[5][0] = new Dragon('F', new Point(5,0));
+		levelPieces[5][3] = new Knight('K', new Point(5,3));
 		
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
