@@ -164,7 +164,7 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(int option) {
 		boolean moved = false;
-		//TODO (-U +D / -L +R)
+		//(-U +D / -L +R)
 		//Move Right
 		if (option == 1 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
 			location.translate(0, 1);
