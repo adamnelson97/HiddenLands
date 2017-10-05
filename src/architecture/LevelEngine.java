@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import architecture.Drawable;
 import architecture.Moveable;
 import pieces.GamePiece;
+import pieces.Knight;
 
 /*
  * This class creates the data structures to store the various game pieces,
@@ -75,6 +76,9 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
 
+		//Pieces
+		levelPieces[5][5] = new Knight('K', new Point(5,5));
+		
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
 			for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
