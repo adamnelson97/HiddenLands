@@ -126,7 +126,7 @@ public class GameEngine {
 	
 	//TODO: write doOneLevel
 	
-	public void setNumLevels() {
+	public void setNumLevels(Player player) {
 		Difficulty diff = player.getDifficulty();
 		switch(diff) {
 		case EASY:
@@ -157,6 +157,7 @@ public class GameEngine {
 	public void playGame() {
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
+		setNumLevels(player);
 		while (currentLevel < numLevels && !player.isDead()) {
 			currentLevel++;
 			setupLevel(currentLevel);
