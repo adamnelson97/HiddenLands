@@ -41,7 +41,8 @@ Interaction: GET_POINT.
 Knight:
 Symbol: 'K'
 Motion: Moves Left one space every turn. Skips a space if it is occupied
-by another piece. If still occupied, moves one pace up.
+by another piece. If still occupied, moves one pace up. Resets to right
+edge if at left edge. Resets to bottom if at top edge.
 Interaction: ADVANCE. Only interacts on same space.
 
 Artifact:
