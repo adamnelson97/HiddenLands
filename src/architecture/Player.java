@@ -74,7 +74,7 @@ public class Player implements Drawable {
 				if (playerChoice < 1 || playerChoice > 4) {
 					System.out.println("Invalid option, please retry");
 				}					
-			} catch (NoSuchElementException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("Must enter a number, please retry");
 			}
 		} while (playerChoice < 1 || playerChoice > 4);
