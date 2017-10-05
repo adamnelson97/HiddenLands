@@ -131,15 +131,15 @@ public class Player implements Drawable {
 		do {
 			displayMenu();
 			String input = null;
-		    try {
-		        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		        input = bufferedReader.readLine();
-		        playerChoice = Integer.parseInt(input);
-		    } catch (NumberFormatException ex) {
-		       System.out.println("Invalid option. Please retry.");
-		    } catch (IOException e) {
-		        e.printStackTrace();
-		    }
+			try {
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+				input = bufferedReader.readLine();
+				playerChoice = Integer.parseInt(input);
+			} catch (NumberFormatException ex) {
+				System.out.println("Invalid option. Please retry.");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			if (playerChoice < 1 || playerChoice > 9) System.out.println("Invalid option. Please retry.");
 		} while(playerChoice < 1 || playerChoice > 9);
 		//scan.close();
@@ -164,44 +164,45 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(int option) {
 		boolean moved = false;
-		//Move right
-		if (option == 1 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
-			location.translate(1, 0);
-			moved = true;
-		}
-		//Move left
-		if (option == 2 && location.getX() > 0) {
-			location.translate(-1, 0);
-			moved = true;
-		}
-		//Jump Right
-		if (option == 3 && location.getX() < (GameEngine.BOARD_SIZE - 2)) {
-			location.translate(2, 0);
-			moved = true;
-		}
-		//Jump Left
-		if (option == 4 && location.getX() > 1) {
-			location.translate(-2, 0);
-			moved = true;
-		}
-		//Move Up
-		if (option == 5 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
+		//(+R -L/-U +D)
+		//Move Right
+		if (option == 1 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
 			location.translate(0, 1);
 			moved = true;
 		}
-		//Move Down
-		if (option == 6 && location.getY() > 0) {
+		//Move Left
+		if (option == 2 && location.getY() > 0) {
 			location.translate(0, -1);
 			moved = true;
 		}
-		//Jump Up
-		if (option == 7 && location.getY() < (GameEngine.BOARD_SIZE - 2)) {
+		//Jump Right
+		if (option == 3 && location.getY() < (GameEngine.BOARD_SIZE - 2)) {
 			location.translate(0, 2);
 			moved = true;
 		}
-		//Jump Down
-		if (option == 8 && location.getY() > 1) {
+		//Jump Left
+		if (option == 4 && location.getY() > 1) {
 			location.translate(0, -2);
+			moved = true;
+		}
+		//Move Up
+		if (option == 5 && location.getX() > 0) {
+			location.translate(-1, 0);
+			moved = true;
+		}
+		//Move Down
+		if (option == 6 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
+			location.translate(1, 0);
+			moved = true;
+		}
+		//Jump Up
+		if (option == 7 && location.getX() > 1) {
+			location.translate(-2, 0);
+			moved = true;
+		}
+		//Jump Down
+		if (option == 8 && location.getX() < (GameEngine.BOARD_SIZE - 2)) {
+			location.translate(2, 0);
 			moved = true;
 		}
 		//Stay put
