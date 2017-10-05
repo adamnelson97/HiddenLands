@@ -30,7 +30,7 @@ public class LevelEngine {
 	public void createLevel(int levelNum) {
 		switch (levelNum) {
 		case 1:
-			//levelOne();
+			levelOne();
 			break;
 		case 2:
 			//levelTwo();

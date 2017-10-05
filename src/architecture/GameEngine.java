@@ -71,6 +71,7 @@ public class GameEngine {
 					pieces[j][i].draw();
 				System.out.print(']');
 			}
+			System.out.println();
 		}
 		System.out.println();
 	}
@@ -124,8 +125,6 @@ public class GameEngine {
 		return false;	
 	}
 	
-	//TODO: write doOneLevel
-	
 	public void setNumLevels(Player player) {
 		Difficulty diff = player.getDifficulty();
 		switch(diff) {
@@ -133,10 +132,10 @@ public class GameEngine {
 			numLevels = 2;
 			break;
 		case MEDIUM:
-			numLevels = 3;
+			numLevels = 2;
 			break;
 		case HARD:
-			numLevels = 4;
+			numLevels = 3;
 			break;
 		case HARDCORE:
 			numLevels = 4;
