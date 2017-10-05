@@ -57,24 +57,6 @@ public class Player implements Drawable {
 		}
 		scan.close();
 	}
-	
-	private int getPlayerChoice2() {
-		int playerChoice = 0;
-		do {
-			//displayMenu();
-			Scanner scan = new Scanner(System.in);
-			String choiceStr = scan.next();
-			try {
-				playerChoice = Integer.parseInt(choiceStr);
-				if (playerChoice < 1 || playerChoice > 4) {
-					System.out.println("Invalid option, please retry");
-				}					
-			} catch (NumberFormatException e) {
-				System.out.println("Must enter a number, please retry");
-			}
-		} while (playerChoice < 1 || playerChoice > 4);
-		return playerChoice;
-	}
 
 	public Difficulty getDifficulty() {
 		return difficulty;
