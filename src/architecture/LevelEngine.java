@@ -14,19 +14,19 @@ import pieces.GamePiece;
  */
 
 public class LevelEngine {
-	
+
 	//Attributes
 	//The board is stored as a 2D array of pieces
 	private Drawable[][] levelPieces;
 	private ArrayList<Moveable> movingPieces;
 	private ArrayList<GamePiece> interactingPieces;
 	private Point startingLocation;
-	
+
 	//Constructor
 	public LevelEngine() {
 		super();
 	}
-	
+
 	public void createLevel(int levelNum) {
 		switch (levelNum) {
 		case 1:
@@ -46,11 +46,11 @@ public class LevelEngine {
 			break;
 		}
 	}
-	
+
 	public Drawable[][] getPieces() {
 		return levelPieces;
 	}
-	
+
 	public ArrayList<Moveable> getMovingPieces() {
 		return movingPieces;
 	}
@@ -58,39 +58,56 @@ public class LevelEngine {
 	public ArrayList<GamePiece> getInteractingPieces() {
 		return interactingPieces;
 	}
-	
+
 	public Point getPlayerStartLoc() {
 		return startingLocation;
 	}
-	
+
 	//Level Constructors
-	
+
 	//TODO: Write levelOne()
-	
+
 	public void levelOne() {
 		System.out.println("-----LEVEL ONE-----");
-		
+
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
+
+		//Identify pieces that interact
+		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+			for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+				if (levelPieces[i][j] instanceof GamePiece) {
+					interactingPieces.add((GamePiece) levelPieces[i][j]);
+				}
+			}
+		}
 		
-		
+		//Identify pieces that move
+		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+			for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+				if (levelPieces[i][j] instanceof Moveable) {
+					movingPieces.add((Moveable) levelPieces[i][j]);
+				}
+			}
+		}
+
 	}
-	
+
 	//TODO: Write levelTwo();
-	
+
 	public void levelTwo() {
 		System.out.println("\nYou continue your adventure, coming into the Dark Realm.");
 		System.out.println("This land is known for more dangerous monsters. Beware!\n");
 		System.out.println("-----LEVEL TWO-----");
-		
+
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
 	}
-	
+
 	//TODO: Write randLevel();
-	
+
 } //End of Class

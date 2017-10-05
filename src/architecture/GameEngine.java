@@ -59,17 +59,17 @@ public class GameEngine {
 	}
 
 	public void displayBoard() {
-		for (int j = 0; j < BOARD_SIZE; j++) {
-			for (int i = 0; i < BOARD_SIZE; i++) {
-				System.out.print('[');
+		for (int i = 0; i < BOARD_SIZE; i++) {
+			System.out.print('|');
+			for (int j = 0; j < BOARD_SIZE; j++) {
 				//Ensure player is always drawn
-				if (new Point(j, i) == player.getLocation()) 
+				if (new Point(i, j) == player.getLocation()) 
 					player.draw();
-				else if (pieces[j][i] == null)
+				else if (pieces[i][j] == null)
 					System.out.print(' ');
 				else
-					pieces[j][i].draw();
-				System.out.print(']');
+					pieces[i][j].draw();
+				System.out.print('|');
 			}
 			System.out.println();
 		}
@@ -81,7 +81,7 @@ public class GameEngine {
 			piece.move(pieces, player.getLocation());		
 		}	
 	}
-	
+
 	public void interaction() {
 		for (GamePiece piece : interactingPieces) {
 			InteractionResult result = piece.interact(pieces, player);		
@@ -112,7 +112,7 @@ public class GameEngine {
 			}
 		}			
 	}
-	
+
 	public boolean levelFinished() {
 		if (player.canAdvance()) {
 			if (currentLevel <  numLevels)
@@ -124,7 +124,7 @@ public class GameEngine {
 		}
 		return false;	
 	}
-	
+
 	public void setNumLevels(Player player) {
 		Difficulty diff = player.getDifficulty();
 		switch(diff) {
@@ -142,7 +142,7 @@ public class GameEngine {
 			break;
 		}
 	}
-	
+
 	public void doOneLevel() {
 		while (!levelFinished()) {
 			displayBoard();
@@ -152,7 +152,7 @@ public class GameEngine {
 			movePieces();
 		}
 	}
-	
+
 	public void playGame() {
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
@@ -170,7 +170,7 @@ public class GameEngine {
 			System.out.println("Congratulations, " + player.getName() + ", you won!");
 		System.exit(0);
 	}
-	
+
 	public void intro() {
 		System.out.println("\n\n\n=====H I D D E N  L A N D S=====");
 		System.out.println("   ------by Adam Nelson------");
@@ -186,7 +186,7 @@ public class GameEngine {
 				"\nHe offers you gold, but you turn it down, saying the honor of helping them is reward enough.\n" +
 				"What will you find on your journey? Glory? Love? Power? There is only one way to find out...\n");
 	}
-	
+
 	public static void main(String[] args) {
 		GameEngine game = new GameEngine();
 		game.intro(); //Prints opening text, does not affect gameplay

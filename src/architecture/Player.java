@@ -1,6 +1,10 @@
 package architecture;
 
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.Console;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import architecture.GameEngine;
@@ -41,7 +45,7 @@ public class Player implements Drawable {
 		do {
 			System.out.println();
 			System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
-			System.out.println("Choose a Difficulty: ");
+			System.out.print("Choose a Difficulty: ");
 			playerChoice = scan.nextInt();
 			if (playerChoice < 1 || playerChoice > 4) System.out.println("Invalid option. Please retry.");
 		} while(playerChoice < 1 || playerChoice > 4);
@@ -60,7 +64,6 @@ public class Player implements Drawable {
 			difficulty = Difficulty.HARDCORE;
 			break;
 		}
-		scan.close();
 	}
 
 	public Difficulty getDifficulty() {
@@ -122,20 +125,24 @@ public class Player implements Drawable {
 	 * within doMove.
 	 */
 	private int getPlayerChoice() {
+
 		int playerChoice = 0;
+
 		do {
 			displayMenu();
-			Scanner scan = new Scanner(System.in);
-			String choiceStr = scan.next();
-			try {
-				playerChoice = Integer.parseInt(choiceStr);
-				if (playerChoice < 1 || playerChoice > 9) {
-					System.out.println("Invalid option, please retry");
-				}					
-			} catch (NumberFormatException e) {
-				System.out.println("Must enter a number, please retry");
-			}
-		} while (playerChoice < 1 || playerChoice > 9);
+			String input = null;
+		    try {
+		        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		        input = bufferedReader.readLine();
+		        playerChoice = Integer.parseInt(input);
+		    } catch (NumberFormatException ex) {
+		       System.out.println("Invalid option. Please retry.");
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+			if (playerChoice < 1 || playerChoice > 9) System.out.println("Invalid option. Please retry.");
+		} while(playerChoice < 1 || playerChoice > 9);
+		//scan.close();
 		return playerChoice;
 	}
 
@@ -151,6 +158,7 @@ public class Player implements Drawable {
 		System.out.println("7: Jump up");
 		System.out.println("8: Jump down");
 		System.out.println("9: Stay put");
+		System.out.print("Choose a movement: ");
 	}
 
 	//This method is private because it will only be called from within doMove
