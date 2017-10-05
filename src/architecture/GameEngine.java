@@ -63,7 +63,9 @@ public class GameEngine {
 			System.out.print('|');
 			for (int j = 0; j < BOARD_SIZE; j++) {
 				//Ensure player is always drawn
-				if (new Point(i, j) == player.getLocation()) 
+				Point temp = new Point(i, j);
+				if (temp.getLocation().getX() == player.getLocation().getX()
+						&& temp.getLocation().getY() == player.getLocation().getY()) 
 					player.draw();
 				else if (pieces[i][j] == null)
 					System.out.print(' ');
