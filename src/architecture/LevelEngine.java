@@ -85,10 +85,9 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7); //Center of board
 
-		//Pieces
+		//Pieces Go Here
 		levelPieces[5][0] = new Knight('K', new Point(5,0));
 
-		
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
 			for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
@@ -121,6 +120,26 @@ public class LevelEngine {
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
+		
+		//Pieces Go Here
+
+		//Identify pieces that interact
+				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+					for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+						if (levelPieces[i][j] instanceof GamePiece) {
+							interactingPieces.add((GamePiece) levelPieces[i][j]);
+						}
+					}
+				}
+				
+				//Identify pieces that move
+				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+					for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+						if (levelPieces[i][j] instanceof Moveable) {
+							movingPieces.add((Moveable) levelPieces[i][j]);
+						}
+					}
+				}
 	}
 
 	//TODO: Write levelThree();
@@ -130,6 +149,31 @@ public class LevelEngine {
 				+ "that a warrior is going to brave the beast. You can see the peak of Alindor,\n"
 				+ "the tallest mountain, up ahead. You spot a small cave opening nearby. That must be\n"
 				+ "the monster's lair...");
+		
+		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
+		startingLocation = new Point(7, 7);
+		
+		//Pieces Go Here
+
+		//Identify pieces that interact
+				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+					for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+						if (levelPieces[i][j] instanceof GamePiece) {
+							interactingPieces.add((GamePiece) levelPieces[i][j]);
+						}
+					}
+				}
+				
+				//Identify pieces that move
+				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+					for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+						if (levelPieces[i][j] instanceof Moveable) {
+							movingPieces.add((Moveable) levelPieces[i][j]);
+						}
+					}
+				}
 	}
 	
 	//TODO: Write levelFour();
@@ -148,6 +192,31 @@ public class LevelEngine {
 				+ "rest in a hostel before being awoken by the city guards. 'Are you the man who slew the monster of Alindor?'\n"
 				+ "You tell them your tale, and why you are here. They provide you with stronger armor, a sharper sword,\n"
 				+ "and a bow with which to face the Skeleton King. Rest well, Adventurer, for tomorrow you face him...");
+		
+		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
+		startingLocation = new Point(7, 7);
+		
+		//Pieces Go Here
+
+		//Identify pieces that interact
+				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+					for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+						if (levelPieces[i][j] instanceof GamePiece) {
+							interactingPieces.add((GamePiece) levelPieces[i][j]);
+						}
+					}
+				}
+				
+				//Identify pieces that move
+				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+					for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+						if (levelPieces[i][j] instanceof Moveable) {
+							movingPieces.add((Moveable) levelPieces[i][j]);
+						}
+					}
+				}
 	}
 
 } //End of Class
