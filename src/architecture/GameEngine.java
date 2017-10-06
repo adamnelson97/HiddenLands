@@ -186,8 +186,47 @@ public class GameEngine {
 		// player is dead
 		if (player.isDead())
 			System.out.println("Too bad, " + player.getName() + ", you lose...");
-		else
+		else {
 			System.out.println("Congratulations, " + player.getName() + ", you won!");
+			switch(numLevels) {
+			case 1:
+				System.out.println("You have made sufficient progress on your journey. You have faced formidable\n"
+						+ "monsters, but greater threats lay ahead. Play again on Medium to further your quest and\n"
+						+ "save the villagers! ");
+				break;
+			case 2:
+				System.out.println("You have made admirable progress along your journey. Word has begun to spread\n"
+						+ "that a warrior is going to brave the beast. Strengthen yourself, and play again on Hard to\n"
+						+ "complete your conquest!");
+				break;
+			case 3:
+				System.out.println("You have slayed the mighty beast! Huzzah! You begin the long walk back to the\n"
+						+ "village to inform the people of the good news..."
+						+ "'...So you truly slayed it? You killed that evil monster?' a child asks you. You nod your\n"
+						+ "head in agreement. You step into the inn you first entered many moons ago. You notice the\n"
+						+ "old man, and his eyes widen. 'So it's true!' he exclaims. 'My boy, I never doubted you. But\n"
+						+ "word has come here that the great city of Glor Infitae is being laid waste to by an unknown foe."
+						+ "Dark forces are surely at work. If you can, we beseech you to help them as you did us!'\n"
+						+ "\nYou consider the proposition, and reply 'I will help any good people, for good in this\n"
+						+ "world must be protected.'\n"
+						+ "\nPlay again on HARDCORE to face the greatest threat in all the land, the fiery rage of\n"
+						+ "THE SKELETON KING!");
+				break;
+			case 4:
+				System.out.println("Word has spread of your incredible victory over the terrible Skeleton King! Villagers openly\n"
+						+ "cry out their thanks for you, offering meat, ale, horses, and gold as tokens of their gratitude.\n"
+						+ "A squire approaches you, and offers you a scroll. The scroll dictates that the Princess, caretaker\n"
+						+ "and ruler of Glor Infitae has summoned you for an audience. You mount your horse and stride through the\n"
+						+ "city, stopping before the marble pillars of the Royal Hall.\n"
+						+ "\nYou dismount, and the guards enter the giant oak doors into the throne room where the Princess sits,\n"
+						+ "beaming in light as if an angel. 'Come here, " + player.getName() + "', she says. You approach her and\n"
+						+ "kneel before her.\n'No one can question your heroics and selfless actions to defending our noble land.\n"
+						+ "It is for this that I now bestow upon you the Heart of Aetna, our guardian spirit, and declare this day\n"
+						+ "in your honor!' The hall erupts in racous applause!\n"
+						+ "\nThank you for playing. Please play again!");
+				break;
+			}
+		}
 		System.exit(0);
 	}
 
@@ -200,7 +239,7 @@ public class GameEngine {
 				"Traveling to the village, you arrive at dusk. You enter the local inn, and order an ale.\n" +
 				"A wounded old man notices your sword, and approaches you.\n" +
 				"'Are you a warrior?' he asks. You nod your head in compliance.\n" +
-				"Maybe you can help us!' he exclaims. Every winter, we are ravaged by a terrible beast,\n" +
+				"Maybe you can help us!' he exclaims. Every winter, we are ravaged by a terrible monster,\n" +
 				"and have to rebuild our homes from his terrible destruction. We are too poor to move\n" +
 				"somewhere else, and our finest warriors have never returned. Please help us!\n" +
 				"\nHe offers you gold, but you turn it down, saying the honor of helping them is reward enough.\n" +
