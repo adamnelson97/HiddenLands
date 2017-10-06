@@ -149,7 +149,7 @@ public class GameEngine {
 		Difficulty diff = player.getDifficulty();
 		switch(diff) {
 		case EASY:
-			numLevels = 2;
+			numLevels = 1;
 			break;
 		case MEDIUM:
 			numLevels = 2;

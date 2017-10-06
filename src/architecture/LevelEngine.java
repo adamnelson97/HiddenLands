@@ -82,7 +82,7 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7); //Center of board
 
 		//Pieces
-		levelPieces[5][0] = new Wizard('W', new Point(5,0));
+		levelPieces[5][0] = new Knight('K', new Point(5,0));
 
 		
 		//Identify pieces that interact
