@@ -11,6 +11,9 @@ import pieces.GamePiece;
 import pieces.Knight;
 import pieces.Maiden;
 import pieces.Man;
+import pieces.Sage;
+import pieces.Witch;
+import pieces.Wizard;
 
 /*
  * This class creates the data structures to store the various game pieces,
@@ -79,8 +82,7 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7); //Center of board
 
 		//Pieces
-		levelPieces[5][0] = new Dwarf('D', new Point(5,0));
-		levelPieces[3][0] = new Man('K', new Point(3,0));
+		levelPieces[5][0] = new Wizard('W', new Point(5,0));
 
 		
 		//Identify pieces that interact
