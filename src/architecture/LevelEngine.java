@@ -41,13 +41,13 @@ public class LevelEngine {
 			levelOne();
 			break;
 		case 2:
-			//levelTwo();
+			levelTwo();
 			break;
 		case 3:
-			//levelThree();
+			levelThree();
 			break;
 		case 4:
-			//levelFour();
+			levelFour();
 			break;
 		default:
 			System.out.println("Error: Level " + levelNum + " not found.");
