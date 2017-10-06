@@ -35,7 +35,7 @@ public class Maiden extends GamePiece {
 			player.setDamagePoints(0);
 			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null;
 			//The piece is removed from the board so it cannot be abused for free health by the player
-			interacted = true;
+			interacted = true; //Prevents future interactions with player
 		}
 		return InteractionResult.NONE;
 	}
