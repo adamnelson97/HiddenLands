@@ -82,16 +82,16 @@ public class GameEngine {
 	public void printTitle(int numLevel) {
 		switch(numLevel) {
 		case 1:
-			System.out.println("      -----LEVEL ONE-----");
+			System.out.println("\n      -----LEVEL ONE-----");
 			break;
 		case 2:
-			System.out.println("      -----LEVEL TWO-----");
+			System.out.println("\n      -----LEVEL TWO-----");
 			break;
 		case 3:
-			System.out.println("      ----LEVEL THREE----");
+			System.out.println("\n      ----LEVEL THREE----");
 			break;
 		case 4:
-			System.out.println("      -----LEVEL FOUR----");
+			System.out.println("\n      -----LEVEL FOUR----");
 			break;
 		}
 	}
