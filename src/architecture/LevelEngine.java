@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import architecture.Drawable;
 import architecture.Moveable;
 import pieces.Dragon;
+import pieces.Dwarf;
 import pieces.GamePiece;
 import pieces.Knight;
 import pieces.Maiden;
@@ -78,7 +79,7 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7); //Center of board
 
 		//Pieces
-		levelPieces[5][0] = new Maiden('M', new Point(5,0));
+		levelPieces[5][0] = new Dwarf('D', new Point(5,0));
 		levelPieces[3][0] = new Man('K', new Point(3,0));
 
 		

@@ -70,7 +70,7 @@ public class Dwarf extends GamePiece implements Moveable {
 				}
 				lastDirection = 0;
 			}
-			else if (lastDirection == 1) {
+			else if (lastDirection == 0) {
 				if (n == 1) {
 					//Corresponds to moving Up
 					if (getLocation().getX() + 1 != playerLocation.getX()
