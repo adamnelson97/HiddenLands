@@ -8,6 +8,8 @@ import architecture.Moveable;
 import pieces.Dragon;
 import pieces.GamePiece;
 import pieces.Knight;
+import pieces.Maiden;
+import pieces.Man;
 
 /*
  * This class creates the data structures to store the various game pieces,
@@ -73,11 +75,11 @@ public class LevelEngine {
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
-		startingLocation = new Point(5, 1);
+		startingLocation = new Point(7, 7); //Center of board
 
 		//Pieces
-		levelPieces[5][0] = new Dragon('F', new Point(5,0));
-		levelPieces[3][0] = new Knight('K', new Point(3,0));
+		levelPieces[5][0] = new Maiden('M', new Point(5,0));
+		levelPieces[3][0] = new Man('K', new Point(3,0));
 
 		
 		//Identify pieces that interact
