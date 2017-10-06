@@ -156,6 +156,7 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 		
 		//Pieces Go Here
+		//TODO: Create Demon boss
 
 		//Identify pieces that interact
 				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
@@ -199,6 +200,7 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 		
 		//Pieces Go Here
+		//TODO: Create Skeleton King boss
 
 		//Identify pieces that interact
 				for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
