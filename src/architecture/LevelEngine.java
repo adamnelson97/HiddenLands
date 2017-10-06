@@ -44,10 +44,10 @@ public class LevelEngine {
 			//levelTwo();
 			break;
 		case 3:
-			//randLevel();
+			//levelThree();
 			break;
 		case 4:
-			//randLevel();
+			//levelFour();
 			break;
 		default:
 			System.out.println("Error: Level " + levelNum + " not found.");
@@ -76,6 +76,10 @@ public class LevelEngine {
 	//TODO: Write levelOne()
 
 	public void levelOne() {
+		System.out.println("The old man says the monster has a lair in the nearby to the West\n"
+				+ " so you head to the Ehrlain Mountains, a region known for troublesome\n"
+				+ "conjurers of dark magik.\n");
+		
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
@@ -108,9 +112,10 @@ public class LevelEngine {
 	//TODO: Write levelTwo();
 
 	public void levelTwo() {
-		System.out.println("\nYou continue your adventure, coming into the Dark Realm.");
-		System.out.println("This land is known for more dangerous monsters. Beware!\n");
-		System.out.println("-----LEVEL TWO-----");
+		System.out.println("You have made sufficient progress on your journey. You have faced formidable\n"
+				+ "monsters, but greater threats lay ahead.\n"
+				+ "Out of the foothills, you enter the Old Wood, a dense, dark forest covering the Mountains."
+				+ "This land is known for harboring dangerous hordes of foul beings. Beware!\n");
 
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
@@ -118,6 +123,31 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 	}
 
-	//TODO: Write randLevel();
+	//TODO: Write levelThree();
+	
+	public void levelThree() {
+		System.out.println("You have made admirable progress along your journey. Word has begun to spread\n"
+				+ "that a warrior is going to brave the beast. You can see the peak of Alindor,\n"
+				+ "the tallest mountain, up ahead. You spot a small cave opening nearby. That must be\n"
+				+ "the monster's lair...");
+	}
+	
+	//TODO: Write levelFour();
+	
+	public void levelFour() {
+		System.out.println("You have slayed the mighty beast! Huzzah! You begin the long walk back to the\n"
+				+ "village to inform the people of the good news...\n"
+				+ "'...So you truly slayed it? You killed that evil monster?' a child asks you. You nod your\n"
+				+ "head in agreement. You step into the inn you first entered many moons ago. You notice the\n"
+				+ "old man, and his eyes widen. 'So it's true!' he exclaims. 'My boy, I never doubted you. But\n"
+				+ "word has come here that the great city of Glor Infitae is being laid waste to by an unknown foe."
+				+ "Dark forces are surely at work. If you can, we beseech you to help them as you did us!'\n"
+				+ "\nYou consider the proposition, and reply 'I will help any good people, for good in this\n"
+				+ "world must be protected.'\n"
+				+ "\nYou purchase a horse from a villager and ride into the night. You arrive at the city gates late, find\n"
+				+ "rest in a hostel before being awoken by the city guards. 'Are you the man who slew the monster of Alindor?'\n"
+				+ "You tell them your tale, and why you are here. They provide you with stronger armor, a sharper sword,\n"
+				+ "and a bow with which to face the Skeleton King. Rest well, Adventurer, for tomorrow you face him...");
+	}
 
 } //End of Class

@@ -201,7 +201,7 @@ public class GameEngine {
 				break;
 			case 3:
 				System.out.println("You have slayed the mighty beast! Huzzah! You begin the long walk back to the\n"
-						+ "village to inform the people of the good news..."
+						+ "village to inform the people of the good news...\n"
 						+ "'...So you truly slayed it? You killed that evil monster?' a child asks you. You nod your\n"
 						+ "head in agreement. You step into the inn you first entered many moons ago. You notice the\n"
 						+ "old man, and his eyes widen. 'So it's true!' he exclaims. 'My boy, I never doubted you. But\n"
@@ -222,7 +222,7 @@ public class GameEngine {
 						+ "beaming in light as if an angel. 'Come here, " + player.getName() + "', she says. You approach her and\n"
 						+ "kneel before her.\n'No one can question your heroics and selfless actions to defending our noble land.\n"
 						+ "It is for this that I now bestow upon you the Heart of Aetna, our guardian spirit, and declare this day\n"
-						+ "in your honor!' The hall erupts in racous applause!\n"
+						+ "in your honor!' The hall erupts in racous applause as townspeople cheer your name!\n"
 						+ "\nThank you for playing. Please play again!");
 				break;
 			}
@@ -239,8 +239,8 @@ public class GameEngine {
 				"Traveling to the village, you arrive at dusk. You enter the local inn, and order an ale.\n" +
 				"A wounded old man notices your sword, and approaches you.\n" +
 				"'Are you a warrior?' he asks. You nod your head in compliance.\n" +
-				"Maybe you can help us!' he exclaims. Every winter, we are ravaged by a terrible monster,\n" +
-				"and have to rebuild our homes from his terrible destruction. We are too poor to move\n" +
+				"Maybe you can help us!' he exclaims. Every winter, we people of Corington are ravaged by a terrible\n" +
+				"monster, and have to rebuild our homes from his terrible destruction. We are too poor to move\n" +
 				"somewhere else, and our finest warriors have never returned. Please help us!\n" +
 				"\nHe offers you gold, but you turn it down, saying the honor of helping them is reward enough.\n" +
 				"What will you find on your journey? Glory? Love? Power? There is only one way to find out...\n");
