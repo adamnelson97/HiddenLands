@@ -4,19 +4,18 @@ import java.awt.Point;
 
 import architecture.Drawable;
 
-public class Rock implements Drawable {
-
+public class Water implements Drawable {
 
 	/*
-	 * Symbol: '@'
+	 * Symbol: '~'
 	 * 
 	 * Landscape, no movement or interaction
 	 */
-
+	
 	Point location;
 	char symbol;
 
-	public Rock(char symbol, Point location) {
+	public Water(char symbol, Point location) {
 		this.symbol = symbol;
 		this.location = location;
 	}

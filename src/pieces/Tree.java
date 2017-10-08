@@ -3,10 +3,8 @@ package pieces;
 import java.awt.Point;
 
 import architecture.Drawable;
-import architecture.InteractionResult;
-import architecture.Player;
 
-public class Tree extends GamePiece {
+public class Tree implements Drawable {
 
 	/*
 	 * Symbol: '$'
@@ -14,13 +12,16 @@ public class Tree extends GamePiece {
 	 * Landscape, no movement or interaction
 	 */
 	
+	Point location;
+	char symbol;
+
 	public Tree(char symbol, Point location) {
-		super(symbol, location);
+		this.symbol = symbol;
+		this.location = location;
 	}
 
-	@Override
-	public InteractionResult interact(Drawable[][] pieces, Player player) {
-		return InteractionResult.NONE;
+	public void draw() {
+		System.out.print(symbol);
 	}
 
 }
