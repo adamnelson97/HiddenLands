@@ -26,10 +26,12 @@ public class Orc extends GamePiece implements Moveable{
 		cooldown = false;
 		health = 4;
 		//Message in constructor so it only displays once
-		System.out.println("You encounter a hideous, grotesque Orc! This must be" +
-				"the monster terrorizing the people of Corington. Draw your sword and" +
-				"slay the beast! Be warned, he is clever, and attacks only when he" +
-				"has the upper hand...");
+		System.out.println("You encounter a hideous, grotesque Orc! This must be\n" +
+				"the monster terrorizing the people of Corington. Draw your sword and\n" +
+				"slay the beast! Be warned, he is clever, and attacks only when he\n" +
+				"has the upper hand.\n" +
+				"\nYou notice he has taken some local dwarves captive. Maybe the can\n" +
+				"assist you...");
 	}
 
 	@Override
