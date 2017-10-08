@@ -52,7 +52,7 @@ Interaction: ADVANCE/KILL. Has a 50% chance of either interaction.
 
 Unicorn:
 Symbol: 'U'
-Motion: Appears on board, disappears for three turns, then reappears.
+Motion: Appears on board, disappears for three turns, then reappears on the fourth.
 Repeat pattern.
 Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
 ---------------------------------------------------------------------

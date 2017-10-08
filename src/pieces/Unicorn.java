@@ -9,7 +9,15 @@ import architecture.Player;
 public class Unicorn extends GamePiece {
 
 	
-	//TODO: Complete Unicorn class
+	/*
+	 * Symbol: 'U'
+	 * 
+	 * Motion: Appears on board, disappears for three turns, then reappears.
+	 * Repeat pattern.
+	 * 
+	 * Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
+	 */
+		
 	public Unicorn(char symbol, Point location) {
 		super(symbol, location);
 		// TODO Auto-generated constructor stub
