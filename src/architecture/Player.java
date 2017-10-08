@@ -2,10 +2,8 @@ package architecture;
 
 import java.awt.Point;
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 import architecture.GameEngine;
 

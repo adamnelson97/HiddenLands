@@ -23,8 +23,6 @@ public class GameEngine {
 
 	/*
 	 * The number of levels for the game are determined by the difficulty.
-	 * There are a minimum of two levels, which are hard coded into LevelEngine.
-	 * All other levels are randomly generated.
 	 */
 	public static int numLevels;
 	//Track the current level
