@@ -12,7 +12,7 @@ public class Orc extends GamePiece implements Moveable{
 	/*
 	 * Symbol: 'O'
 	 * 
-	 * Motion: Moves two spaces in direction closest to player.
+	 * Motion: Moves one space in each direction towards player.
 	 * 
 	 * Interaction: HIT. Does two points of damage first interaction,
 	 * next interaction is cool down. Repeat pattern.
@@ -67,6 +67,46 @@ public class Orc extends GamePiece implements Moveable{
 		double orcX = getLocation().getX();
 		double orcY = getLocation().getY();
 		
+		if (playerX - orcX > 0) { //Move Down
+			//Still only moves if grid is devoid of other entities, but now does not care about player's location
+			if (pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
+
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+				Point temp = getLocation(); //Copies location to new point
+				temp.translate(1, 0); //Moves the new point in the desired direction
+				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+			}
+		}
+		else { //Move Up
+			if (pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
+
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+				Point temp = getLocation(); //Copies location to new point
+				temp.translate(-1, 0); //Moves the new point in the desired direction
+				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+			}
+		}
+		
+		if (playerY - orcY > 0) { //Move Right
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
+
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+				Point temp = getLocation(); //Copies location to new point
+				temp.translate(0, 1); //Moves the new point in the desired direction
+				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+			}		}
+		else { //Move Left
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
+
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+				Point temp = getLocation(); //Copies location to new point
+				temp.translate(0, -1); //Moves the new point in the desired direction
+				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+			}		}
 	}
 
-}
+} //End of Class
