@@ -49,6 +49,12 @@ Artifact:
 Symbol: 'A'
 Motion: None
 Interaction: ADVANCE/KILL. Has a 50% chance of either interaction.
+
+Unicorn:
+Symbol: 'U'
+Motion: Appears on board, disappears for three turns, then reappears.
+Repeat pattern.
+Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
 ---------------------------------------------------------------------
 
 Enemy Pieces
@@ -69,4 +75,10 @@ Symbol: 'F'. Uses 'F' for 'Fire' since Dwarves use 'D'.
 Motion: None
 Interaction: KILL. Dragon is initially sleeping, and gives warning.
 If the player lands on that space again they die.
+
+Orc:
+Symbol: 'O'
+Motion: Moves two spaces in direction closest to player.
+Interaction: HIT. Does two points of damage first interaction,
+next interaction is cool down. Repeat pattern.
 ---------------------------------------------------------------------
