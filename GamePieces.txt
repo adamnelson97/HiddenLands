@@ -78,7 +78,7 @@ If the player lands on that space again they die.
 
 Orc:
 Symbol: 'O'
-Motion: Moves two spaces in direction furthest to player.
+Motion: Moves one space in each direction towards player.
 Interaction: HIT. Does two points of damage first interaction,
 next interaction is cool down. Repeat pattern.
 
