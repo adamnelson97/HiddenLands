@@ -5,6 +5,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+
+import pieces.Rock;
+import pieces.Tree;
+import pieces.Water;
 import architecture.GameEngine;
 
 /*
@@ -114,7 +118,7 @@ public class Player implements Drawable {
 		boolean moved = false;
 		while (!moved) {
 			int choice = getPlayerChoice();
-			moved = updatePlayerLocation(choice);
+			moved = updatePlayerLocation(pieces, choice);
 		}
 	}
 
@@ -160,48 +164,96 @@ public class Player implements Drawable {
 	}
 
 	//This method is private because it will only be called from within doMove
-	private boolean updatePlayerLocation(int option) {
+	private boolean updatePlayerLocation(Drawable[][] pieces, int option) {
 		boolean moved = false;
 		//(-U +D / -L +R)
 		//Move Right
 		if (option == 6 && location.getY() < (GameEngine.BOARD_SIZE - 1)) {
-			location.translate(0, 1);
-			moved = true;
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Rock
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Tree
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Water) {
+			}
+			else {
+				location.translate(0, 1);
+				moved = true;
+			}
 		}
 		//Move Left
 		if (option == 4 && location.getY() > 0) {
-			location.translate(0, -1);
-			moved = true;
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Rock
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Tree
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Water) {
+			}
+			else {
+				location.translate(0, -1);
+				moved = true;
+			}
 		}
 		//Jump Right
 		if (option == 3 && location.getY() < (GameEngine.BOARD_SIZE - 2)) {
-			location.translate(0, 2);
-			moved = true;
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()+2] instanceof Rock
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+2] instanceof Tree
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+2] instanceof Water) {
+			}
+			else {
+				location.translate(0, 2);
+				moved = true;
+			}
 		}
 		//Jump Left
 		if (option == 1 && location.getY() > 1) {
-			location.translate(0, -2);
-			moved = true;
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()-2] instanceof Rock
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-2] instanceof Tree
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-2] instanceof Water) {
+			}
+			else {
+				location.translate(0, -2);
+				moved = true;
+			}
 		}
 		//Move Up
 		if (option == 8 && location.getX() > 0) {
-			location.translate(-1, 0);
-			moved = true;
+			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Rock
+					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Tree
+					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Water) {
+			}
+			else {
+				location.translate(-1, 0);
+				moved = true;
+			}
 		}
 		//Move Down
 		if (option == 2 && location.getX() < (GameEngine.BOARD_SIZE - 1)) {
-			location.translate(1, 0);
-			moved = true;
+			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Rock
+					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Tree
+					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Water) {
+			}
+			else {
+				location.translate(1, 0);
+				moved = true;
+			}
 		}
 		//Jump Up
 		if (option == 7 && location.getX() > 1) {
-			location.translate(-2, 0);
-			moved = true;
+			if (pieces[(int) getLocation().getX()-2][(int) getLocation().getY()] instanceof Rock
+					|| pieces[(int) getLocation().getX()-2][(int) getLocation().getY()] instanceof Tree
+					|| pieces[(int) getLocation().getX()-2][(int) getLocation().getY()] instanceof Water) {
+			}
+			else {
+				location.translate(-2, 0);
+				moved = true;
+			}
 		}
 		//Jump Down
 		if (option == 9 && location.getX() < (GameEngine.BOARD_SIZE - 2)) {
-			location.translate(2, 0);
-			moved = true;
+			if (pieces[(int) getLocation().getX()+2][(int) getLocation().getY()] instanceof Rock
+					|| pieces[(int) getLocation().getX()+2][(int) getLocation().getY()] instanceof Tree
+					|| pieces[(int) getLocation().getX()+2][(int) getLocation().getY()] instanceof Water) {
+			}
+			else {
+				location.translate(2, 0);
+				moved = true;
+			}
 		}
 		//Stay put
 		if (option == 5) { moved = true; }
