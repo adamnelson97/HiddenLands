@@ -12,6 +12,7 @@ import pieces.Knight;
 import pieces.Maiden;
 import pieces.Man;
 import pieces.Sage;
+import pieces.Unicorn;
 import pieces.Witch;
 import pieces.Wizard;
 
@@ -86,7 +87,7 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7); //Center of board
 
 		//Pieces Go Here
-		levelPieces[5][0] = new Knight('K', new Point(5,0));
+		levelPieces[5][0] = new Unicorn('U', new Point(5,0));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
