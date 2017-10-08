@@ -19,17 +19,27 @@ public class Orc extends GamePiece implements Moveable{
 	 */
 
 	boolean cooldown;
+	int health;
 
 	public Orc(char symbol, Point location) {
 		super(symbol, location);
 		cooldown = false;
+		health = 4;
+		//Message in constructor so it only displays once
+		System.out.println("You encounter a hideous, grotesque Orc! This must be" +
+				"the monster terrorizing the people of Corington. Draw your sword and" +
+				"slay the beast! Be warned, he is clever, and attacks only when he" +
+				"has the upper hand...");
 	}
 
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
-
+		
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
+			health--; //An interaction injures the orc regardless of cooldown
+			if (health <= 0) return InteractionResult.ADVANCE; //If the orc is dead, the player advances
+			
 			if (!cooldown) { //If the orc is not on cooldown...
 				
 				//Increase damage by one
@@ -52,8 +62,11 @@ public class Orc extends GamePiece implements Moveable{
 	}
 
 	public void move(Drawable[][] pieces, Point playerLocation) {
-		// TODO Auto-generated method stub
-
+		double playerX = playerLocation.getX();
+		double playerY = playerLocation.getY();
+		double orcX = getLocation().getX();
+		double orcY = getLocation().getY();
+		
 	}
 
 }
