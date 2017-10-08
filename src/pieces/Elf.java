@@ -45,7 +45,7 @@ public class Elf extends GamePiece implements Moveable {
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 					Point temp = getLocation(); //Copies location to new point
 					temp.translate(0, 1); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
@@ -58,7 +58,7 @@ public class Elf extends GamePiece implements Moveable {
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 					Point temp = getLocation(); //Copies location to new point
 					temp.translate(0, -1); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
@@ -70,7 +70,7 @@ public class Elf extends GamePiece implements Moveable {
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 					Point temp = getLocation(); //Copies location to new point
 					temp.translate(-1, 0); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
@@ -83,7 +83,7 @@ public class Elf extends GamePiece implements Moveable {
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 					Point temp = getLocation(); //Copies location to new point
 					temp.translate(1, 0); //Moves the new point in the desired direction
-					setLocation(temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}

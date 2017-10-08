@@ -91,6 +91,7 @@ public class LevelEngine {
 
 		//Pieces Go Here
 		levelPieces[5][0] = new Rock('@', new Point(5,0));
+		levelPieces[5][1] = new Knight('K', new Point(5,1));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
