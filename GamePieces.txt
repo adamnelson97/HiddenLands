@@ -85,9 +85,9 @@ next interaction is cool down. Repeat pattern.
 Skeleton King:
 Symbol: The . is the actual entity, all other characters are created as
 rocks, intialized with different symbols
-/^^^\
+/```\
 |+.+|
- \-/
+ \#/
  Motion: None
  Interaction: Warmup for 9 turns. If player does not collect 4 prizes by
  the 10th, they die, regardless of locattion.
