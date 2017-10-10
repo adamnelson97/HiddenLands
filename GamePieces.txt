@@ -3,8 +3,17 @@ Note: ALL pieces only move if their destination is unoccupied by
 both the player and other pieces.If there is another piece there,
 the piece (that is to be moved) stays put and waits to move next turn.
 
+------------------------------------------------------------
+----Landscape----
+------------------------------------------------------------
 
+Rock: o
+Tree: #
+Water: ~
+
+------------------------------------------------------------
 ----Neutral Pieces---
+------------------------------------------------------------
 
 Elf:
 Symbol: 'E'
@@ -28,9 +37,10 @@ Symbol: 'S'
 Motion: Randomly chooses a direction and moves one space.
 Interaction: NONE. Randomly informs player about the other pieces'
 interaction results if they have at least two points.
----------------------------------------------------------------------
 
-Friendly Pieces
+------------------------------------------------------------
+----Friendly Pieces----
+------------------------------------------------------------
 
 Dwarf:
 Symbol: 'D'
@@ -55,9 +65,10 @@ Symbol: 'U'
 Motion: Appears on board, disappears for three turns, then reappears on the fourth.
 Repeat pattern.
 Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
----------------------------------------------------------------------
 
-Enemy Pieces
+------------------------------------------------------------
+----Enemy Pieces----
+------------------------------------------------------------
 
 Wizard:
 Symbol: 'W'. Used to confuse player as it is the same as the Witch.
@@ -90,5 +101,5 @@ rocks, intialized with different symbols
  \#/
  Motion: None
  Interaction: Warmup for 9 turns. If player does not collect 4 prizes by
- the 10th, they die, regardless of locattion.
----------------------------------------------------------------------
+ the 10th, they die, regardless of location.
+------------------------------------------------------------
