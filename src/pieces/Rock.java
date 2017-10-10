@@ -8,7 +8,7 @@ public class Rock implements Drawable {
 
 
 	/*
-	 * Symbol: '@'
+	 * Symbol: 'o'
 	 * 
 	 * Landscape, no movement or interaction
 	 */
