@@ -203,7 +203,7 @@ public class GameEngine {
 						+ "'...So you truly slayed it? You killed that evil monster?' a child asks you. You nod your\n"
 						+ "head in agreement. You step into the inn you first entered many moons ago. You notice the\n"
 						+ "old man, and his eyes widen. 'So it's true!' he exclaims. 'My boy, I never doubted you. But\n"
-						+ "word has come here that the great city of Glor Infitae is being laid waste to by an unknown foe."
+						+ "word has come here that the great city of Glor Infitae is being laid waste to by an unknown foe.\n"
 						+ "Dark forces are surely at work. If you can, we beseech you to help them as you did us!'\n"
 						+ "\nYou consider the proposition, and reply 'I will help any good people, for good in this\n"
 						+ "world must be protected.'\n"
