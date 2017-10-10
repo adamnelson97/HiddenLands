@@ -31,9 +31,10 @@ public class Wizard extends GamePiece {
 		double wizX = getLocation().getX();
 		double wizY = getLocation().getY();
 		double hitDistance = 2;
-		
+
 		if (playerX <= wizX + hitDistance && playerX  >= wizX - hitDistance && playerY <= wizY + hitDistance && playerY >= wizY - hitDistance) {
-			System.out.println("\nYou encounter a Wizard! His spells play tricks on you, and you injure yourself escaping.");
+			System.out.println("\nYou encounter a Wizard! His spells play tricks on you, and you");
+			System.out.println("injure yourself escaping.");
 			return InteractionResult.HIT;
 		}
 		else {

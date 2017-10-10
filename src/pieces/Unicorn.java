@@ -31,8 +31,10 @@ public class Unicorn extends GamePiece implements Moveable {
 		Point playerLocation = player.getLocation();
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()
 				&& present == 0) {
-			System.out.println("\nYou encounter a beautiful golden unicorn with a black horn, covered in\n" +
-					"speckles of starlight. You approach it, and upon touching its horn feel revitalized!");
+
+			System.out.println("\nYou encounter a beautiful golden unicorn with a black horn, covered");
+			System.out.println("in speckles of starlight. You approach it, and upon touching its horn");
+			System.out.println("feel revitalized!");
 
 			//Decrease damage by one if damage is greater than zero
 			int playerDamage = player.getDamagePoints();

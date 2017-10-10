@@ -26,12 +26,14 @@ public class Orc extends GamePiece implements Moveable{
 		cooldown = false;
 		health = 4;
 		//Message in constructor so it only displays once
-		System.out.println("You encounter a hideous, grotesque Orc! This must be\n" +
-				"the monster terrorizing the people of Corington. Draw your sword and\n" +
-				"slay the beast! Be warned, he is clever, and attacks only when he\n" +
-				"has the upper hand.\n" +
-				"\nYou notice he has taken some local dwarves captive. Maybe the can\n" +
-				"assist you...");
+		System.out.println("You encounter a hideous, grotesque Orc! This must be the monster");
+		System.out.println("terrorizing the people of Corington. Draw your sword and slay the");
+		System.out.println("beast! Be warned, he is clever, and attacks only when he has the");
+		System.out.println("upper hand.");
+		System.out.println();
+		System.out.println("You notice he has taken some local dwarves captive. Maybe the can");
+		System.out.println("assist you...");
+		System.out.println(); 
 	}
 
 	@Override
@@ -40,6 +42,8 @@ public class Orc extends GamePiece implements Moveable{
 		
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			health--; //An interaction injures the orc regardless of cooldown
+			System.out.println("The orc cries out in pain from the sharp cut of your blade!");
+			
 			if (health <= 0) return InteractionResult.ADVANCE; //If the orc is dead, the player advances
 			
 			if (!cooldown) { //If the orc is not on cooldown...

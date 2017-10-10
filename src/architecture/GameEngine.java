@@ -172,6 +172,7 @@ public class GameEngine {
 	}
 
 	public void playGame() {
+		System.out.println("NOTE: @ = Rocks, # = Trees, ~ = Water\n");
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
 		setNumLevels(player);

@@ -36,7 +36,8 @@ public class Artifact extends GamePiece {
 				return InteractionResult.KILL;
 			}
 			else if (n == 2) {
-				System.out.println("You encounter a spirit, who rewards you with wisdom and regained\nstamina for your journey.");
+				System.out.println("You encounter a spirit, who rewards you with wisdom and regained");
+				System.out.println("stamina for your journey.");
 				return InteractionResult.ADVANCE;
 			}
 		}
