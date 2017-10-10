@@ -91,8 +91,8 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7); //Center of board
 
 		//Pieces Go Here
-		levelPieces[5][0] = new Rock('@', new Point(5,0));
-		levelPieces[4][1] = new Rock('@', new Point(4,1));
+		levelPieces[5][0] = new Rock('o', new Point(5,0));
+		levelPieces[4][1] = new Rock('o', new Point(4,1));
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
 
 		//Identify pieces that interact
@@ -132,8 +132,8 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 
 		//Pieces Go Here
-		levelPieces[5][0] = new Rock('@', new Point(5,0));
-		levelPieces[4][1] = new Rock('@', new Point(4,1));
+		levelPieces[5][0] = new Rock('o', new Point(5,0));
+		levelPieces[4][1] = new Rock('o', new Point(4,1));
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
 
 		//Identify pieces that interact
@@ -171,8 +171,8 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 
 		//Pieces Go Here
-		levelPieces[5][0] = new Rock('@', new Point(5,0));
-		levelPieces[4][1] = new Rock('@', new Point(4,1));
+		levelPieces[5][0] = new Rock('o', new Point(5,0));
+		levelPieces[4][1] = new Rock('o', new Point(4,1));
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
 
 		//Identify pieces that interact
@@ -229,8 +229,8 @@ public class LevelEngine {
 
 		//Pieces Go Here
 		//TODO: Create Skeleton King boss
-		levelPieces[5][0] = new Rock('@', new Point(5,0));
-		levelPieces[4][1] = new Rock('@', new Point(4,1));
+		levelPieces[5][0] = new Rock('o', new Point(5,0));
+		levelPieces[4][1] = new Rock('o', new Point(4,1));
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
 
 		//Identify pieces that interact
