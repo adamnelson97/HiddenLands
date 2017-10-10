@@ -101,8 +101,7 @@ public class Player implements Drawable {
 	}
 
 	public void takeDamage() {
-		if (difficulty == Difficulty.HARDCORE) { killed(); }
-		else { damagePoints++; }
+		damagePoints++;
 	}
 
 	public void killed() {
