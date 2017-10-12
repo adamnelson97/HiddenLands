@@ -14,7 +14,7 @@ public class Wizard extends GamePiece {
 	 * 
 	 * Motion: None
 	 * 
-	 * Interaction: HIT. Has range of +/- 2 spaces from current space,
+	 * Interaction: HIT. Has range of +/- 1 spaces from current space,
 	 * i.e. if the Wizard is on space 3, he can hit a target on spaces 1-5.
 	 */
 
@@ -30,7 +30,7 @@ public class Wizard extends GamePiece {
 		double playerY = playerLocation.getY();
 		double wizX = getLocation().getX();
 		double wizY = getLocation().getY();
-		double hitDistance = 2;
+		double hitDistance = 1;
 
 		if (playerX <= wizX + hitDistance && playerX  >= wizX - hitDistance && playerY <= wizY + hitDistance && playerY >= wizY - hitDistance) {
 			System.out.println("\nYou encounter a Wizard! His spells play tricks on you, and you");

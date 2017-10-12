@@ -73,7 +73,7 @@ Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
 Wizard:
 Symbol: 'W'. Used to confuse player as it is the same as the Witch.
 Motion: None
-Interaction: HIT. Has range of +/- 2 spaces from current space.
+Interaction: HIT. Has range of +/- 1 spaces from current space.
 
 Witch:
 Symbol: 'W'. Used to confuse player as it is the same as the Wizard.

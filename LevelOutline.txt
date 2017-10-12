@@ -1,1 +1,40 @@
 Hidden Lands Level Outline
+
+Legend:
+Rocks - o	Trees - #	Water - ~
+Elf - E		Dwarf - D	Knight - K
+Man - M		Maiden - M	Sage - S
+Artifact - A	Unicorn - U Dragon - F
+Witch - W	Wizard - W	Orc - O
+Player - P
+
+To distinguish witches and wizards for the key, Witch = 1, Wizard = 2
+To distinguish men and maidens for the key, Man = 3, Maiden = 4
+
+X = (7,7) the center of the 15x15 grid
+
+-----LEVEL ONE-----
+Level One is supposed to be relatively easy. The player should familiarize themselves with
+the basic enemy types (Witches and Wizards), encounter all non-traverseable landscapes
+(rocks, trees, water), and meet most basic friendly entities. By playing this level numerous
+times, they should ideally collect lots of information about other game entities.
+
+Setting: Heading west towards mountain range.
+
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+5| | | | | | | | | | | | | | | |5
+6| | | | | | | | | | | | | | | |6
+7| | | | | | | |X| | | | |P| | |7
+8| | | | | | | | | | | | | | | |8
+9| | | | | | | | | | | | | | | |9
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
