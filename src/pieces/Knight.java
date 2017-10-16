@@ -56,6 +56,7 @@ public class Knight extends GamePiece implements Moveable {
 			}
 			//Move Left
 			else if (getLocation().getY() - 1 != playerLocation.getY()
+					&& getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
 				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board

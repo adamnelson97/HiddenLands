@@ -198,6 +198,7 @@ public class LevelEngine {
 		 * Landscape
 		 */
 		
+		levelPieces[1][10] = new Tree('#', new Point(1,10));
 		//Top Row of Trees
 		levelPieces[0][0] = new Tree('#', new Point(0,0));
 		levelPieces[0][1] = new Tree('#', new Point(0,1));
