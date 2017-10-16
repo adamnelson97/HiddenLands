@@ -35,6 +35,7 @@ public class Unicorn extends GamePiece implements Moveable {
 			System.out.println("\nYou encounter a beautiful golden unicorn with a black horn, covered");
 			System.out.println("in speckles of starlight. You approach it, and upon touching its horn");
 			System.out.println("feel revitalized!");
+			System.out.println("YOU HAVE BEEN HEALED BY ONE POINT.");
 
 			//Decrease damage by one if damage is greater than zero
 			int playerDamage = player.getDamagePoints();
