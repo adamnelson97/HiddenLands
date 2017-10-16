@@ -32,6 +32,7 @@ public class Maiden extends GamePiece {
 			System.out.println("\nYou encounter a fair Maiden! She takes you to a cottage to rest,");
 			System.out.println("giving you bread, meat, and ale. You fall asleep...");
 			System.out.println("You awaken rejuvenated, but the maiden is gone...");
+			System.out.println("YOUR HEALTH HAS BEEN FULLY RESTORED.");
 			player.setDamagePoints(0);
 			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null;
 			//The piece is removed from the board so it cannot be abused for free health by the player
