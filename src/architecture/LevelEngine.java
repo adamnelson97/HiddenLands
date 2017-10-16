@@ -321,10 +321,8 @@ public class LevelEngine {
 		 * Pieces Go Here
 		 */
 		//Landscape
-		levelPieces[5][0] = new Rock('o', new Point(5,0));
-		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		levelPieces[7][5] = new Trap(' ', new Point(7,5));
 		//Friendlies
-		levelPieces[5][1] = new Knight('K', new Point(5,1));
 		//Enemies
 
 		//Identify pieces that interact
@@ -384,8 +382,6 @@ public class LevelEngine {
 		 * Pieces Go Here
 		 */
 		//Landscape
-		levelPieces[5][0] = new Rock('o', new Point(5,0));
-		levelPieces[4][1] = new Rock('o', new Point(4,1));
 		//Friendlies
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
 		//Enemies

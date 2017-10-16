@@ -15,6 +15,7 @@ public class Trap extends GamePiece {
 	 * 
 	 * Interaction: Appears blank at first, but appears when player is within
 	 * +/- one space and adjacent to the player, blocking their way. Injures the player one point.
+	 * Kills the player if they are directly on it.
 	 */
 
 	boolean interacted;
@@ -32,6 +33,10 @@ public class Trap extends GamePiece {
 		double trapX = getLocation().getX();
 		double trapY = getLocation().getY();
 
+		if (playerX == trapX && playerY == trapY) {
+			System.out.println("You have fallen into a trap!");
+			return InteractionResult.KILL;
+		}
 		if (playerX == trapX && playerY <= trapY + 1 && playerY >= trapY - 1
 				|| playerY == trapY && playerX <= trapX + 1 && playerX >= trapX - 1) {
 			if (interacted == false) {
