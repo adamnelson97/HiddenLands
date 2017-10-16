@@ -2,6 +2,7 @@ package architecture;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import architecture.GameEngine;
 import architecture.Player;
@@ -170,12 +171,32 @@ public class GameEngine {
 			movePieces();
 		}
 	}
+	
+	public void cheatcode() {
+		System.out.print("Do you have a cheatcode? ");
+		Scanner in = new Scanner(System.in);
+		String code = in.nextLine();
+		
+		if (code.equalsIgnoreCase("Gimli")) {
+			currentLevel = 2;
+			System.out.println("Skipping to Level Two...");
+		}
+		else if (code.equalsIgnoreCase("Legolas")) {
+			currentLevel = 3;
+			System.out.println("Skipping to Level Three...");
+		}
+		else if (code.equalsIgnoreCase("Aragorn")) {
+			currentLevel = 4;
+			System.out.println("Skipping to Level Four...");
+		}
+	}
 
 	public void playGame() {
 		System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water\n");
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
 		setNumLevels(player);
+		cheatcode(); //Checks to see if the player knows any cheat codes. Also used for debugging
 		while (currentLevel < numLevels && !player.isDead()) {
 			currentLevel++;
 			setupLevel(currentLevel);
