@@ -13,6 +13,12 @@ To distinguish men and maidens for the key, Man = 3, Maiden = 4
 
 X = (7,7) the center of the 15x15 grid
 
+Diagram works as follows:
+levelPieces[x][y] = Point(x,y)
+  0 y
+0| | |
+x| |P|
+
 Spaces that can harm a player are marked with a small x.
 
 -----LEVEL ONE-----
