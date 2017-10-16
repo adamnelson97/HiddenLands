@@ -14,7 +14,7 @@ public class Trap extends GamePiece {
 	 * Motion: None
 	 * 
 	 * Interaction: Appears blank at first, but appears when player is within
-	 * +/- one space, blocking their way. Injures the player one point.
+	 * +/- one space and adjacent to the player, blocking their way. Injures the player one point.
 	 */
 
 	boolean interacted;
@@ -31,9 +31,9 @@ public class Trap extends GamePiece {
 		double playerY = playerLocation.getY();
 		double trapX = getLocation().getX();
 		double trapY = getLocation().getY();
-		double hitDistance = 1;
 
-		if (playerX <= trapX + hitDistance && playerX  >= trapX - hitDistance && playerY <= trapY + hitDistance && playerY >= trapY - hitDistance) {
+		if (playerX == trapX && playerY <= trapY + 1 && playerY >= trapY - 1
+				|| playerY == trapY && playerX <= trapX + 1 && playerX >= trapX - 1) {
 			if (interacted == false) {
 				System.out.println("You have sprung a trap! You are injured by spikes, and your path");
 				System.out.println("is blocked. You must retreat to safety!");
