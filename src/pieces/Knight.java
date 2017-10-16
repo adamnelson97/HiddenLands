@@ -65,17 +65,6 @@ public class Knight extends GamePiece implements Moveable {
 				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 			}
-			//Move 2 Left
-			else if (getLocation().getY() - 2 != playerLocation.getY()
-					&& getLocation().getY() > 1
-					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 2] == null) {
-
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-				Point temp = getLocation(); //Copies location to new point
-				temp.translate(0, -2); //Moves the new point in the desired direction
-				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-			}
 			//Move Up
 			else if (getLocation().getX() - 1 != playerLocation.getX()
 					&& getLocation().getX() > 0
