@@ -22,7 +22,9 @@ the basic enemy types (Witches and Wizards), encounter all non-traverseable land
 times, they should ideally collect lots of information about other game entities.
 
 Setting: Heading west towards mountain range.
+
 Strategy: Gain advance points by interacting with Dwarves.
+
 Challenges: Avoid too many interactions with Witches and Wizards
 
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
@@ -49,8 +51,11 @@ forcing the player to explore certain areas, and less entities to help them. The
 fail several times trying to find the quickest way to beat the level.
 
 Setting: Forest at the base of the mountains.
+
 Strategy: Advance by either reaching the Artifact (which can also kill the player)
-or by interacting with the Knight.
+or by interacting with the Knight. The player can also abuse the Unicorn but risks
+accidental death from the neighboring Wizard.
+
 Challenges: More enemies, less helpful entities. If the player tries to reach the Artifact
 and takes a wrong turn, they will be killed by a Dragon.
 
@@ -70,9 +75,9 @@ The player must reach the knight in time or cut his path off in order to advance
 8| |x|x|x| | | | | |P| | | | | |8
 9| | | | |x|x|x| |x|x|x| | | | |9
 0| | | | |x|2|x| |x|2|x| | | | |0
-1| | | | |x|x|x| |x|x|x| | | | |1
-2| | | | |#|#|#| |#|#|#| | |x|x|2
-3| | | | |#|^|&|^|^|^|#| | |x|1|3
+1|x|x| | |x|x|x| |x|x|x| | | | |1
+2|2|U| | |#|#|#| |#|#|#| | |x|x|2
+3|x|x| | |#|^|&|^|^|^|#| | |x|1|3
 4| | | | |#|#|#|#|#|^|#| | |x|2|4
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
   
