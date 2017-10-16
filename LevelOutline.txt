@@ -22,6 +22,8 @@ the basic enemy types (Witches and Wizards), encounter all non-traverseable land
 times, they should ideally collect lots of information about other game entities.
 
 Setting: Heading west towards mountain range.
+Strategy: Gain advance points by interacting with Dwarves.
+Challenges: Avoid too many interactions with Witches and Wizards
 
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
 0| | | | | | | | |x|x|x| | |#|#|0
@@ -29,9 +31,9 @@ Setting: Heading west towards mountain range.
 2| |o|D| | | |x|2|x|x|x| | | | |2
 3| | | | | | |x|x|x|o| | | | | |3
 4| | | | | | | | | | | | | | | |4
-5| | | |#| | | | | | | | | | | |5
-6|x|x| |#| |3|~|~|~| | | | | | |6
-7|1|x| | | | |~|X|~| | |E|P| | |7
+5| | | |#| | | | | | | | | |x|x|5
+6|x|x| |#| |3|~|~|~| | | | |x|2|6
+7|1|x| | | | |~|X|~| | |E|P|x|x|7
 8|x|x| | | | |~|~|~| | | | | | |8
 9| | | | | | | | | | | | | | | |9
 0| | | | | |x|x|x| | | | | | | |0
@@ -45,3 +47,63 @@ Setting: Heading west towards mountain range.
 Level Two should be significantly more difficult, with more dangerous mobs, more terrain
 forcing the player to explore certain areas, and less entities to help them. The player should
 fail several times trying to find the quickest way to beat the level.
+
+Setting: Forest at the base of the mountains.
+Strategy: Advance by either reaching the Artifact (which can also kill the player)
+or by interacting with the Knight.
+Challenges: More enemies, less helpful entities. If the player tries to reach the Artifact
+and takes a wrong turn, they will be killed by a Dragon.
+
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0|o|o|o| | | | | | | | | | | | |0
+1|o|A|o| | | | | | | | | | | | |1
+2|o| |o| | | | | | | | | | | | |2
+3|o| | | | | | | | | | | | | | |3
+4|o|o|o|o|o| | | | | | | | | | |4
+5| | | | | | | | | | | | | | | |5
+6| | | | | | | | | | | | | | | |6
+7| | | | | | | |X| | | | | | | |7
+8| | | | | | | | | | | | | | | |8
+9| | | | | | | | | | | | | | | |9
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+  
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+5| | | | | | | | | | | | | | | |5
+6| | | | | | | | | | | | | | | |6
+7| | | | | | | |X| | | | | | | |7
+8| | | | | | | | | | | | | | | |8
+9| | | | | | | | | | | | | | | |9
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+  
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+5| | | | | | | | | | | | | | | |5
+6| | | | | | | | | | | | | | | |6
+7| | | | | | | |X| | | | | | | |7
+8| | | | | | | | | | | | | | | |8
+9| | | | | | | | | | | | | | | |9
+0| | | | | | | | | | | | | | | |0
+1| | | | | | | | | | | | | | | |1
+2| | | | | | | | | | | | | | | |2
+3| | | | | | | | | | | | | | | |3
+4| | | | | | | | | | | | | | | |4
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
