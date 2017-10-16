@@ -15,6 +15,7 @@ import pieces.Maiden;
 import pieces.Man;
 import pieces.Rock;
 import pieces.Sage;
+import pieces.Trap;
 import pieces.Tree;
 import pieces.Unicorn;
 import pieces.Water;
@@ -195,8 +196,69 @@ public class LevelEngine {
 		/*
 		 * Landscape
 		 */
+		
 		//Top Row of Trees
-		//levelPieces[][] = new Tree('#', Point());
+		levelPieces[0][0] = new Tree('#', new Point(0,0));
+		levelPieces[0][1] = new Tree('#', new Point(0,1));
+		levelPieces[0][2] = new Tree('#', new Point(0,2));
+		levelPieces[0][3] = new Tree('#', new Point(0,3));
+		levelPieces[0][4] = new Tree('#', new Point(0,4));
+		levelPieces[0][5] = new Tree('#', new Point(0,5));
+		levelPieces[0][6] = new Tree('#', new Point(0,6));
+		levelPieces[0][7] = new Tree('#', new Point(0,7));
+		levelPieces[0][8] = new Tree('#', new Point(0,8));
+		//Left Cave Wall
+		levelPieces[1][0] = new Rock('o', new Point(1,0));
+		levelPieces[2][0] = new Rock('o', new Point(2,0));
+		levelPieces[3][0] = new Rock('o', new Point(3,0));
+		levelPieces[4][0] = new Rock('o', new Point(4,0));
+		//Right Cave Wall
+		levelPieces[1][8] = new Rock('o', new Point(1,8));
+		levelPieces[2][8] = new Rock('o', new Point(2,8));
+		levelPieces[3][8] = new Rock('o', new Point(3,8));
+		levelPieces[4][8] = new Rock('o', new Point(4,8));
+		//Bottom Cave Wall
+		levelPieces[4][0] = new Rock('o', new Point(4,0));
+		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		levelPieces[4][2] = new Rock('o', new Point(4,2));
+		levelPieces[4][3] = new Rock('o', new Point(4,3));
+		levelPieces[4][4] = new Rock('o', new Point(4,4));
+		levelPieces[4][5] = new Rock('o', new Point(4,5));
+		levelPieces[4][7] = new Rock('o', new Point(4,7));
+		levelPieces[4][8] = new Rock('o', new Point(4,8));
+		//Inner Walls
+		levelPieces[1][2] = new Rock('o', new Point(1,2));
+		levelPieces[2][2] = new Rock('o', new Point(2,2));
+		levelPieces[2][4] = new Rock('o', new Point(2,4));
+		levelPieces[3][4] = new Rock('o', new Point(3,4));
+		levelPieces[2][6] = new Rock('o', new Point(2,6));
+		levelPieces[2][5] = new Trap(' ', new Point(2,5));
+		//Top Forest Wall
+		levelPieces[12][4] = new Tree('#', new Point(12,4));
+		levelPieces[12][5] = new Tree('#', new Point(12,5));
+		levelPieces[12][6] = new Tree('#', new Point(12,6));
+		levelPieces[12][8] = new Tree('#', new Point(12,8));
+		levelPieces[12][9] = new Tree('#', new Point(12,9));
+		levelPieces[12][10] = new Tree('#', new Point(12,10));
+		//Bottom Forest Wall
+		levelPieces[14][4] = new Tree('#', new Point(14,4));
+		levelPieces[14][5] = new Tree('#', new Point(14,5));
+		levelPieces[14][6] = new Tree('#', new Point(14,6));
+		levelPieces[14][7] = new Tree('#', new Point(14,7));
+		levelPieces[14][8] = new Tree('#', new Point(14,8));
+		levelPieces[14][10] = new Tree('#', new Point(14,10));
+		//Mid Forest sections
+		levelPieces[13][4] = new Tree('#', new Point(13, 4));
+		levelPieces[13][6] = new Trap(' ', new Point(13, 6));
+		levelPieces[13][10] = new Tree('#', new Point(13, 10));
+		//Right side pool
+		levelPieces[4][14] = new Rock('o', new Point(4,14));
+		levelPieces[5][13] = new Rock('o', new Point(5, 13));
+		levelPieces[7][13] = new Rock('o', new Point(7, 13));
+		levelPieces[8][14] = new Rock('o', new Point(8,14));
+		levelPieces[7][14] = new Tree('#', new Point(7,14));
+		levelPieces[6][14] = new Water('~', new Point(6,14));
+		levelPieces[5][14] = new Water('~', new Point(5,14));
 
 		/*
 		 * Friendlies
