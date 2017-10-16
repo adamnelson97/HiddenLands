@@ -79,8 +79,6 @@ public class LevelEngine {
 
 	//Level Constructors
 
-	//TODO: Write levelOne()
-
 	public void levelOne() {
 		System.out.println("\n	The old man says the monster has a lair in the nearby to the West");
 		System.out.println("so you head to the Ehrlain Mountains, a region known for troublesome");
@@ -147,7 +145,16 @@ public class LevelEngine {
 		levelPieces[7][11] = new Elf('E', new Point(7,11));
 		levelPieces[1][13] = new Elf('E', new Point(1,13));
 		
-		//Enemies
+		/*
+		 * Enemies
+		 */
+		
+		levelPieces[7][0] = new Witch('W', new Point(7,0));
+		levelPieces[11][6] = new Wizard('W', new Point(11,6));
+		levelPieces[2][7] = new Wizard('W', new Point(2,7));
+		levelPieces[1][9] = new Witch('W', new Point(1,9));
+		levelPieces[6][14] = new Wizard('W', new Point(6,14));
+		levelPieces[12][11] = new Wizard('W', new Point(12,11));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
