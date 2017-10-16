@@ -47,7 +47,8 @@ public class Sage extends GamePiece implements Moveable {
 				}
 			}
 			else {
-				System.out.println("You are too inexperienced for my wisdom! Come back later.");
+				System.out.println("You encounter a wise sage!");
+				System.out.println("'You are too inexperienced for my wisdom! Come back later.'");
 			}
 		}
 		return InteractionResult.NONE;

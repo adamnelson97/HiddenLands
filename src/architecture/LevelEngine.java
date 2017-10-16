@@ -2,11 +2,13 @@ package architecture;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Random;
 
 import architecture.Drawable;
 import architecture.Moveable;
 import pieces.Dragon;
 import pieces.Dwarf;
+import pieces.Elf;
 import pieces.GamePiece;
 import pieces.Knight;
 import pieces.Maiden;
@@ -88,12 +90,12 @@ public class LevelEngine {
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
-		startingLocation = new Point(7, 7); //Center of board
-
+		startingLocation = new Point(7, 12);
+		
 		/*
-		 * Pieces Go Here
+		 * Landscape
 		 */
-		//Landscape
+		
 		//Top Left cluster
 		levelPieces[1][1] = new Tree('#', new Point(1,1));
 		levelPieces[1][2] = new Rock('o', new Point(1,2));
@@ -128,8 +130,23 @@ public class LevelEngine {
 		levelPieces[8][8] = new Water('~', new Point(8,8));
 
 		
-		//Friendlies
-		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		/*
+		 * Friendlies
+		 */
+		
+		levelPieces[2][2] = new Dwarf('D', new Point(2,2));
+		levelPieces[11][1] = new Elf('E', new Point(11,1));
+		levelPieces[11][2] = new Dwarf('D', new Point(11,2));
+		
+		Random rand = new Random();
+		int n = rand.nextInt(3) + 1;
+		if (n == 3) levelPieces[12][1] = new Man('M', new Point(12,1));
+		if (n == 2) levelPieces[6][5] = new Man('M', new Point(6,5));
+		
+		levelPieces[12][9] = new Sage('S', new Point(12,9));
+		levelPieces[7][11] = new Elf('E', new Point(7,11));
+		levelPieces[1][13] = new Elf('E', new Point(1,13));
+		
 		//Enemies
 
 		//Identify pieces that interact
