@@ -38,6 +38,7 @@ public class Trap extends GamePiece {
 				System.out.println("You have sprung a trap! You are injured by spikes, and your path");
 				System.out.println("is blocked. You must retreat to safety!");
 				interacted = true;
+				setSymbol('&');
 				return InteractionResult.HIT;
 			}
 		}
