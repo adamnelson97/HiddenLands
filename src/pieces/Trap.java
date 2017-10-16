@@ -34,13 +34,13 @@ public class Trap extends GamePiece {
 		double trapY = getLocation().getY();
 
 		if (playerX == trapX && playerY == trapY) {
-			System.out.println("You have fallen into a trap!");
+			System.out.println("\nYou have fallen into a trap!");
 			return InteractionResult.KILL;
 		}
 		if (playerX == trapX && playerY <= trapY + 1 && playerY >= trapY - 1
 				|| playerY == trapY && playerX <= trapX + 1 && playerX >= trapX - 1) {
 			if (interacted == false) {
-				System.out.println("You have sprung a trap! You are injured by spikes, and your path");
+				System.out.println("\nYou have sprung a trap! You are injured by spikes, and your path");
 				System.out.println("is blocked. You must retreat to safety!");
 				interacted = true;
 				setSymbol('&');
