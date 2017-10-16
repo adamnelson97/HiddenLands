@@ -48,5 +48,9 @@ public abstract class GamePiece implements Drawable {
 				location = newLocation;
 		}
 	}
+	
+	public void setSymbol(char x) {
+		symbol = x;
+	}
 }
 //End of Class
