@@ -272,6 +272,15 @@ public class LevelEngine {
 		/*
 		 * Enemies
 		 */
+		levelPieces[3][6] = new Dragon('F', new Point(3,6));
+		levelPieces[0][13] = new Witch('W', new Point(0,13));
+		levelPieces[1][13] = new Wizard('W', new Point(1,13));
+		levelPieces[7][2] = new Witch('W', new Point(7,2));
+		levelPieces[12][0] = new Wizard('W', new Point(12,0));
+		levelPieces[13][14] = new Witch('W', new Point(13,14));
+		levelPieces[14][14] = new Wizard('W', new Point(14,14));
+		levelPieces[10][5] = new Wizard('W', new Point(10,5));
+		levelPieces[10][9] = new Wizard('W', new Point(10,9));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
