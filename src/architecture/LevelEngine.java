@@ -94,8 +94,40 @@ public class LevelEngine {
 		 * Pieces Go Here
 		 */
 		//Landscape
-		levelPieces[5][0] = new Rock('o', new Point(5,0));
-		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		//Top Left cluster
+		levelPieces[1][1] = new Tree('#', new Point(1,1));
+		levelPieces[1][2] = new Rock('o', new Point(1,2));
+		levelPieces[2][1] = new Rock('o', new Point(2,1));
+		//Bottom Left pool
+		levelPieces[13][0] = new Water('~', new Point(13, 0));
+		levelPieces[13][1] = new Water('~', new Point(13, 1));
+		levelPieces[14][0] = new Water('~', new Point(14, 0));
+		levelPieces[14][1] = new Water('~', new Point(14, 1));
+		//Mid Left trees
+		levelPieces[5][3] = new Tree('#', new Point(5,3));
+		levelPieces[6][3] = new Tree('#', new Point(6,3));
+		//Top Right trees
+		levelPieces[0][13] = new Tree('#', new Point(0,13));
+		levelPieces[0][14] = new Tree('#', new Point(0,14));
+		levelPieces[1][14] = new Tree('#', new Point(1,14));
+		//Bottom Right cluster
+		levelPieces[13][14] = new Tree('#', new Point(13,14));
+		levelPieces[14][14] = new Tree('#', new Point(14,14));
+		levelPieces[13][13] = new Rock('o', new Point(13,13));
+		levelPieces[14][13] = new Rock('o', new Point(14,13));
+		levelPieces[14][12] = new Rock('o', new Point(14,12));
+		//Center pool
+		levelPieces[6][6] = new Water('~', new Point(6,6));
+		levelPieces[6][7] = new Water('~', new Point(6,7));
+		levelPieces[6][8] = new Water('~', new Point(6,8));
+		levelPieces[7][6] = new Water('~', new Point(7,6));
+		levelPieces[7][7] = new Water('~', new Point(7,7));
+		levelPieces[7][8] = new Water('~', new Point(7,8));
+		levelPieces[8][6] = new Water('~', new Point(8,6));
+		levelPieces[8][7] = new Water('~', new Point(8,7));
+		levelPieces[8][8] = new Water('~', new Point(8,8));
+
+		
 		//Friendlies
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
 		//Enemies
