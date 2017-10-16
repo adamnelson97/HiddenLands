@@ -6,6 +6,7 @@ import java.util.Random;
 
 import architecture.Drawable;
 import architecture.Moveable;
+import pieces.Artifact;
 import pieces.Dragon;
 import pieces.Dwarf;
 import pieces.Elf;
@@ -191,7 +192,7 @@ public class LevelEngine {
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
-		startingLocation = new Point(7, 7);
+		startingLocation = new Point(8, 9);
 
 		/*
 		 * Landscape
@@ -263,7 +264,10 @@ public class LevelEngine {
 		/*
 		 * Friendlies
 		 */
-		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		levelPieces[2][11] = new Knight('K', new Point(2,11));
+		levelPieces[1][1] = new Artifact('A', new Point(1,1));
+		levelPieces[12][1] = new Unicorn('U', new Point(12,1));
+		levelPieces[6][12] = new Elf('E', new Point(6,12));
 		
 		/*
 		 * Enemies
