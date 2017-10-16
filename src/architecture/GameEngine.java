@@ -178,15 +178,15 @@ public class GameEngine {
 		String code = in.nextLine();
 		
 		if (code.equalsIgnoreCase("Gimli")) {
-			currentLevel = 2;
+			currentLevel = 1;
 			System.out.println("Skipping to Level Two...");
 		}
 		else if (code.equalsIgnoreCase("Legolas")) {
-			currentLevel = 3;
+			currentLevel = 2;
 			System.out.println("Skipping to Level Three...");
 		}
 		else if (code.equalsIgnoreCase("Aragorn")) {
-			currentLevel = 4;
+			currentLevel = 3;
 			System.out.println("Skipping to Level Four...");
 		}
 	}
