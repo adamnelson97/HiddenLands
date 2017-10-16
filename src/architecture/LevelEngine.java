@@ -193,14 +193,19 @@ public class LevelEngine {
 		startingLocation = new Point(7, 7);
 
 		/*
-		 * Pieces Go Here
+		 * Landscape
 		 */
-		//Landscape
-		levelPieces[5][0] = new Rock('o', new Point(5,0));
-		levelPieces[4][1] = new Rock('o', new Point(4,1));
-		//Friendlies
+		//Top Row of Trees
+		//levelPieces[][] = new Tree('#', Point());
+
+		/*
+		 * Friendlies
+		 */
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
-		//Enemies
+		
+		/*
+		 * Enemies
+		 */
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {

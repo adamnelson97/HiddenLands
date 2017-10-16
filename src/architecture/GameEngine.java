@@ -106,7 +106,7 @@ public class GameEngine {
 			InteractionResult result = piece.interact(pieces, player);		
 			if (result == InteractionResult.GET_POINT) {
 				player.addPoint(); 
-				System.out.println("\nYou just won a prize!\n");
+				System.out.println("\nYou just earned a point!\n");
 			}
 			if (result == InteractionResult.HIT) {
 				player.takeDamage();
@@ -125,7 +125,7 @@ public class GameEngine {
 			}
 			if (result == InteractionResult.ADVANCE) {
 				player.wonAdvance();
-				System.out.println("\nGood news, you have won an advance!\n");
+				System.out.println("\nGood news, you beat the level!\n");
 				// can only advance once
 				break;
 			}
@@ -192,7 +192,7 @@ public class GameEngine {
 	}
 
 	public void playGame() {
-		System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water\n");
+		System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, P = Player\n");
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
 		setNumLevels(player);
@@ -295,6 +295,7 @@ public class GameEngine {
 		System.out.println("What will you find on your journey? Glory? Love? Power? There is only");
 		System.out.println("one way to find out...");
 		System.out.println();
+		System.out.println("COLLECT POINTS/KILL MONSTERS TO BEAT EACH LEVEL");
 	}
 
 	public static void main(String[] args) {
