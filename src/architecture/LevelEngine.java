@@ -90,10 +90,15 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7); //Center of board
 
-		//Pieces Go Here
+		/*
+		 * Pieces Go Here
+		 */
+		//Landscape
 		levelPieces[5][0] = new Rock('o', new Point(5,0));
 		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		//Friendlies
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		//Enemies
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
@@ -131,10 +136,15 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
 
-		//Pieces Go Here
+		/*
+		 * Pieces Go Here
+		 */
+		//Landscape
 		levelPieces[5][0] = new Rock('o', new Point(5,0));
 		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		//Friendlies
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		//Enemies
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
@@ -170,10 +180,15 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
 
-		//Pieces Go Here
+		/*
+		 * Pieces Go Here
+		 */
+		//Landscape
 		levelPieces[5][0] = new Rock('o', new Point(5,0));
 		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		//Friendlies
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		//Enemies
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
@@ -227,11 +242,16 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
 
-		//Pieces Go Here
 		//TODO: Create Skeleton King boss
+		/*
+		 * Pieces Go Here
+		 */
+		//Landscape
 		levelPieces[5][0] = new Rock('o', new Point(5,0));
 		levelPieces[4][1] = new Rock('o', new Point(4,1));
+		//Friendlies
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		//Enemies
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
