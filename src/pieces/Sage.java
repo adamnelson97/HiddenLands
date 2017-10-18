@@ -33,7 +33,7 @@ public class Sage extends GamePiece implements Moveable {
 				Random rand = new Random();
 				int n = rand.nextInt(4) + 1;
 
-				System.out.println("You encounter a wise sage! Listen to his helpful words...");
+				System.out.println("\nYou encounter a wise sage! Listen to his helpful words...");
 				switch(n) {
 				case 1:
 					System.out.println("'The Elves, Men, and Sages will neither help nor hinder your quest.");
@@ -52,7 +52,7 @@ public class Sage extends GamePiece implements Moveable {
 				}
 			}
 			else {
-				System.out.println("You encounter a wise sage!");
+				System.out.println("\nYou encounter a wise sage!");
 				System.out.println("'You are too inexperienced for my wisdom! Come back later.'");
 			}
 		}
