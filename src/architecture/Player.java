@@ -150,15 +150,9 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within getPlayerChoice
 	private void displayMenu() {
 		System.out.println();
-		System.out.println("7: Move Up and Left");
-		System.out.println("8: Move Up");
-		System.out.println("9: Move Up and Right");
-		System.out.println("4: Move Left");
-		System.out.println("5: Stay Put");
-		System.out.println("6: Move Right");
-		System.out.println("1: Move Down and Left");
-		System.out.println("2: Move Down");
-		System.out.println("3: Move Down and Right");
+		System.out.println("7: Up and Left    8: Up       9: Up and Right");
+		System.out.println("4: Left           5: Stay Put 6: Right");
+		System.out.println("1: Down and Left  2: Down     3: Down and Right");
 		System.out.print("Choose a movement: ");
 	}
 
