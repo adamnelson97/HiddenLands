@@ -24,7 +24,7 @@ public class Artifact extends GamePiece {
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
-			System.out.println("You encounter an ancient artifact! Upon inspecting it, it begins to glow.");
+			System.out.println("\nYou encounter an ancient artifact! Upon inspecting it, it begins to glow.");
 			System.out.println("----F L A S H----");
 			System.out.println("You have been transported somewhere new and mysterious!");
 
