@@ -181,7 +181,7 @@ public class LevelEngine {
 	//TODO: Write levelTwo();
 
 	public void levelTwo() {
-		System.out.println("You have made sufficient progress on your journey. You have faced");
+		System.out.println("\nYou have made sufficient progress on your journey. You have faced");
 		System.out.println("formidable monsters, but greater threats lay ahead.");
 		System.out.println();
 		System.out.println("Out of the foothills, you enter the Srulmvic Timberland, a dense,");
@@ -305,7 +305,7 @@ public class LevelEngine {
 	//TODO: Write levelThree();
 
 	public void levelThree() {
-		System.out.println("You have made admirable progress along your journey. Word has begun");
+		System.out.println("\nYou have made admirable progress along your journey. Word has begun");
 		System.out.println("to spread that a warrior is going to brave the beast. You can see");
 		System.out.println("the peak of Alindor, the tallest mountain glittering with the light");
 		System.out.println("of a thousand stars, up ahead. You spot a small cave opening nearby.");
@@ -347,7 +347,7 @@ public class LevelEngine {
 	//TODO: Write levelFour();
 
 	public void levelFour() {
-		System.out.println("You have slayed the mighty beast! Huzzah! You begin the long walk");
+		System.out.println("\nYou have slayed the mighty beast! Huzzah! You begin the long walk");
 		System.out.println("back to the village to inform the people of the good news...");
 		System.out.println();
 		System.out.println("'...So you truly slayed it? You killed that evil monster?' a child");

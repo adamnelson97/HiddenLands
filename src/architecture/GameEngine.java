@@ -106,11 +106,11 @@ public class GameEngine {
 			InteractionResult result = piece.interact(pieces, player);		
 			if (result == InteractionResult.GET_POINT) {
 				player.addPoint(); 
-				System.out.println("\nYou just earned a point!\n");
+				System.out.println("\nYou just earned a point!");
 			}
 			if (result == InteractionResult.HIT) {
 				player.takeDamage();
-				System.out.println("\nYou just took a hit!\n");
+				System.out.println("\nYou just took a hit!");
 				if (player.isDead()) {
 					System.out.println("Too many hits, you are dead");
 					// can only be killed once
@@ -119,13 +119,13 @@ public class GameEngine {
 			}
 			if (result == InteractionResult.KILL) {
 				player.killed();
-				System.out.println("\nSomething just killed you!\n");
+				System.out.println("\nSomething just killed you!");
 				// can only be killed once
 				break;
 			}
 			if (result == InteractionResult.ADVANCE) {
 				player.wonAdvance();
-				System.out.println("\nGood news, you beat the level!\n");
+				System.out.println("\nGood news, you beat the level!");
 				// can only advance once
 				break;
 			}

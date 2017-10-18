@@ -144,6 +144,8 @@ public class Player implements Drawable {
 			if (playerChoice < 1 || playerChoice > 9) System.out.println("Invalid option. Please retry.");
 		} while(playerChoice < 1 || playerChoice > 9);
 		//scan.close();
+		System.out.println();
+		System.out.println();
 		return playerChoice;
 	}
 
