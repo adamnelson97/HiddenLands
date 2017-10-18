@@ -31,19 +31,24 @@ public class Sage extends GamePiece implements Moveable {
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			if (player.getAdvancePoints() >= 2) {
 				Random rand = new Random();
-				int n = rand.nextInt(3) + 1;
+				int n = rand.nextInt(4) + 1;
 
 				System.out.println("You encounter a wise sage! Listen to his helpful words...");
-				if (n == 1) {
-					System.out.println("The Elves, Men, and Sages will neither help nor hinder your quest.");
-					System.out.println("However, they may tell you a tale worth listening to...");
-				}
-				else if (n == 2) {
-					System.out.println("The Dwarves and Knights are kind folk and will aid you in your quest.");
-				}
-				else if (n == 3) {
-					System.out.println("There are many dangerous creatures in these lands, including");
-					System.out.println("Dragons, Witches, and Wizards! Be wary of them.");
+				switch(n) {
+				case 1:
+					System.out.println("'The Elves, Men, and Sages will neither help nor hinder your quest.");
+					System.out.println("However, they may tell you a tale worth listening to...'");
+					break;
+				case 2:
+					System.out.println("'The Dwarves and Knights are kind folk and will aid you in your quest.'");
+					break;
+				case 3:
+					System.out.println("'There are many dangerous creatures in these lands, including");
+					System.out.println("Dragons, Witches, and Wizards! Be wary of them.'");
+					break;
+				case 4:
+					System.out.println("'Artifacts are particularly mysterious. The spirits they contain");
+					System.out.println("may or may not like you!'");
 				}
 			}
 			else {
