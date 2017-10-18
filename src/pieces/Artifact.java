@@ -31,11 +31,11 @@ public class Artifact extends GamePiece {
 			Random rand = new Random();
 			int n = rand.nextInt(2) + 1;
 
-			if (n == 1) {
+			switch(n) {
+			case 1:
 				System.out.println("You encounter a ghoul. He smites you for disturbing his eternal slumber!");
 				return InteractionResult.KILL;
-			}
-			else if (n == 2) {
+			case 2:
 				System.out.println("You encounter a spirit, who rewards you with wisdom and regained");
 				System.out.println("stamina for your journey.");
 				return InteractionResult.ADVANCE;
