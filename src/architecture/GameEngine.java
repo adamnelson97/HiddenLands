@@ -173,7 +173,7 @@ public class GameEngine {
 	}
 	
 	public void cheatcode() {
-		System.out.print("Do you have a cheatcode? ");
+		System.out.print("Do you have a cheatcode? If not, just hit enter: ");
 		Scanner in = new Scanner(System.in);
 		String code = in.nextLine();
 		
@@ -210,31 +210,31 @@ public class GameEngine {
 			System.out.println("Congratulations, " + player.getName() + ", you won!\n");
 			switch(numLevels) {
 			case 1:
-				System.out.println("	You have made sufficient progress on your journey. You have faced");
+				System.out.println("You have made sufficient progress on your journey. You have faced");
 				System.out.println("formidable monsters, but greater threats lay ahead. Play again on");
 				System.out.println("Medium to further your quest and save the villagers! ");
 				System.out.println();
 				break;
 			case 2:
-				System.out.println("	You have made admirable progress along your journey. Word has begun");
+				System.out.println("You have made admirable progress along your journey. Word has begun");
 				System.out.println("to spread that a warrior is going to brave the beast. Strengthen");
 				System.out.println("yourself, and play again on Hard to complete your conquest!");
 				System.out.println();
 				break;
 			case 3:
-				System.out.println("	You have slayed the mighty beast! Huzzah! You begin the long walk");
+				System.out.println("You have slayed the mighty beast! Huzzah! You begin the long walk");
 				System.out.println("back to the village to inform the people of the good news...");
 				System.out.println();
-				System.out.println("	'...So you truly slayed it? You killed that evil monster?' a child");
+				System.out.println("'...So you truly slayed it? You killed that evil monster?' a child");
 				System.out.println("asks you. You nod your head in affirmation. You step into the inn you");
 				System.out.println("first entered many moons ago. You notice the old man, and his eyes widen.");
 				System.out.println();
-				System.out.println("	'So it's true!' he exclaims. 'My boy, I never doubted you. But word has");
+				System.out.println("'So it's true!' he exclaims. 'My boy, I never doubted you. But word has");
 				System.out.println("come here that the great city of Glor Infitae is being laid waste to by");
 				System.out.println("an unknown foe. Dark forces are surely at work. If you can, we beseech");
 				System.out.println("you to help them as you did us!'");
 				System.out.println();
-				System.out.println("	You consider the proposition, and reply 'I will help any good people,");
+				System.out.println("You consider the proposition, and reply 'I will help any good people,");
 				System.out.println("for good in this world must be protected.'");
 				System.out.println();
 				System.out.println("Play again on HARDCORE to face the greatest threat in all the land,");
@@ -242,7 +242,7 @@ public class GameEngine {
 				System.out.println();
 				break;
 			case 4:
-				System.out.println("	Word has spread of your incredible victory over the terrible Skeleton King!");
+				System.out.println("Word has spread of your incredible victory over the terrible Skeleton King!");
 				System.out.println("Villagers openly cry out their thanks for you, offering meat, ale,");
 				System.out.println("horses, and gold as tokens of their gratitude. A squire approaches");
 				System.out.println("you, and offers you a scroll. The scroll dictates that the Princess");
@@ -250,18 +250,18 @@ public class GameEngine {
 				System.out.println("for an audience. You mount your horse and stride through the city,");
 				System.out.println("stopping before the marble pillars of the Royal Hall.");
 				System.out.println();
-				System.out.println("	You dismount, and the guards enter the giant oak doors into the throne");
+				System.out.println("You dismount, and the guards enter the giant oak doors into the throne");
 				System.out.println("room where the Princess sits, beaming in light as if an angel.");
 				System.out.println();
-				System.out.println("	'Come here, " + player.getName() + "', she says. You approach her and");
+				System.out.println("'Come here, " + player.getName() + "', she says. You approach her and");
 				System.out.println("kneel before her.");
 				System.out.println();
-				System.out.println("	'No one can question your heroics and selfless actions to defending");
+				System.out.println("'No one can question your heroics and selfless actions to defending");
 				System.out.println("our noble land. It is for your nobility and chivalry that I now bestow");
 				System.out.println("upon you the Heart of Aetna, our guardian spirit, and declare this day");
 				System.out.println("in your honor!'");
 				System.out.println();
-				System.out.println("	The hall erupts in racous applause as townspeople cheer your name!");
+				System.out.println("The hall erupts in racous applause as townspeople cheer your name!");
 				System.out.println();
 				System.out.println("Thank you for playing. Please play again!");
 				System.out.println();
@@ -272,24 +272,24 @@ public class GameEngine {
 	}
 
 	public void intro() {
-		System.out.println("\n\n=====H I D D E N  L A N D S=====");
+		System.out.println("\n=====H I D D E N  L A N D S=====");
 		System.out.println("   ------by Adam Nelson------");
-		System.out.println("Welcome Adventurer! You are about to embark on a quest filled");
+		System.out.println("\nWelcome Adventurer! You are about to embark on a quest filled");
 		System.out.println("with danger, mysterious creatures, and treasure! Good luck!");
 		System.out.println();
-		System.out.println("	Whilst traveling across the land, you see a village on the horizon.");
+		System.out.println("Whilst traveling across the land, you see a village on the horizon.");
 		System.out.println("Traveling to the village, you arrive at dusk. You enter the local");
 		System.out.println("inn, and order an ale. A wounded old man notices your sword, and");
 		System.out.println("approaches you.");
 		System.out.println();
-		System.out.println("	'Are you a warrior?' he asks. You nod your head in compliance.");
+		System.out.println("'Are you a warrior?' he asks. You nod your head in compliance.");
 		System.out.println();
-		System.out.println("	'Maybe you can help us!' he exclaims. 'Every winter, we people of");
+		System.out.println("'Maybe you can help us!' he exclaims. 'Every winter, we people of");
 		System.out.println("Corington are ravaged by a terrible monster, and have to rebuild our");
 		System.out.println("homes from his terrible destruction. We are too poor to move somewhere");
 		System.out.println("else, and our finest warriors have never returned. Please help us!");
 		System.out.println();
-		System.out.println("	He offers you gold, but you turn it down, saying the honor of helping");
+		System.out.println("He offers you gold, but you turn it down, saying the honor of helping");
 		System.out.println("them is reward enough.");
 		System.out.println();
 		System.out.println("What will you find on your journey? Glory? Love? Power? There is only");
