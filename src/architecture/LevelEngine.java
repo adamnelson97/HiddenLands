@@ -364,7 +364,7 @@ public class LevelEngine {
 		/*
 		 * Enemies
 		 */
-		levelPieces[8][6] = new Orc('O', new Point(8,6));
+		levelPieces[9][5] = new Orc('O', new Point(9,5));
 		levelPieces[7][7] = new Trap('o', new Point(7,7));
 
 		//Identify pieces that interact

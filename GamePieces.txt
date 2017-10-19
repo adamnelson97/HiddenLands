@@ -89,8 +89,7 @@ If the player lands on that space again they die.
 
 Orc:
 Symbol: 'O'
-Motion: Moves one space towards the player in the direction there
-is the greatest distance.
+Motion: Moves one space in each direction towards the player.
 Interaction: HIT.
 
 Skeleton King:

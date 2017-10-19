@@ -12,8 +12,7 @@ public class Orc extends GamePiece implements Moveable{
 	/*
 	 * Symbol: 'O'
 	 * 
-	 * Motion: Moves one space towards the player in the direction there
-	 * is the greatest distance.
+	 * Motion: Moves one space in each direction towards the player.
 	 * 
 	 * Interaction: HIT.
 	 */
@@ -60,7 +59,7 @@ public class Orc extends GamePiece implements Moveable{
 		double diffX = Math.abs(playerX - orcX);
 		double diffY = Math.abs(playerY - orcY);
 
-		if (diffX > diffY) {
+		//if (diffX > diffY) {
 			if (playerX - orcX > 0) { //Move Down
 				//Still only moves if grid is devoid of other entities, but now does not care about player's location
 				if (pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
@@ -82,9 +81,9 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
-		}
+		//}
 
-		else {		
+		//else {		
 			if (playerY - orcY > 0) { //Move Right
 				if (pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
 
@@ -104,7 +103,7 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}		
 			}
-		}
+		//}
 	}
 
 } //End of Class
