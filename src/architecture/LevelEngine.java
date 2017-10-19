@@ -269,6 +269,8 @@ public class LevelEngine {
 		levelPieces[1][1] = new Artifact('A', new Point(1,1));
 		levelPieces[12][1] = new Unicorn('U', new Point(12,1));
 		levelPieces[6][12] = new Elf('E', new Point(6,12));
+		levelPieces[12][2] = new Elf('E', new Point(12,2));
+		levelPieces[10][12] = new Elf('E', new Point(10,12));
 		
 		/*
 		 * Enemies
