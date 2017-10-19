@@ -41,29 +41,25 @@ public class Knight extends GamePiece implements Moveable {
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		try {
 			//Move Left
-			if (getLocation().getY() - 1 != playerLocation.getY()
-					&& getLocation().getY() > 0
+			if (getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
 				moveKnight(0, -1, pieces);
 			}
 			//Skip Left past Trap
-			else if (getLocation().getY() - 1 != playerLocation.getY()
-					&& getLocation().getY() > 0
+			else if (getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] instanceof Trap) {
 
 				moveKnight(0, -2, pieces);	
 			}
 			//Move Up
-			else if (getLocation().getX() - 1 != playerLocation.getX()
-					&& getLocation().getX() > 0
+			else if (getLocation().getX() > 0
 					&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
 
 				moveKnight(-1, 0, pieces);				
 			}
 			//Skip Up past Trap
-			else if (getLocation().getY() - 1 != playerLocation.getY()
-					&& getLocation().getX() > 0
+			else if (getLocation().getX() > 0
 					&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] instanceof Trap) {
 
 				moveKnight(-2, 0, pieces);
