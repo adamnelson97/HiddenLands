@@ -92,11 +92,11 @@ public class LevelEngine {
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 12);
-		
+
 		/*
 		 * Landscape
 		 */
-		
+
 		//Top Left cluster
 		levelPieces[1][1] = new Tree('#', new Point(1,1));
 		levelPieces[1][2] = new Rock('o', new Point(1,2));
@@ -120,38 +120,33 @@ public class LevelEngine {
 		levelPieces[14][13] = new Rock('o', new Point(14,13));
 		levelPieces[14][12] = new Rock('o', new Point(14,12));
 		//Center pool
-		levelPieces[6][6] = new Water('~', new Point(6,6));
-		levelPieces[6][7] = new Water('~', new Point(6,7));
-		levelPieces[6][8] = new Water('~', new Point(6,8));
-		levelPieces[7][6] = new Water('~', new Point(7,6));
-		levelPieces[7][7] = new Water('~', new Point(7,7));
-		levelPieces[7][8] = new Water('~', new Point(7,8));
-		levelPieces[8][6] = new Water('~', new Point(8,6));
-		levelPieces[8][7] = new Water('~', new Point(8,7));
-		levelPieces[8][8] = new Water('~', new Point(8,8));
+		for (int i = 6; i < 9; i++) {
+			for (int j = 6; j < 9; j++) {
+				levelPieces[i][j] = new Water('~', new Point(i,j));
+			}
+		}
 
-		
 		/*
 		 * Friendlies
 		 */
-		
+
 		levelPieces[2][2] = new Dwarf('D', new Point(2,2));
 		levelPieces[11][1] = new Elf('E', new Point(11,1));
 		levelPieces[11][2] = new Dwarf('D', new Point(11,2));
-		
+
 		Random rand = new Random();
 		int n = rand.nextInt(3) + 1;
 		if (n == 3) levelPieces[12][1] = new Man('M', new Point(12,1));
 		if (n == 2) levelPieces[6][5] = new Man('M', new Point(6,5));
-		
+
 		levelPieces[12][9] = new Sage('S', new Point(12,9));
 		levelPieces[7][11] = new Elf('E', new Point(7,11));
 		levelPieces[1][13] = new Elf('E', new Point(1,13));
-		
+
 		/*
 		 * Enemies
 		 */
-		
+
 		levelPieces[7][0] = new Witch('W', new Point(7,0));
 		levelPieces[11][6] = new Wizard('W', new Point(11,6));
 		levelPieces[2][7] = new Wizard('W', new Point(2,7));
@@ -198,18 +193,12 @@ public class LevelEngine {
 		/*
 		 * Landscape
 		 */
-		
+
 		levelPieces[1][10] = new Tree('#', new Point(1,10));
 		//Top Row of Trees
-		levelPieces[0][0] = new Tree('#', new Point(0,0));
-		levelPieces[0][1] = new Tree('#', new Point(0,1));
-		levelPieces[0][2] = new Tree('#', new Point(0,2));
-		levelPieces[0][3] = new Tree('#', new Point(0,3));
-		levelPieces[0][4] = new Tree('#', new Point(0,4));
-		levelPieces[0][5] = new Tree('#', new Point(0,5));
-		levelPieces[0][6] = new Tree('#', new Point(0,6));
-		levelPieces[0][7] = new Tree('#', new Point(0,7));
-		levelPieces[0][8] = new Tree('#', new Point(0,8));
+		for (int i = 0; i < 9; i++) {
+			levelPieces[0][i] = new Tree('#', new Point(0,i));
+		}
 		//Left Cave Wall
 		levelPieces[1][0] = new Rock('o', new Point(1,0));
 		levelPieces[2][0] = new Rock('o', new Point(2,0));
@@ -272,7 +261,7 @@ public class LevelEngine {
 		levelPieces[6][12] = new Elf('E', new Point(6,12));
 		levelPieces[12][2] = new Elf('E', new Point(12,2));
 		levelPieces[10][12] = new Elf('E', new Point(10,12));
-		
+
 		/*
 		 * Enemies
 		 */
@@ -323,7 +312,39 @@ public class LevelEngine {
 		/*
 		 * Pieces Go Here
 		 */
+
 		//Landscape
+		//Left Columns
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 15; j++) {	
+				levelPieces[j][i] = new Rock('o', new Point(j,i));
+			}
+		}
+		//Right Columns
+		for (int i = 13; i < 15; i++) {
+			for (int j = 0; j < 15; j++) {	
+				levelPieces[j][i] = new Rock('o', new Point(j,i));
+			}
+		}
+		//Top Mid Columns
+		for (int i = 2; i < 13; i++) {
+			for (int j = 0; j < 2; j++) {	
+				levelPieces[j][i] = new Rock('o', new Point(j,i));
+			}
+		}
+		//Bottom Mid Columns
+		for (int i = 2; i < 13; i++) {
+			for (int j = 13; j < 15; j++) {	
+				levelPieces[j][i] = new Rock('o', new Point(j,i));
+			}
+		}
+
+		//Bottom Left Pool
+		levelPieces[10][3] = new Water('~', new Point(10,3));
+		levelPieces[11][3] = new Water('~', new Point(11,3));
+		levelPieces[11][4] = new Water('~', new Point(11,4));
+
+		
 		//Friendlies
 		//Enemies
 		levelPieces[4][4] = new Orc('O', new Point(4,4));
