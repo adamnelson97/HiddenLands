@@ -42,11 +42,7 @@ public class Elf extends GamePiece implements Moveable {
 				if (getLocation().getY() + 1 != playerLocation.getY()
 						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(0, 1); //Moves the new point in the desired direction
-					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					movePiece(0, 1, pieces);
 				}
 			}
 			else if (n == 2) {
@@ -55,11 +51,7 @@ public class Elf extends GamePiece implements Moveable {
 				if (getLocation().getY() - 1 != playerLocation.getY()
 						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(0, -1); //Moves the new point in the desired direction
-					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					movePiece(0, -1, pieces);
 				}
 			}
 			else if (n == 3) {
@@ -67,11 +59,7 @@ public class Elf extends GamePiece implements Moveable {
 				if (getLocation().getX() - 1 != playerLocation.getX()
 						&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(-1, 0); //Moves the new point in the desired direction
-					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					movePiece(-1, 0, pieces);
 				}
 			}
 			else if (n == 4) {
@@ -80,11 +68,7 @@ public class Elf extends GamePiece implements Moveable {
 				if (getLocation().getX() + 1 != playerLocation.getX()
 						&& pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
 
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-					Point temp = getLocation(); //Copies location to new point
-					temp.translate(1, 0); //Moves the new point in the desired direction
-					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+					movePiece(1, 0, pieces);
 				}
 			}
 
