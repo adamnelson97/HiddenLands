@@ -330,22 +330,11 @@ public class LevelEngine {
 			levelPieces[13][i] = new Rock('o', new Point(13,i));
 		}
 
-		//Top Left Trees
+		
 		levelPieces[3][3] = new Tree('#', new Point(3,3));
-		levelPieces[3][4] = new Tree('#', new Point(3,4));
-		levelPieces[4][3] = new Tree('#', new Point(4,3));
-		//Top Right Pool
-		levelPieces[3][10] = new Water('~', new Point(3,10));
 		levelPieces[3][11] = new Water('~', new Point(3,11));
-		levelPieces[4][11] = new Water('~', new Point(4,11));
-		//Bottom Left Pool
 		levelPieces[10][3] = new Water('~', new Point(10,3));
-		levelPieces[11][3] = new Water('~', new Point(11,3));
-		levelPieces[11][4] = new Water('~', new Point(11,4));
-		//Bottom Right Trees
-		levelPieces[10][11] = new Tree('#', new Point(10,11));
 		levelPieces[11][11] = new Tree('#', new Point(11,11));
-		levelPieces[11][10] = new Tree('#', new Point(11,10));
 
 		//Fire Columns
 		levelPieces[4][6] = new Fire('$', new Point(4,6));
