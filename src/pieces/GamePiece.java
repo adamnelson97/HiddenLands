@@ -39,12 +39,21 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	public void setLocation(Drawable[][] pieces, Point newLocation) {
+		//Ensure the new location is still on the board
+		if (newLocation.getX() >= 0 && newLocation.getX() < GameEngine.BOARD_SIZE
+				&& newLocation.getY() >= 0 && newLocation.getY() < GameEngine.BOARD_SIZE) {
+			location = newLocation;
+		}
+	}
+
+	public void movePiece(int x, int y, Drawable[][] pieces) {
 		//Ensure the new location is currently empty
-		if (pieces[(int) newLocation.getX()][(int) newLocation.getY()] == null) {
-			//Ensure the new location is still on the board
-			if (newLocation.getX() >= 0 && newLocation.getX() < GameEngine.BOARD_SIZE
-					&& newLocation.getY() >= 0 && newLocation.getY() < GameEngine.BOARD_SIZE)
-				location = newLocation;
+		if (pieces[(int) getLocation().getX()+x][(int) getLocation().getY()+y] == null) {
+			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+			Point temp = getLocation(); //Copies location to new point
+			temp.translate(x, y); //Moves the new point in the desired direction
+			setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 		}
 	}
 
