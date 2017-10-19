@@ -17,7 +17,6 @@ public class Orc extends GamePiece implements Moveable{
 	 * Interaction: HIT.
 	 */
 
-	boolean cooldown;
 	int health;
 
 	public Orc(char symbol, Point location) {
@@ -56,7 +55,10 @@ public class Orc extends GamePiece implements Moveable{
 		double playerY = playerLocation.getY();
 		double orcX = getLocation().getX();
 		double orcY = getLocation().getY();
+		double diffX = Math.abs(playerX - orcX);
+		double diffY = Math.abs(playerY - orcY);
 
+		if (diffX > diffY) {
 			if (playerX - orcX > 0) { //Move Down
 				//Still only moves if grid is devoid of other entities, but now does not care about player's location
 				if (pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
@@ -78,7 +80,9 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
-
+		}
+		
+		else {
 			if (playerY - orcY > 0) { //Move Right
 				if (pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
 
@@ -98,6 +102,7 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}		
 			}
+		}
 	}
 
 } //End of Class
