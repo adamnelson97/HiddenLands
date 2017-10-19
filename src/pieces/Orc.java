@@ -62,86 +62,47 @@ public class Orc extends GamePiece implements Moveable{
 
 		if (diffX > diffY) {
 			if (playerX - orcX > 0) { //Move Down
-				moveDown(pieces, playerLocation);
+				movePiece(1, 0, pieces);
+				moved = true;
 			}
 			else if (playerX - orcX < 0 ){ //Move Up
-				moveUp(pieces, playerLocation);
+				movePiece(-1, 0, pieces);
+				moved = true;
 			}
 		}
 
 		else {
 			if (playerY - orcY > 0) { //Move Right
-				moveRight(pieces, playerLocation);
+				movePiece(0, 1, pieces);
+				moved = true;	
 			}
 			else if (playerY - orcY < 0) { //Move Left
-				moveLeft(pieces, playerLocation);	
+				movePiece(0, -1, pieces);
+				moved = true;
 			}
 		}
-		
+
 		//At this point, if the orc has not moved due to an obstacle it moves in the other direction anyway
 		if (!moved) {
 			if (playerX - orcX > 0) { //Move Down
-				moveDown(pieces, playerLocation);
+				movePiece(1, 0, pieces);
+				moved = true;
 			}
 			else if (playerX - orcX < 0 ){ //Move Up
-				moveUp(pieces, playerLocation);
+				movePiece(-1, 0, pieces);
+				moved = true;
 			}
 		}
 		if (!moved) {
 			if (playerY - orcY > 0) { //Move Right
-				moveRight(pieces, playerLocation);
+				movePiece(0, 1, pieces);
+				moved = true;	
 			}
 			else if (playerY - orcY < 0) { //Move Left
-				moveLeft(pieces, playerLocation);	
+				movePiece(0, -1, pieces);
+				moved = true;
 			}
 		}
-	}
-	private void moveUp(Drawable[][] pieces, Point playerLocation) {
-		if (pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
-
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-			Point temp = getLocation(); //Copies location to new point
-			temp.translate(-1, 0); //Moves the new point in the desired direction
-			setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-			moved = true;
-		}
-	}
-
-	private void moveDown(Drawable[][] pieces, Point playerLocation) {
-		if (pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
-
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-			Point temp = getLocation(); //Copies location to new point
-			temp.translate(1, 0); //Moves the new point in the desired direction
-			setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-			moved = true;
-		}
-	}
-
-	private void moveRight(Drawable[][] pieces, Point playerLocation) {
-		if (pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
-
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-			Point temp = getLocation(); //Copies location to new point
-			temp.translate(0, 1); //Moves the new point in the desired direction
-			setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-			moved = true;
-		}	
-	}
-
-	private void moveLeft(Drawable[][] pieces, Point playerLocation) {
-		if (pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
-
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-			Point temp = getLocation(); //Copies location to new point
-			temp.translate(0, -1); //Moves the new point in the desired direction
-			setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-			moved = true;
-		}	
 	}
 
 } //End of Class
