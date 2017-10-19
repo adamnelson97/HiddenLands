@@ -47,7 +47,6 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	public void movePiece(int x, int y, Drawable[][] pieces) {
-		//Ensure the new location is currently empty
 		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 		Point temp = getLocation(); //Copies location to new point
 		temp.translate(x, y); //Moves the new point in the desired direction
