@@ -39,16 +39,15 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	public void setLocation(Drawable[][] pieces, Point newLocation) {
-		// Ensure the location remains on the board
-		if (pieces[(int) newLocation.getX()][(int) newLocation.getY()] instanceof Rock
-				|| pieces[(int) newLocation.getX()][(int) newLocation.getY()] instanceof Tree
-				|| pieces[(int) newLocation.getX()][(int) newLocation.getY()] instanceof Water) {
+		//Ensure the new location is currently empty
+		if (pieces[(int) newLocation.getX()][(int) newLocation.getY()] == null) {
+			//Ensure the new location is still on the board
 			if (newLocation.getX() >= 0 && newLocation.getX() < GameEngine.BOARD_SIZE
 					&& newLocation.getY() >= 0 && newLocation.getY() < GameEngine.BOARD_SIZE)
 				location = newLocation;
 		}
 	}
-	
+
 	public void setSymbol(char x) {
 		symbol = x;
 	}
