@@ -272,6 +272,9 @@ public class GameEngine {
 				break;
 			}
 		}
+		System.out.println("Hit enter to exit the game.");
+		Scanner in = new Scanner(System.in);
+		String code = in.nextLine();
 		System.exit(0);
 	}
 
