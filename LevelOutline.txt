@@ -4,7 +4,7 @@ Hidden Lands Level Outline
 Rocks - o	Trees - #	Water - ~
 Elf - E		Dwarf - D	Knight - K
 Man - M		Maiden - M	Sage - S
-Artifact - A	Unicorn - U Dragon - F
+Artifact - A	Unicorn - U		Dragon - F
 Witch - W	Wizard - W	Orc - O
 Player - P
 

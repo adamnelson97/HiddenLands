@@ -23,7 +23,7 @@ public class Orc extends GamePiece implements Moveable{
 
 	public Orc(char symbol, Point location) {
 		super(symbol, location);
-		health = 6;
+		health = 5;
 		//Message in constructor so it only displays once
 		System.out.println("You encounter a hideous, grotesque Orc! This must be the monster");
 		System.out.println("terrorizing the people of Corington. Draw your sword and slay the");
