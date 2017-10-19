@@ -93,6 +93,13 @@ enemy actively moves towards the player. The player will have no way to advance 
 than defeating the boss through interactions. They will have Maidens to heal them, but
 must use them appropriately.
 
+Setting: Orc Cave
+
+Strategy: Interact with Orc to damage it. Interact with Maidens to heal and survive.
+
+Challenges: Player must interact with Maidens and learnt they are different from Men.
+Otherwise they will not beat the level.
+
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
 0| | | | | | | | | | | | | | | |0
 1| | | | | | | | | | | | | | | |1
