@@ -47,6 +47,22 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	public void movePiece(int x, int y, Drawable[][] pieces) {
+		/*
+		 * Alright, here is how this insanity works:
+		 * 1. Piece of Type X wants to move.
+		 * 2. In Type X's move method, you must check if the new location is currently null
+		 *    in pieces. You cannot simply check this in movePiece or setLocation. Just accept that
+		 *    this problem goes back very deep into the code structure and would take forever to fix.
+		 *    NOT WORTH IT.
+		 * 3. If the new location is currently null, call movePiece with the desired translation.
+		 * 4. movePiece will nullify the piece's current location, and call setLocation with the new location.
+		 * 5. If the new location is still on the board, the piece's Point location is changed.
+		 * 6. Regardless of whether or not the piece moved, the piece is added back to the array.
+		 *    It will have the proper location, moved or not.
+		 *    
+		 * NOTE: This only works for translating around the board. To set a brand new location from scratch,
+		 * you must do it 'manually'. See the Knight move method for an example.
+		 */
 		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 		Point temp = getLocation(); //Copies location to new point
 		temp.translate(x, y); //Moves the new point in the desired direction
