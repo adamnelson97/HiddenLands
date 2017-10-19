@@ -14,6 +14,7 @@ import pieces.GamePiece;
 import pieces.Knight;
 import pieces.Maiden;
 import pieces.Man;
+import pieces.Orc;
 import pieces.Rock;
 import pieces.Sage;
 import pieces.Trap;
@@ -323,7 +324,7 @@ public class LevelEngine {
 		 * Pieces Go Here
 		 */
 		//Landscape
-		levelPieces[7][5] = new Trap(' ', new Point(7,5));
+		levelPieces[4][4] = new Orc('O', new Point(4,4));
 		//Friendlies
 		//Enemies
 
