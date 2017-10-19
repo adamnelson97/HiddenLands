@@ -3,5 +3,3 @@
 .classpath
 .settings/
 bin/
-*.jar
-*.cmd
