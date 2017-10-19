@@ -89,7 +89,7 @@ If the player lands on that space again they die.
 
 Orc:
 Symbol: 'O'
-Motion: Moves one space in each direction towards the player.
+Motion: Moves one space in direction furthest from the player.
 Interaction: HIT.
 
 Skeleton King:

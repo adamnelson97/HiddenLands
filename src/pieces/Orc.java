@@ -12,7 +12,7 @@ public class Orc extends GamePiece implements Moveable{
 	/*
 	 * Symbol: 'O'
 	 * 
-	 * Motion: Moves one space in each direction towards the player.
+	 * Motion: Moves one space in direction furthest from the player.
 	 * 
 	 * Interaction: HIT.
 	 */
