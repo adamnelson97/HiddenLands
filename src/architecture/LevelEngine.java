@@ -313,29 +313,21 @@ public class LevelEngine {
 		/*
 		 * Landscape
 		 */
-		//Left Columns
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < 15; j++) {	
-				levelPieces[j][i] = new Rock('o', new Point(j,i));
-			}
+		//Left Column
+		for (int i = 1; i < 14; i++) {	
+			levelPieces[i][1] = new Rock('o', new Point(i,1));
 		}
 		//Right Columns
-		for (int i = 13; i < 15; i++) {
-			for (int j = 0; j < 15; j++) {	
-				levelPieces[j][i] = new Rock('o', new Point(j,i));
-			}
+		for (int i = 1; i < 14; i++) {	
+			levelPieces[i][13] = new Rock('o', new Point(i,13));
 		}
 		//Top Mid Columns
 		for (int i = 2; i < 13; i++) {
-			for (int j = 0; j < 2; j++) {	
-				levelPieces[j][i] = new Rock('o', new Point(j,i));
-			}
+			levelPieces[1][i] = new Rock('o', new Point(1,i));
 		}
 		//Bottom Mid Columns
 		for (int i = 2; i < 13; i++) {
-			for (int j = 13; j < 15; j++) {	
-				levelPieces[j][i] = new Rock('o', new Point(j,i));
-			}
+			levelPieces[13][i] = new Rock('o', new Point(13,i));
 		}
 
 		//Top Left Trees
@@ -354,7 +346,7 @@ public class LevelEngine {
 		levelPieces[10][11] = new Tree('#', new Point(10,11));
 		levelPieces[11][11] = new Tree('#', new Point(11,11));
 		levelPieces[11][10] = new Tree('#', new Point(11,10));
-		
+
 		//Fire Columns
 		levelPieces[4][6] = new Fire('$', new Point(4,6));
 		levelPieces[4][7] = new Fire('$', new Point(4,7));
@@ -368,7 +360,7 @@ public class LevelEngine {
 		levelPieces[6][10] = new Fire('$', new Point(6,10));
 		levelPieces[7][10] = new Fire('$', new Point(7,10));
 		levelPieces[8][10] = new Fire('$', new Point(8,10));
-		
+
 		/*
 		 * Friendlies
 		 */
