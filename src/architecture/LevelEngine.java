@@ -307,13 +307,11 @@ public class LevelEngine {
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
-		startingLocation = new Point(7, 7);
+		startingLocation = new Point(12, 2);
 
 		/*
-		 * Pieces Go Here
+		 * Landscape
 		 */
-
-		//Landscape
 		//Left Columns
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 15; j++) {	
@@ -339,15 +337,35 @@ public class LevelEngine {
 			}
 		}
 
+		//Top Left Trees
+		levelPieces[3][3] = new Tree('#', new Point(3,3));
+		levelPieces[3][4] = new Tree('#', new Point(3,4));
+		levelPieces[4][3] = new Tree('#', new Point(4,3));
+		//Top Right Pool
+		levelPieces[3][10] = new Water('~', new Point(3,10));
+		levelPieces[3][11] = new Water('~', new Point(3,11));
+		levelPieces[4][11] = new Water('~', new Point(4,11));
 		//Bottom Left Pool
 		levelPieces[10][3] = new Water('~', new Point(10,3));
 		levelPieces[11][3] = new Water('~', new Point(11,3));
 		levelPieces[11][4] = new Water('~', new Point(11,4));
-
+		//Bottom Right Trees
+		levelPieces[10][11] = new Tree('#', new Point(10,11));
+		levelPieces[11][11] = new Tree('#', new Point(11,11));
+		levelPieces[11][10] = new Tree('#', new Point(11,10));
 		
-		//Friendlies
-		//Enemies
-		levelPieces[4][4] = new Orc('O', new Point(4,4));
+		/*
+		 * Friendlies
+		 */
+		levelPieces[2][2] = new Maiden('M', new Point(2,2));
+		levelPieces[2][12] = new Maiden('M', new Point(2,12));
+		levelPieces[12][12] = new Maiden('M', new Point(12,12));
+
+		/*
+		 * Enemies
+		 */
+		levelPieces[8][6] = new Orc('O', new Point(8,6));
+		levelPieces[7][7] = new Trap('o', new Point(7,7));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
