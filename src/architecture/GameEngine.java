@@ -107,7 +107,7 @@ public class GameEngine {
 			if (result == InteractionResult.GET_POINT) {
 				player.addPoint(); 
 				System.out.println("\nYou just earned a point!");
-				//TODO Add statement declaring how many points the player currently has
+				System.out.println("You currently have " + player.getAdvancePoints() + " points.");
 			}
 			if (result == InteractionResult.HIT) {
 				player.takeDamage();
@@ -117,7 +117,9 @@ public class GameEngine {
 					// can only be killed once
 					break;
 				}
-				//TODO add else statement saying, if they are not dead, how many hits they have taken
+				else {
+					System.out.println("You have taken " + player.getDamagePoints() + " hits.");
+				}
 			}
 			if (result == InteractionResult.KILL) {
 				player.killed();
