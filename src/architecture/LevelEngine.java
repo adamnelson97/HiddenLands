@@ -10,6 +10,7 @@ import pieces.Artifact;
 import pieces.Dragon;
 import pieces.Dwarf;
 import pieces.Elf;
+import pieces.Fire;
 import pieces.GamePiece;
 import pieces.Knight;
 import pieces.Maiden;
@@ -353,6 +354,20 @@ public class LevelEngine {
 		levelPieces[10][11] = new Tree('#', new Point(10,11));
 		levelPieces[11][11] = new Tree('#', new Point(11,11));
 		levelPieces[11][10] = new Tree('#', new Point(11,10));
+		
+		//Fire Columns
+		levelPieces[4][6] = new Fire('$', new Point(4,6));
+		levelPieces[4][7] = new Fire('$', new Point(4,7));
+		levelPieces[4][8] = new Fire('$', new Point(4,8));
+		levelPieces[6][4] = new Fire('$', new Point(6,4));
+		levelPieces[7][4] = new Fire('$', new Point(7,4));
+		levelPieces[8][4] = new Fire('$', new Point(8,4));
+		levelPieces[10][6] = new Fire('$', new Point(10,6));
+		levelPieces[10][7] = new Fire('$', new Point(10,7));
+		levelPieces[10][8] = new Fire('$', new Point(10,8));
+		levelPieces[6][10] = new Fire('$', new Point(6,10));
+		levelPieces[7][10] = new Fire('$', new Point(7,10));
+		levelPieces[8][10] = new Fire('$', new Point(8,10));
 		
 		/*
 		 * Friendlies
