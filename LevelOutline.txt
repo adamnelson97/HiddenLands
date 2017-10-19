@@ -71,9 +71,9 @@ The player must reach the knight in time or cut his path off in order to advance
 
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
 0|#|#|#|#|#|#|#|#|#|^| | |x|1|x|0
-1|o|A|o| | | | | |o|^|#| |x|2|x|1
+1|o|A|o| | |x| | |o|^|#| |x|2|x|1
 2|o| |o| |o|&|o| |o|^|^|K|x|x|x|2
-3|o| | | |o| |F| |o| | | | | | |3
+3|o| | | |o|x|F| |o| | | | | | |3
 4|o|o|o|o|o|o| |o|o| | | | | |o|4
 5| | | | | | | | | | | | | |o|~|5
 6| |x|x|x| | | | | | | | |E| |~|6
@@ -97,25 +97,28 @@ Setting: Orc Cave
 
 Strategy: Interact with Orc to damage it. Interact with Maidens to heal and survive.
 
-Challenges: Player must interact with Maidens and learnt they are different from Men.
-Otherwise they will not beat the level.
+Challenges: Player must interact with Maidens and learn they are different from Men.
+Otherwise they will not beat the level. Springing the trap in the middle of the level
+will make success impossible.
+
+Note: The trap will initially appear as a rock to trick the player.
 
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
-0| | | | | | | | | | | | | | | |0
-1| | | | | | | | | | | | | | | |1
-2| | | | | | | | | | | | | | | |2
-3| | | | | | | | | | | | | | | |3
-4| | | | | | | | | | | | | | | |4
-5| | | | | | | | | | | | | | | |5
-6| | | | | | | | | | | | | | | |6
-7| | | | | | | |X| | | | | | | |7
-8| | | | | | | | | | | | | | | |8
-9| | | | | | | | | | | | | | | |9
-0| | | | | | | | | | | | | | | |0
-1| | | | | | | | | | | | | | | |1
-2| | | | | | | | | | | | | | | |2
-3| | | | | | | | | | | | | | | |3
-4| | | | | | | | | | | | | | | |4
+0|o|o|o|o|o|o|o|o|o|o|o|o|o|o|o|0
+1|o|o|o|o|o|o|o|o|o|o|o|o|o|o|o|1
+2|o|o|4| | | | | | | | | |4|o|o|2
+3|o|o| |#|#| | | | | |~|~| |o|o|3
+4|o|o| |#| | | | | | | |~| |o|o|4
+5|o|o| | | | | | | | | | | |o|o|5
+6|o|o| | | | | |x| | | | | |o|o|6
+7|o|o| | | | |x|&|x| | | | |o|o|7
+8|o|o| | | | |O|x| | | | | |o|o|8
+9|o|o| | | | | | | | | | | |o|o|9
+0|o|o| |~| | | | | | | |#| |o|o|0
+1|o|o| |~|~| | | | | |#|#| |o|o|1
+2|o|o|P| | | | | | | | | |4|o|o|2
+3|o|o|o|o|o|o|o|o|o|o|o|o|o|o|o|3
+4|o|o|o|o|o|o|o|o|o|o|o|o|o|o|o|4
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
   
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
