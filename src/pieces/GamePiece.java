@@ -48,13 +48,11 @@ public abstract class GamePiece implements Drawable {
 
 	public void movePiece(int x, int y, Drawable[][] pieces) {
 		//Ensure the new location is currently empty
-		if (pieces[(int) getLocation().getX()+x][(int) getLocation().getY()+y] == null) {
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-			Point temp = getLocation(); //Copies location to new point
-			temp.translate(x, y); //Moves the new point in the desired direction
-			setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-			pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-		}
+		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+		Point temp = getLocation(); //Copies location to new point
+		temp.translate(x, y); //Moves the new point in the desired direction
+		setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 	}
 
 	public void setSymbol(char x) {
