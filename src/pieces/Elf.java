@@ -47,7 +47,6 @@ public class Elf extends GamePiece implements Moveable {
 			}
 			else if (n == 2) {
 				//Corresponds to moving Left
-
 				if (getLocation().getY() - 1 != playerLocation.getY()
 						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
@@ -64,7 +63,6 @@ public class Elf extends GamePiece implements Moveable {
 			}
 			else if (n == 4) {
 				//Corresponds to moving Down
-
 				if (getLocation().getX() + 1 != playerLocation.getX()
 						&& pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
 
