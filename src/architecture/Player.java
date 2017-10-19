@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+import pieces.Fire;
 import pieces.Rock;
 import pieces.Tree;
 import pieces.Water;
@@ -168,6 +169,7 @@ public class Player implements Drawable {
 				&& location.getX() > 0) {
 			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Rock
 					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Tree
+					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Fire
 					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Water) {
 			}
 			else {
@@ -180,6 +182,7 @@ public class Player implements Drawable {
 				&& location.getX() > 0) {
 			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Rock
 					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Tree
+					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Fire
 					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Water) {
 			}
 			else {
@@ -193,6 +196,7 @@ public class Player implements Drawable {
 				&& location.getX() > 0) {
 			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Rock
 					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Tree
+					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Fire
 					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Water) {
 			}
 			else {
@@ -205,6 +209,7 @@ public class Player implements Drawable {
 				&& location.getY() > 0) {
 			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Rock
 					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Tree
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Fire
 					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Water) {
 			}
 			else {
@@ -217,6 +222,7 @@ public class Player implements Drawable {
 				&& location.getY() < GameEngine.BOARD_SIZE-1) {
 			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Rock
 					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Tree
+					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Fire
 					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Water) {
 			}
 			else {
@@ -230,6 +236,7 @@ public class Player implements Drawable {
 				&& location.getX() < GameEngine.BOARD_SIZE-1) {
 			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Rock
 					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Tree
+					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Fire
 					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Water) {
 			}
 			else {
@@ -242,6 +249,7 @@ public class Player implements Drawable {
 				&& location.getX() < (GameEngine.BOARD_SIZE - 1)) {
 			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Rock
 					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Tree
+					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Fire
 					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Water) {
 			}
 			else {
@@ -255,6 +263,7 @@ public class Player implements Drawable {
 				&& location.getX() < GameEngine.BOARD_SIZE-1) {
 			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Rock
 					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Tree
+					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Fire
 					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Water) {
 			}
 			else {
