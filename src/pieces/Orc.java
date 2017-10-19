@@ -56,10 +56,7 @@ public class Orc extends GamePiece implements Moveable{
 		double playerY = playerLocation.getY();
 		double orcX = getLocation().getX();
 		double orcY = getLocation().getY();
-		double diffX = Math.abs(playerX - orcX);
-		double diffY = Math.abs(playerY - orcY);
 
-		//if (diffX > diffY) {
 			if (playerX - orcX > 0) { //Move Down
 				//Still only moves if grid is devoid of other entities, but now does not care about player's location
 				if (pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
@@ -71,7 +68,7 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
-			else { //Move Up
+			else if (playerX - orcX < 0 ){ //Move Up
 				if (pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
 
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
@@ -81,9 +78,7 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}
 			}
-		//}
 
-		//else {		
 			if (playerY - orcY > 0) { //Move Right
 				if (pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
 
@@ -93,7 +88,7 @@ public class Orc extends GamePiece implements Moveable{
 					setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}		}
-			else { //Move Left
+			else if (playerY - orcY < 0) { //Move Left
 				if (pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
@@ -103,7 +98,6 @@ public class Orc extends GamePiece implements Moveable{
 					pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 				}		
 			}
-		//}
 	}
 
 } //End of Class
