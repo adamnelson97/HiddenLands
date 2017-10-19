@@ -61,22 +61,26 @@ public class Orc extends GamePiece implements Moveable{
 		moved = false;
 
 		if (diffX > diffY) {
-			if (playerX - orcX > 0) { //Move Down
+			if (playerX - orcX > 0 && pieces[(int) (getLocation().getX()+1)][(int) getLocation().getY()] == null) { 
+				//Move Down
 				movePiece(1, 0, pieces);
 				moved = true;
 			}
-			else if (playerX - orcX < 0 ){ //Move Up
+			else if (playerX - orcX < 0 && pieces[(int) (getLocation().getX()-1)][(int) getLocation().getY()] == null){ 
+				//Move Up
 				movePiece(-1, 0, pieces);
 				moved = true;
 			}
 		}
 
 		else {
-			if (playerY - orcY > 0) { //Move Right
+			if (playerY - orcY > 0 && pieces[(int) (getLocation().getX())][(int) getLocation().getY()+1] == null) { 
+				//Move Right
 				movePiece(0, 1, pieces);
 				moved = true;	
 			}
-			else if (playerY - orcY < 0) { //Move Left
+			else if (playerY - orcY < 0 && pieces[(int) (getLocation().getX())][(int) getLocation().getY()-1] == null) { 
+				//Move Left
 				movePiece(0, -1, pieces);
 				moved = true;
 			}
@@ -84,21 +88,25 @@ public class Orc extends GamePiece implements Moveable{
 
 		//At this point, if the orc has not moved due to an obstacle it moves in the other direction anyway
 		if (!moved) {
-			if (playerX - orcX > 0) { //Move Down
+			if (playerX - orcX > 0 && pieces[(int) (getLocation().getX()+1)][(int) getLocation().getY()] == null) { 
+				//Move Down
 				movePiece(1, 0, pieces);
 				moved = true;
 			}
-			else if (playerX - orcX < 0 ){ //Move Up
+			else if (playerX - orcX < 0 && pieces[(int) (getLocation().getX()-1)][(int) getLocation().getY()] == null){ 
+				//Move Up
 				movePiece(-1, 0, pieces);
 				moved = true;
 			}
 		}
 		if (!moved) {
-			if (playerY - orcY > 0) { //Move Right
+			if (playerY - orcY > 0 && pieces[(int) (getLocation().getX())][(int) getLocation().getY()+1] == null) { 
+				//Move Right
 				movePiece(0, 1, pieces);
 				moved = true;	
 			}
-			else if (playerY - orcY < 0) { //Move Left
+			else if (playerY - orcY < 0 && pieces[(int) (getLocation().getX())][(int) getLocation().getY()-1] == null) { 
+				//Move Left
 				movePiece(0, -1, pieces);
 				moved = true;
 			}
