@@ -14,8 +14,7 @@ public class Orc extends GamePiece implements Moveable{
 	 * 
 	 * Motion: Moves one space in each direction towards player.
 	 * 
-	 * Interaction: HIT. Does two points of damage first interaction,
-	 * next interaction is cool down. Repeat pattern.
+	 * Interaction: HIT.
 	 */
 
 	boolean cooldown;
@@ -23,15 +22,14 @@ public class Orc extends GamePiece implements Moveable{
 
 	public Orc(char symbol, Point location) {
 		super(symbol, location);
-		cooldown = false;
-		health = 4;
+		health = 6;
 		//Message in constructor so it only displays once
 		System.out.println("You encounter a hideous, grotesque Orc! This must be the monster");
 		System.out.println("terrorizing the people of Corington. Draw your sword and slay the");
 		System.out.println("beast! Be warned, he is clever, and attacks only when he has the");
 		System.out.println("upper hand.");
 		System.out.println();
-		System.out.println("You notice he has taken some local dwarves captive. Maybe the can");
+		System.out.println("You notice he has taken some locals captive. Maybe they can");
 		System.out.println("assist you...");
 		System.out.println(); 
 	}
@@ -43,27 +41,13 @@ public class Orc extends GamePiece implements Moveable{
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
 			health--; //An interaction injures the orc regardless of cooldown
 			System.out.println("The orc cries out in pain from the sharp cut of your blade!");
+			System.out.println("He strikes you back with his monstrous claws!");
 			
-			if (health <= 0) return InteractionResult.ADVANCE; //If the orc is dead, the player advances
-			
-			if (!cooldown) { //If the orc is not on cooldown...
-				
-				//Increase damage by one
-				int playerDamage = player.getDamagePoints();
-				playerDamage++;
-				player.setDamagePoints(playerDamage);
-				
-				cooldown = true; //Won't attack next turn
-				
-				return InteractionResult.HIT; //Increase damage by second point
-			}
-			else {
-				cooldown = false; //Allows orc to attack next turn
-				return InteractionResult.NONE;
-			}
+			if (health <= 0) return InteractionResult.ADVANCE; //If the orc is dead, the player advances				
+			else return InteractionResult.HIT; //Increase damage by second point
 		}
 		else {
-			return InteractionResult.NONE;
+			return InteractionResult.NONE; //No interaction if they are on different spaces
 		}
 	}
 
