@@ -324,9 +324,9 @@ public class LevelEngine {
 		 * Pieces Go Here
 		 */
 		//Landscape
-		levelPieces[4][4] = new Orc('O', new Point(4,4));
 		//Friendlies
 		//Enemies
+		levelPieces[4][4] = new Orc('O', new Point(4,4));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
