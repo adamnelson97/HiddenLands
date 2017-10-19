@@ -333,7 +333,7 @@ public class LevelEngine {
 		
 		levelPieces[3][3] = new Tree('#', new Point(3,3));
 		levelPieces[3][11] = new Water('~', new Point(3,11));
-		levelPieces[10][3] = new Water('~', new Point(10,3));
+		levelPieces[11][3] = new Water('~', new Point(10,3));
 		levelPieces[11][11] = new Tree('#', new Point(11,11));
 
 		//Fire Columns
