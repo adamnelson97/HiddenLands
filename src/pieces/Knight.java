@@ -44,25 +44,25 @@ public class Knight extends GamePiece implements Moveable {
 			if (getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
-				moveKnight(0, -1, pieces);
+				movePiece(0, -1, pieces);
 			}
 			//Skip Left past Trap
 			else if (getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] instanceof Trap) {
 
-				moveKnight(0, -2, pieces);	
+				movePiece(0, -2, pieces);	
 			}
 			//Move Up
 			else if (getLocation().getX() > 0
 					&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
 
-				moveKnight(-1, 0, pieces);				
+				movePiece(-1, 0, pieces);				
 			}
 			//Skip Up past Trap
 			else if (getLocation().getX() > 0
 					&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] instanceof Trap) {
 
-				moveKnight(-2, 0, pieces);
+				movePiece(-2, 0, pieces);
 				}
 			//Reset Right
 			else if (getLocation().getY() == 0 && pieces[(int) getLocation().getX()][GameEngine.BOARD_SIZE - 1] == null) {
@@ -83,13 +83,5 @@ public class Knight extends GamePiece implements Moveable {
 				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {}
-	}
-
-	private void moveKnight(int x, int y, Drawable[][] pieces) {
-		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-		Point temp = getLocation(); //Copies location to new point
-		temp.translate(x, y); //Moves the new point in the desired direction
-		setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
 	}
 }
