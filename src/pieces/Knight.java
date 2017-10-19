@@ -41,47 +41,33 @@ public class Knight extends GamePiece implements Moveable {
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		try {
 			//Move Left
-			if (getLocation().getX() - 1 != playerLocation.getX()
+			if (getLocation().getY() - 1 != playerLocation.getY()
 					&& getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-				Point temp = getLocation(); //Copies location to new point
-				temp.translate(0, -1); //Moves the new point in the desired direction
-				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+				moveKnight(0, -1, pieces);
 			}
-			else if (getLocation().getX() - 1 != playerLocation.getX()
+			//Skip Left past Trap
+			else if (getLocation().getY() - 1 != playerLocation.getY()
 					&& getLocation().getY() > 0
 					&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] instanceof Trap) {
 
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-				Point temp = getLocation(); //Copies location to new point
-				temp.translate(0, -2); //Moves the new point in the desired direction
-				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+				moveKnight(0, -2, pieces);	
 			}
 			//Move Up
-			else if (getLocation().getY() - 1 != playerLocation.getY()
+			else if (getLocation().getX() - 1 != playerLocation.getX()
 					&& getLocation().getX() > 0
 					&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
 
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-				Point temp = getLocation(); //Copies location to new point
-				temp.translate(-1, 0); //Moves the new point in the desired direction
-				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+				moveKnight(-1, 0, pieces);				
 			}
+			//Skip Up past Trap
 			else if (getLocation().getY() - 1 != playerLocation.getY()
 					&& getLocation().getX() > 0
 					&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] instanceof Trap) {
 
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
-				Point temp = getLocation(); //Copies location to new point
-				temp.translate(-2, 0); //Moves the new point in the desired direction
-				setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
-				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-			}
+				moveKnight(-2, 0, pieces);
+				}
 			//Reset Right
 			else if (getLocation().getY() == 0 && pieces[(int) getLocation().getX()][GameEngine.BOARD_SIZE - 1] == null) {
 				pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
@@ -103,4 +89,11 @@ public class Knight extends GamePiece implements Moveable {
 		} catch (ArrayIndexOutOfBoundsException e) {}
 	}
 
+	private void moveKnight(int x, int y, Drawable[][] pieces) {
+		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
+		Point temp = getLocation(); //Copies location to new point
+		temp.translate(x, y); //Moves the new point in the desired direction
+		setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
+		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
+	}
 }
