@@ -159,93 +159,35 @@ public class Player implements Drawable {
 	//This method is private because it will only be called from within doMove
 	private boolean updatePlayerLocation(Drawable[][] pieces, int option) {
 		boolean moved = false;
+		int x = 0;
+		int y = 0;
 		//(-U +D / -L +R)
+
 		//Move Up and Left
-		if (option == 7
-				&& location.getY() > 0
-				&& location.getX() > 0) {
-			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Landscape) {
-			}
-			else {
-				location.translate(-1, -1);
-				moved = true;
-			}
-		}
+		if (option == 7	&& location.getY() > 0 && location.getX() > 0) { x = -1; y = -1;}
 		//Move Up
-		if (option == 8
-				&& location.getX() > 0) {
-			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Landscape) {
-			}
-			else {
-				location.translate(-1, 0);
-				moved = true;
-			}
-		}
+		if (option == 8	&& location.getX() > 0) { x = -1; y = 0; }
 		//Move Up and Right
-		if (option == 9
-				&& location.getY() < GameEngine.BOARD_SIZE - 1
-				&& location.getX() > 0) {
-			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Landscape) {
-			}
-			else {
-				location.translate(-1, +1);
-				moved = true;
-			}
-		}
+		if (option == 9	&& location.getY() < GameEngine.BOARD_SIZE - 1 && location.getX() > 0) { x = -1; y = 1;}
 		//Move Left
-		if (option == 4
-				&& location.getY() > 0) {
-			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Landscape) {
-			}
-			else {
-				location.translate(0, -1);
-				moved = true;
-			}
-		}
+		if (option == 4	&& location.getY() > 0) { x = 0; y = -1;}
 		//Move Right
-		if (option == 6
-				&& location.getY() < GameEngine.BOARD_SIZE-1) {
-			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Landscape) {
-			}
-			else {
-				location.translate(0, +1);
-				moved = true;
-			}
-		}
+		if (option == 6	&& location.getY() < GameEngine.BOARD_SIZE-1) { x = 0; y = 1;}
 		//Move Down and Left
-		if (option == 1
-				&& location.getY() > 0
-				&& location.getX() < GameEngine.BOARD_SIZE-1) {
-			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Landscape) {
-			}
-			else {
-				location.translate(+1, -1);
-				moved = true;
-			}
-		}
+		if (option == 1	&& location.getY() > 0 && location.getX() < GameEngine.BOARD_SIZE-1) { x = 1; y = -1;}
 		//Move Down
-		if (option == 2 
-				&& location.getX() < (GameEngine.BOARD_SIZE - 1)) {
-			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Landscape) {
-			}
-			else {
-				location.translate(1, 0);
-				moved = true;
-			}
-		}
+		if (option == 2 && location.getX() < (GameEngine.BOARD_SIZE - 1)) { x = 1; y = 0;}
 		//Move Down and Right
-		if (option == 3
-				&& location.getY() < GameEngine.BOARD_SIZE-1
-				&& location.getX() < GameEngine.BOARD_SIZE-1) {
-			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Landscape) {
-			}
-			else {
-				location.translate(+1, +1);
-				moved = true;
-			}
-		}
+		if (option == 3	&& location.getY() < GameEngine.BOARD_SIZE-1 && location.getX() < GameEngine.BOARD_SIZE-1) { x = 1; y = 1;}
 		//Stay put
-		if (option == 5) { moved = true; }
+		if (option == 5) { moved = true; x = 0; y = 0;}
+		
+		if (pieces[(int) getLocation().getX() + x][(int) getLocation().getY() + y] instanceof Landscape) {
+		} //Does nothing if the player is attempting to move onto landscape
+		else {
+			location.translate(x, y);
+			moved = true;
+		}
 
 		if (!moved) {
 			System.out.println("Invalid option, please retry");
