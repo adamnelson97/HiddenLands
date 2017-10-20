@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-import pieces.Fire;
-import pieces.Rock;
-import pieces.Tree;
-import pieces.Water;
+import pieces.Landscape;
 import architecture.GameEngine;
 
 /*
@@ -167,10 +164,7 @@ public class Player implements Drawable {
 		if (option == 7
 				&& location.getY() > 0
 				&& location.getX() > 0) {
-			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Rock
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Tree
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Fire
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Water) {
+			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()-1] instanceof Landscape) {
 			}
 			else {
 				location.translate(-1, -1);
@@ -180,10 +174,7 @@ public class Player implements Drawable {
 		//Move Up
 		if (option == 8
 				&& location.getX() > 0) {
-			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Rock
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Tree
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Fire
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Water) {
+			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()] instanceof Landscape) {
 			}
 			else {
 				location.translate(-1, 0);
@@ -194,10 +185,7 @@ public class Player implements Drawable {
 		if (option == 9
 				&& location.getY() < GameEngine.BOARD_SIZE - 1
 				&& location.getX() > 0) {
-			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Rock
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Tree
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Fire
-					|| pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Water) {
+			if (pieces[(int) getLocation().getX()-1][(int) getLocation().getY()+1] instanceof Landscape) {
 			}
 			else {
 				location.translate(-1, +1);
@@ -207,10 +195,7 @@ public class Player implements Drawable {
 		//Move Left
 		if (option == 4
 				&& location.getY() > 0) {
-			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Rock
-					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Tree
-					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Fire
-					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Water) {
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()-1] instanceof Landscape) {
 			}
 			else {
 				location.translate(0, -1);
@@ -220,10 +205,7 @@ public class Player implements Drawable {
 		//Move Right
 		if (option == 6
 				&& location.getY() < GameEngine.BOARD_SIZE-1) {
-			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Rock
-					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Tree
-					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Fire
-					|| pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Water) {
+			if (pieces[(int) getLocation().getX()][(int) getLocation().getY()+1] instanceof Landscape) {
 			}
 			else {
 				location.translate(0, +1);
@@ -234,10 +216,7 @@ public class Player implements Drawable {
 		if (option == 1
 				&& location.getY() > 0
 				&& location.getX() < GameEngine.BOARD_SIZE-1) {
-			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Rock
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Tree
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Fire
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Water) {
+			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()-1] instanceof Landscape) {
 			}
 			else {
 				location.translate(+1, -1);
@@ -247,10 +226,7 @@ public class Player implements Drawable {
 		//Move Down
 		if (option == 2 
 				&& location.getX() < (GameEngine.BOARD_SIZE - 1)) {
-			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Rock
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Tree
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Fire
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Water) {
+			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()] instanceof Landscape) {
 			}
 			else {
 				location.translate(1, 0);
@@ -261,10 +237,7 @@ public class Player implements Drawable {
 		if (option == 3
 				&& location.getY() < GameEngine.BOARD_SIZE-1
 				&& location.getX() < GameEngine.BOARD_SIZE-1) {
-			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Rock
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Tree
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Fire
-					|| pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Water) {
+			if (pieces[(int) getLocation().getX()+1][(int) getLocation().getY()+1] instanceof Landscape) {
 			}
 			else {
 				location.translate(+1, +1);
