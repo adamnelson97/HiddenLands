@@ -126,6 +126,13 @@ public class LevelEngine {
 				levelPieces[i][j] = new Water('~', new Point(i,j));
 			}
 		}
+		//Campfire
+		levelPieces[4][10] = new Rock('o', new Point(4,10));
+		levelPieces[4][12] = new Rock('o', new Point(4,12));
+		levelPieces[3][11] = new Rock('o', new Point(3,11));
+		levelPieces[5][11] = new Rock('o', new Point(5,11));
+		levelPieces[4][11] = new Fire('$', new Point(4,11));
+
 
 		/*
 		 * Friendlies
@@ -174,8 +181,6 @@ public class LevelEngine {
 		}
 
 	}
-
-	//TODO: Write levelTwo();
 
 	public void levelTwo() {
 		System.out.println("\nYou have made sufficient progress on your journey. You have faced");
@@ -294,8 +299,6 @@ public class LevelEngine {
 			}
 		}
 	}
-
-	//TODO: Write levelThree();
 
 	public void levelThree() {
 		System.out.println("\nYou have made admirable progress along your journey. Word has begun");
