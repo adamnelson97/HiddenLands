@@ -415,14 +415,19 @@ public class LevelEngine {
 		interactingPieces = new ArrayList<GamePiece>();
 		startingLocation = new Point(7, 7);
 
-		//TODO: Create Skeleton King boss
 		/*
-		 * Pieces Go Here
+		 * Landscape
 		 */
-		//Landscape
-		//Friendlies
+		
+		/*
+		 * Friendlies
+		 */
 		levelPieces[5][1] = new Knight('K', new Point(5,1));
-		//Enemies
+
+		/*
+		 * Enemies
+		 */
+		//TODO: Create Skeleton King boss
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
