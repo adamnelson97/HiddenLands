@@ -183,16 +183,17 @@ public class GameEngine {
 		
 		if (code.equalsIgnoreCase("Gimli")) {
 			currentLevel = 1;
-			System.out.println("Skipping to Level Two...");
+			System.out.println("\nSkipping to Level Two...");
 		}
 		else if (code.equalsIgnoreCase("Legolas")) {
 			currentLevel = 2;
-			System.out.println("Skipping to Level Three...");
+			System.out.println("\nSkipping to Level Three...");
 		}
 		else if (code.equalsIgnoreCase("Aragorn")) {
 			currentLevel = 3;
-			System.out.println("Skipping to Level Four...");
+			System.out.println("\nSkipping to Level Four...");
 		}
+		//in.close(); Do NOT close the scanner! It produces lots of errors
 	}
 
 	public void playGame() {
