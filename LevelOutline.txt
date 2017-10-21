@@ -21,6 +21,8 @@ x| |P|
 
 Spaces that can harm a player are marked with a small x.
 
+
+
 -----LEVEL ONE-----
 Level One is supposed to be relatively easy. The player should familiarize themselves with
 the basic enemy types (Witches and Wizards), encounter all non-traverseable landscapes
@@ -50,6 +52,8 @@ Challenges: Avoid too many interactions with Witches and Wizards
 3|~|~| | | | | | | | |x|x|x|o|#|3
 4|~|~| | | | | | | | | | |o|o|#|4
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+  
+  
   
 -----LEVEL TWO-----
 Level Two should be significantly more difficult, with more dangerous mobs, more terrain
@@ -87,6 +91,8 @@ The player must reach the knight in time or cut his path off in order to advance
 4| | | | |#|#|#|#|#|^|#| | |x|2|4
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
 
+
+
 -----LEVEL THREE-----
 This is the first of two consecutive boss levels. This is the first level where the
 enemy actively moves towards the player. The player will have no way to advance other
@@ -119,6 +125,22 @@ will make success impossible.
 3| |o|o|o|o|o|o|o|o|o|o|o|o|o| |3
 4| | | | | | | | | | | | | | | |4
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+  
+-----LEVEL FOUR-----
+This is the final level. This is supposed to be extremely difficult. The player will
+defeat the boss by destroying his Skeleton minions. Once all of the Skeletons are
+dead, the player be able to access a previously secluded area, and upon reaching the
+final space, beats the level.
+
+Setting: Graveyard outside the city
+
+Strategy: Player eliminates Skeletons in a manner similar to killing the Orc. Upon
+Player then lands on final 'end' space to end the game.
+
+Challenges: The level features a turn counter. If the player does not successfully reach
+the objective after a predetermined amount of turns, they are killed and lose the game.
+Skeleton minions also deal minor damage.
+
   
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
 0| | | | | | | | | | | | | | | |0
