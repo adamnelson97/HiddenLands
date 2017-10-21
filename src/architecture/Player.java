@@ -15,7 +15,7 @@ import architecture.GameEngine;
  */
 public class Player implements Drawable {
 
-	public static final int POINTS_TO_ADVANCE = 3;
+	public static final int POINTS_TO_ADVANCE = 10;
 	public static final int POINTS_TO_DIE = 3;
 
 	private String name;
