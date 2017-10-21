@@ -38,7 +38,7 @@ Challenges: Avoid too many interactions with Witches and Wizards
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
 0| | | | | | | | |x|x|x| | |#|#|0
 1| |#|o| | | |x|x|x|1|x| | |E|#|1
-2| |o|D| | | |x|2|x|x|x| | | | |2
+2| |o|D| | | |x|2|x|x|x| | |D| |2
 3| | | | | | |x|x|x| | |o| | | |3
 4| | | | | | | | | | |o|$|o| | |4
 5| | | |#| | | | | | | |o| |x|x|5
