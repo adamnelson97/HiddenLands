@@ -141,12 +141,13 @@ public class LevelEngine {
 
 		Random rand = new Random();
 		int n = rand.nextInt(3) + 1;
-		if (n == 3) levelPieces[12][1] = new Man('M', new Point(12,1));
+		if (n == 1) levelPieces[12][1] = new Man('M', new Point(12,1));
 		if (n == 2) levelPieces[6][5] = new Man('M', new Point(6,5));
 
 		levelPieces[12][9] = new Sage('S', new Point(12,9));
 		levelPieces[7][11] = new Elf('E', new Point(7,11));
 		levelPieces[1][13] = new Elf('E', new Point(1,13));
+		levelPieces[2][13] = new Dwarf('D', new Point(2,13));
 
 		/*
 		 * Enemies
