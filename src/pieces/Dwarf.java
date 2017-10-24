@@ -21,6 +21,7 @@ public class Dwarf extends GamePiece implements Moveable {
 
 	private int lastDirection; //0 is for L/R, 1 is for U/D
 	int numPoints; //Tracks the number of advance points the dwarf has given the player
+	final static int MAX_POINTS = 4;
 
 	public Dwarf(char symbol, Point location) {
 		super(symbol, location);
@@ -31,7 +32,7 @@ public class Dwarf extends GamePiece implements Moveable {
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
-			if (numPoints < 4) {
+			if (numPoints < MAX_POINTS) {
 				System.out.println("\nYou encounter a Dwarf! You offer him ale, and he thanks you with treasure!");
 				numPoints++;
 				return InteractionResult.GET_POINT;
