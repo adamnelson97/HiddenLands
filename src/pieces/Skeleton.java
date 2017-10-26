@@ -37,7 +37,7 @@ public class Skeleton extends GamePiece implements Moveable {
 			Point playerLocation = player.getLocation();
 			if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) { //Only interacts on same location
 				System.out.println("You encounter a ghastly Skeleton! He reaches out to grab you");
-				System.out.println("with his bony hands");
+				System.out.println("with his bony hands.");
 				if (health > 1) {
 					health--;
 					return InteractionResult.NONE;
@@ -56,7 +56,7 @@ public class Skeleton extends GamePiece implements Moveable {
 
 	@Override
 	public void move(Drawable[][] pieces, Point playerLocation) {
-		// TODO Auto-generated method stub
+		// TODO Movement method for Skeleton
 
 	}
 
