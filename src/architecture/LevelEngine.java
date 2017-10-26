@@ -415,7 +415,7 @@ public class LevelEngine {
 		levelPieces = new Drawable[GameEngine.BOARD_SIZE][GameEngine.BOARD_SIZE];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
-		startingLocation = new Point(7, 7);
+		startingLocation = new Point(14, 7);
 
 		/*
 		 * Landscape
@@ -455,10 +455,10 @@ public class LevelEngine {
 		for (int i = 4; i < 11; i++) { //Bottom Row
 			levelPieces[9][i] = new Landscape('$', new Point(9,i));
 		}
-		for (int i = 5; i < 8; i++) { //Left Row
+		for (int i = 5; i < 9; i++) { //Left Row
 			levelPieces[i][4] = new Landscape('$', new Point(i,4));
 		}
-		for (int i = 5; i < 8; i++) { //Right Row
+		for (int i = 5; i < 9; i++) { //Right Row
 			levelPieces[i][10] = new Landscape('$', new Point(i,10));
 		}
 
