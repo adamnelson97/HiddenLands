@@ -92,6 +92,12 @@ Symbol: 'O'
 Motion: Moves one space in direction furthest from the player.
 Interaction: HIT.
 
+Skeleton:
+Symbol: 'X'
+Motion: Randomly moves in a 9x9 square.
+Interaction: Has 3 health points. First two interactions are NONE.
+Third interaction kills skeleton, and injures player by one point.
+
 Skeleton King:
 Symbol: The . is the actual entity, all other characters are created as
 rocks, intialized with different symbols
