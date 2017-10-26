@@ -17,6 +17,7 @@ import pieces.Maiden;
 import pieces.Man;
 import pieces.Orc;
 import pieces.Sage;
+import pieces.Skeleton;
 import pieces.Trap;
 import pieces.Unicorn;
 import pieces.Witch;
@@ -331,7 +332,7 @@ public class LevelEngine {
 			levelPieces[13][i] = new Landscape('o', new Point(13,i));
 		}
 
-		
+
 		levelPieces[3][3] = new Landscape('#', new Point(3,3));
 		levelPieces[3][11] = new Landscape('~', new Point(3,11));
 		levelPieces[11][3] = new Landscape('~', new Point(10,3));
@@ -460,7 +461,7 @@ public class LevelEngine {
 		for (int i = 5; i < 8; i++) { //Right Row
 			levelPieces[i][10] = new Landscape('$', new Point(i,10));
 		}
-		
+
 		//Skeleton King Body
 		//First Row
 		levelPieces[6][5] = new Landscape('/', new Point(6,5));
@@ -487,8 +488,11 @@ public class LevelEngine {
 		/*
 		 * Enemies
 		 */
-		//TODO Add skeleton enemies
-		
+		levelPieces[2][2] = new Skeleton('X', new Point(2,2));
+		levelPieces[11][2] = new Skeleton('X', new Point(11,2));
+		levelPieces[2][12] = new Skeleton('X', new Point(2,12));
+		levelPieces[11][12] = new Skeleton('X', new Point(11,12));
+
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
 			for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
