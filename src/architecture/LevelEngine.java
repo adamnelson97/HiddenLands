@@ -419,17 +419,76 @@ public class LevelEngine {
 		/*
 		 * Landscape
 		 */
+
+		//Rock Ring surrounding end space
+		levelPieces[1][5] = new Landscape('o', new Point(1,5));
+		levelPieces[1][6] = new Landscape('o', new Point(1,6));
+		levelPieces[1][7] = new Landscape('o', new Point(1,7));
+		levelPieces[1][8] = new Landscape('o', new Point(1,8));
+		levelPieces[1][9] = new Landscape('o', new Point(1,9));
+		levelPieces[0][5] = new Landscape('o', new Point(0,5));
+		levelPieces[0][9] = new Landscape('o', new Point(0,9));
+		//Left Landscape Cluster
+		levelPieces[6][1] = new Landscape('o', new Point(6,1));
+		levelPieces[7][1] = new Landscape('#', new Point(7,1));
+		levelPieces[8][1] = new Landscape('o', new Point(8,1));
+		levelPieces[5][2] = new Landscape('o', new Point(5,2));
+		levelPieces[6][2] = new Landscape('#', new Point(6,2));
+		levelPieces[7][2] = new Landscape('#', new Point(7,2));
+		//Right Landscape Cluster
+		levelPieces[5][12] = new Landscape('#', new Point(5,12));
+		levelPieces[7][12] = new Landscape('#', new Point(7,12));
+		levelPieces[8][12] = new Landscape('o', new Point(8,12));
+		levelPieces[6][13] = new Landscape('o', new Point(6,13));
+		levelPieces[7][13] = new Landscape('#', new Point(7,13));
+		levelPieces[8][13] = new Landscape('o', new Point(8,13));
+		//Fire around Player
+		levelPieces[13][6] = new Landscape('$', new Point(13,6));
+		levelPieces[14][6] = new Landscape('$', new Point(14,6));
+		levelPieces[13][8] = new Landscape('$', new Point(13,8));
+		levelPieces[14][8] = new Landscape('$', new Point(14,8));
+		//Fire around Skeleton King
+		for (int i = 4; i < 11; i++) { //Top Row
+			levelPieces[4][i] = new Landscape('$', new Point(4,i));
+		}
+		for (int i = 4; i < 11; i++) { //Bottom Row
+			levelPieces[9][i] = new Landscape('$', new Point(9,i));
+		}
+		for (int i = 5; i < 8; i++) { //Left Row
+			levelPieces[i][4] = new Landscape('$', new Point(i,4));
+		}
+		for (int i = 5; i < 8; i++) { //Right Row
+			levelPieces[i][10] = new Landscape('$', new Point(i,10));
+		}
 		
+		//Skeleton King Body
+		//First Row
+		levelPieces[6][5] = new Landscape('/', new Point(6,5));
+		levelPieces[6][6] = new Landscape('`', new Point(6,6));
+		levelPieces[6][7] = new Landscape('`', new Point(6,7));
+		levelPieces[6][8] = new Landscape('`', new Point(6,8));
+		levelPieces[6][9] = new Landscape('\\', new Point(6,9));
+		//Second Row
+		levelPieces[7][5] = new Landscape('\\', new Point(7,5));
+		levelPieces[7][6] = new Landscape('+', new Point(7,6));
+		levelPieces[7][7] = new Landscape('.', new Point(7,7));
+		levelPieces[7][8] = new Landscape('+', new Point(7,8));
+		levelPieces[7][9] = new Landscape('/', new Point(7,9));
+		//Third Row
+		levelPieces[8][6] = new Landscape('\\', new Point(8,6));
+		levelPieces[8][7] = new Landscape('#', new Point(8,7));
+		levelPieces[8][8] = new Landscape('/', new Point(8,8));
+
 		/*
 		 * Friendlies
 		 */
-		levelPieces[5][1] = new Knight('K', new Point(5,1));
+		levelPieces[10][7] = new Maiden('M', new Point(10,7));
 
 		/*
 		 * Enemies
 		 */
-		//TODO: Create Skeleton King boss
-
+		//TODO Add skeleton enemies
+		
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
 			for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
