@@ -134,12 +134,13 @@ final space, beats the level.
 
 Setting: Graveyard outside the city
 
-Strategy: Player eliminates Skeletons in a manner similar to killing the Orc. Upon
-Player then lands on final 'end' space to end the game.
+Strategy: Player eliminates Skeletons in a manner similar to killing the Orc. Once all
+the skeletons are dead, the 'end' space is made available. Player then lands on final
+'end' space to end the game.
 
 Challenges: The level features a turn counter. If the player does not successfully reach
 the objective after a predetermined amount of turns, they are killed and lose the game.
-Skeleton minions also deal minor damage.
+Skeleton minions also deal minor damage. Players overcome this by using the Maiden to heal.
 
 Note: @ denotes the end space. The space immediately below it will be blocked
 until the player reaches enough points.
@@ -157,7 +158,7 @@ Note: - denotes the 9x9 space the Skeleton may move in.
 7| |#|#| |$|\|+|.|+|/|$| |#|#| |7
 8| |o| | |$| |\|#|/| |$| |o|o| |8
 9| | | | |$|$|$|$|$|$|$| | | | |9
-0| |-|-|-| | | | | | | |-|-|-| |0
+0| |-|-|-| | | |4| | | |-|-|-| |0
 1| |-|X|-| | | | | | | |-|X|-| |1
 2| |-|-|-| | | | | | | |-|-|-| |2
 3| | | | | | |$| |$| | | | | | |3
