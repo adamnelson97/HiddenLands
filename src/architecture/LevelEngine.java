@@ -462,6 +462,12 @@ public class LevelEngine {
 			levelPieces[i][10] = new Landscape('$', new Point(i,10));
 		}
 
+		//Other Fire
+		levelPieces[0][1] = new Landscape('$', new Point(0,1));
+		levelPieces[2][14] = new Landscape('$', new Point(2,14));
+		levelPieces[13][12] = new Landscape('$', new Point(13,12));
+		levelPieces[14][0] = new Landscape('$', new Point(14,0));
+
 		//Skeleton King Body
 		//First Row
 		levelPieces[6][5] = new Landscape('/', new Point(6,5));
