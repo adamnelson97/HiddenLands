@@ -95,6 +95,7 @@ Interaction: HIT.
 Skeleton:
 Symbol: 'X'
 Motion: Randomly moves in a 9x9 square.
+The Skeleton can also move onto the same space as the player.
 Interaction: Has 3 health points. First two interactions are NONE.
 Third interaction kills skeleton, and injures player by one point.
 
