@@ -103,7 +103,7 @@ Skeleton King:
 Symbol: The . is the actual entity, all other characters are created as
 rocks, intialized with different symbols
 /```\
-|+.+|
+\+.+/
  \#/
  Motion: None
  Interaction: NONE interaction until a timer runs out. If the player
