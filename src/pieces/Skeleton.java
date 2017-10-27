@@ -58,68 +58,70 @@ public class Skeleton extends GamePiece implements Moveable {
 	}
 
 	public void move(Drawable[][] pieces, Point playerLocation) {
-		//Tracks whether the Skeleton has moved this turn. The Skeleton
-		//will attempt movements until a valid one is found.
-		boolean moved = false;
+		if (living) { //Skeleton only moves if it is still alive
+			//Tracks whether the Skeleton has moved this turn. The Skeleton
+			//will attempt movements until a valid one is found.
+			boolean moved = false;
 
-		//Used to randomly determine movement.
-		Random rand = new Random();
+			//Used to randomly determine movement.
+			Random rand = new Random();
 
-		//Used to translate the Skeleton according to the random number
-		int x = 0; 
-		int y = 0;
+			//Used to translate the Skeleton according to the random number
+			int x = 0; 
+			int y = 0;
 
-		while (!moved) {
-			int n = rand.nextInt(9)+1; //Generates a random number between 1 and 9 inclusive
-			switch(n) {
-			case 1: //Down and Left
-				x = 1;
-				y = -1;
-				break;
-			case 2: //Down
-				x = 1;
-				break;
-			case 3: //Down and Right
-				x = 1;
-				y = 1;
-				break;
-			case 4: //Left
-				y = -1;
-				break;
-			case 5: //Stay Put
-				break;
-			case 6: //Right
-				y = 1;
-				break;
-			case 7: //Up and Left
-				x = -1;
-				y = -1;
-				break;
-			case 8: //Up
-				x = -1;
-				break;
-			case 9: //Up and Right
-				x = -1;
-				y = 1;
-				break;
-			}
+			while (!moved) {
+				int n = rand.nextInt(9)+1; //Generates a random number between 1 and 9 inclusive
+				switch(n) {
+				case 1: //Down and Left
+					x = 1;
+					y = -1;
+					break;
+				case 2: //Down
+					x = 1;
+					break;
+				case 3: //Down and Right
+					x = 1;
+					y = 1;
+					break;
+				case 4: //Left
+					y = -1;
+					break;
+				case 5: //Stay Put
+					break;
+				case 6: //Right
+					y = 1;
+					break;
+				case 7: //Up and Left
+					x = -1;
+					y = -1;
+					break;
+				case 8: //Up
+					x = -1;
+					break;
+				case 9: //Up and Right
+					x = -1;
+					y = 1;
+					break;
+				}
 
-			//Check to make sure new location is in the Skeleton's bounds
-			//Checks X-bounds
-			if (getLocation().getX() + x <= startX + 1 && getLocation().getX() + x >= startX - 1) {
-				//Checks Y-bounds
-				if (getLocation().getY() + y <= startY + 1 && getLocation().getY() + y >= startY - 1) {
-					/*
-					 * If the new location is valid, the piece checks that the destination is currently
-					 * void of other entities (excluding the player).
-					 */
-					if (pieces[(int) getLocation().getX() + x][(int) getLocation().getY() + y] == null) {
-						movePiece(x, y, pieces);
-						moved = true;
+				//Check to make sure new location is in the Skeleton's bounds
+				//Checks X-bounds
+				if (getLocation().getX() + x <= startX + 1 && getLocation().getX() + x >= startX - 1) {
+					//Checks Y-bounds
+					if (getLocation().getY() + y <= startY + 1 && getLocation().getY() + y >= startY - 1) {
+						/*
+						 * If the new location is valid, the piece checks that the destination is currently
+						 * void of other entities (excluding the player).
+						 */
+						if (pieces[(int) getLocation().getX() + x][(int) getLocation().getY() + y] == null) {
+							movePiece(x, y, pieces);
+							moved = true;
+						}
 					}
 				}
+				
 			}
-
 		}
 	}
 
