@@ -106,6 +106,6 @@ rocks, intialized with different symbols
 |+.+|
  \#/
  Motion: None
- Interaction: Warmup for 9 turns. If player does not collect 4 prizes by
- the 10th, they die, regardless of location.
+ Interaction: NONE interaction until a timer runs out. If the player
+ fails to beat the level in time, they die with KILL.
 ------------------------------------------------------------
