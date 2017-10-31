@@ -44,6 +44,7 @@ public class SkeletonKing extends GamePiece {
 		
 		if (allDead && !pathClear) {
 			pieces[1][7] = null; //Removes the rock blocking the path to end space
+			pieces[0][7] = new Landscape('@', new Point(0, 7));
 			System.out.println("\nA path has appeared! Go to the top of the cliff");
 			System.out.println("and shoot the Skeleton King with your bow!");
 			pathClear = true; //Ensures this block only runs once
