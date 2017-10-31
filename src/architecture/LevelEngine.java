@@ -18,6 +18,7 @@ import pieces.Man;
 import pieces.Orc;
 import pieces.Sage;
 import pieces.Skeleton;
+import pieces.SkeletonKing;
 import pieces.Trap;
 import pieces.Unicorn;
 import pieces.Witch;
@@ -478,7 +479,6 @@ public class LevelEngine {
 		//Second Row
 		levelPieces[7][5] = new Landscape('\\', new Point(7,5));
 		levelPieces[7][6] = new Landscape('+', new Point(7,6));
-		levelPieces[7][7] = new Landscape('.', new Point(7,7));
 		levelPieces[7][8] = new Landscape('+', new Point(7,8));
 		levelPieces[7][9] = new Landscape('/', new Point(7,9));
 		//Third Row
@@ -500,6 +500,7 @@ public class LevelEngine {
 		levelPieces[11][12] = new Skeleton('X', new Point(11,12));
 		levelPieces[3][7] = new Skeleton('X', new Point(3,7));
 		levelPieces[11][7] = new Skeleton('X', new Point(11,7));
+		levelPieces[7][7] = new SkeletonKing('.', new Point(7,7));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
