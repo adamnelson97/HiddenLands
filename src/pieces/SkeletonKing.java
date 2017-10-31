@@ -3,6 +3,7 @@ package pieces;
 import java.awt.Point;
 
 import architecture.Drawable;
+import architecture.GameEngine;
 import architecture.InteractionResult;
 import architecture.Player;
 
@@ -32,12 +33,22 @@ public class SkeletonKing extends GamePiece {
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		//TODO Complete method
+		if (!allDead) {
+			allDead = true; //Changes this value to true. Loops will change back to false if Skeleton exists.
+			for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
+				for (int j = 0; j < GameEngine.BOARD_SIZE; j++) {
+					if (pieces[i][j] instanceof Skeleton) allDead = false;
+				}
+			}
+		}
+		
 		if (allDead && !pathClear) {
 			pieces[1][7] = null; //Removes the rock blocking the path to end space
 			System.out.println("\nA path has appeared! Go to the top of the cliff");
 			System.out.println("and shoot the Skeleton King with your bow!");
 			pathClear = true; //Ensures this block only runs once
 		}
+		
 		if (allDead) {
 			Point playerLocation = player.getLocation();
 			if (playerLocation.getX() == 1 && playerLocation.getY() == 7) {
@@ -47,12 +58,14 @@ public class SkeletonKing extends GamePiece {
 				return InteractionResult.ADVANCE; //Ends level
 			}
 		}
+		
 		if (moveCounter == 0) {
 			System.out.println("\nYou are too late! The Skeleton King has too much dark");
 			System.out.println("energy to be destoyed! He opens his mouth and a stream");
 			System.out.println("of darkness surrounds you...");
 			return InteractionResult.KILL;
 		}
+		
 		System.out.println("\nYou have " + moveCounter + " turns left to defeat the");
 		System.out.println("Skeleton King.");
 		moveCounter--;
