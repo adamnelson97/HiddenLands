@@ -490,7 +490,6 @@ public class LevelEngine {
 		 * Friendlies
 		 */
 		levelPieces[10][7] = new Maiden('M', new Point(10,7));
-		levelPieces[2][7] = new Maiden('M', new Point(2,7));
 
 		/*
 		 * Enemies
@@ -499,8 +498,6 @@ public class LevelEngine {
 		levelPieces[11][2] = new Skeleton('X', new Point(11,2));
 		levelPieces[2][12] = new Skeleton('X', new Point(2,12));
 		levelPieces[11][12] = new Skeleton('X', new Point(11,12));
-		levelPieces[3][7] = new Skeleton('X', new Point(3,7));
-		levelPieces[11][7] = new Skeleton('X', new Point(11,7));
 		levelPieces[7][7] = new SkeletonKing('.', new Point(7,7));
 
 		//Identify pieces that interact
