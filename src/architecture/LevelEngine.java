@@ -498,6 +498,8 @@ public class LevelEngine {
 		levelPieces[11][2] = new Skeleton('X', new Point(11,2));
 		levelPieces[2][12] = new Skeleton('X', new Point(2,12));
 		levelPieces[11][12] = new Skeleton('X', new Point(11,12));
+		levelPieces[3][7] = new Skeleton('X', new Point(3,7));
+		levelPieces[11][7] = new Skeleton('X', new Point(11,7));
 
 		//Identify pieces that interact
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
