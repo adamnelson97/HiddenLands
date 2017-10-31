@@ -32,7 +32,6 @@ public class SkeletonKing extends GamePiece {
 
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
-		//TODO Complete method
 		if (!allDead) {
 			allDead = true; //Changes this value to true. Loops will change back to false if Skeleton exists.
 			for (int i = 0; i < GameEngine.BOARD_SIZE; i++) {
@@ -42,6 +41,7 @@ public class SkeletonKing extends GamePiece {
 			}
 		}
 		
+		//Clears the path if all Skeleton minions are dead
 		if (allDead && !pathClear) {
 			pieces[1][7] = null; //Removes the rock blocking the path to end space
 			pieces[0][7] = new Landscape('@', new Point(0, 7));
@@ -50,6 +50,7 @@ public class SkeletonKing extends GamePiece {
 			pathClear = true; //Ensures this block only runs once
 		}
 		
+		//Checks to see if the player is in the location to end the game.
 		if (allDead) {
 			Point playerLocation = player.getLocation();
 			if (playerLocation.getX() == 0 && playerLocation.getY() == 7) {
@@ -60,6 +61,7 @@ public class SkeletonKing extends GamePiece {
 			}
 		}
 		
+		//Kills the player if they run out of turns.
 		if (moveCounter == 0) {
 			System.out.println("\nYou are too late! The Skeleton King has too much dark");
 			System.out.println("energy to be destoyed! He opens his mouth and a stream");
