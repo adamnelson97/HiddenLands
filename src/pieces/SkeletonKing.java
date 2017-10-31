@@ -7,22 +7,34 @@ import architecture.GameEngine;
 import architecture.InteractionResult;
 import architecture.Player;
 
+/**
+ * <h1>Skeleton King</h1>
+ * This is the second boss entity. The player faces the Skeleton King
+ * on level four.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ */
 public class SkeletonKing extends GamePiece {
-
 	/*
 	 * Motion: None
 	 * 
 	 * Interaction: NONE interaction until a timer runs out. If the player
 	 * fails to beat the level in time, they die with KILL.
 	 */
-
+	
 	private int moveCounter; //Tracks the number of moves the player has left to beat the level
 	private boolean allDead; //Tracks whether all the Skeleton minions are dead
 	private boolean pathClear; //Tracks whether the path to the end space is clear or not
 
+	/**
+	 * Constructor with output message. 
+	 * @param symbol The actual symbol attached to the object.
+	 * @param location The location of the object on the array.
+	 */
 	public SkeletonKing(char symbol, Point location) {
 		super(symbol, location);
-		moveCounter = 100; //Starting number of moves the player has to beat the level
+		moveCounter = 60; //Starting number of moves the player has to beat the level
 		allDead = false;
 		pathClear = false;
 		System.out.println("\nThe Skeleton King has raised minions from the dead to");
@@ -30,6 +42,12 @@ public class SkeletonKing extends GamePiece {
 		System.out.println("too strong and can't be stopped!");
 	}
 
+	/**
+	 * Depending on the status of the level, either advances, kills, or does
+	 * nothing to the player.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		if (!allDead) {
