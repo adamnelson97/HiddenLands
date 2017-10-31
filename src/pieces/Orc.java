@@ -44,7 +44,7 @@ public class Orc extends GamePiece implements Moveable{
 			System.out.println("He strikes you back with his monstrous claws!");
 
 			if (health <= 0) return InteractionResult.ADVANCE; //If the orc is dead, the player advances				
-			else return InteractionResult.HIT; //Increase damage by second point
+			else return InteractionResult.HIT;
 		}
 		else {
 			return InteractionResult.NONE; //No interaction if they are on different spaces
