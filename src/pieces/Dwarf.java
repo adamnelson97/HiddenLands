@@ -8,6 +8,15 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Dwarf</h1>
+ * This entity is a friendly dwarf who helps the player advance by
+ * exchanging points for ale!
+ * @author AdamN
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Dwarf extends GamePiece implements Moveable {
 
 	/*
@@ -23,11 +32,21 @@ public class Dwarf extends GamePiece implements Moveable {
 	int numPoints; //Tracks the number of advance points the dwarf has given the player
 	final static int MAX_POINTS = 4;
 
+	/**
+	 * Default GamePiece Constructor. Also sets the starting direction of the Dwarf.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Dwarf(char symbol, Point location) {
 		super(symbol, location);
 		lastDirection = 1; //This will make the first movement attempt be Left or Right
 	}
 
+	/**
+	 * Gives the player a point each interaction up to a certain set number.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -47,6 +66,11 @@ public class Dwarf extends GamePiece implements Moveable {
 		}
 	}
 
+	/**
+	 * Randomly moves the Dwarf left/right or up/down, based off the previous turn.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();
 		int n = rand.nextInt(2) + 1; //Chooses a number between 1 and 2
