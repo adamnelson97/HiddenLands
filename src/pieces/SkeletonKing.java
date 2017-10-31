@@ -16,13 +16,13 @@ public class SkeletonKing extends GamePiece {
 	 * fails to beat the level in time, they die with KILL.
 	 */
 
-	private static int moveCounter; //Tracks the number of moves the player has left to beat the level
-	private static boolean allDead; //Tracks whether all the Skeleton minions are dead
-	private static boolean pathClear; //Tracks whether the path to the end space is clear or not
+	private int moveCounter; //Tracks the number of moves the player has left to beat the level
+	private boolean allDead; //Tracks whether all the Skeleton minions are dead
+	private boolean pathClear; //Tracks whether the path to the end space is clear or not
 
 	public SkeletonKing(char symbol, Point location) {
 		super(symbol, location);
-		moveCounter = 30; //Starting number of moves the player has to beat the level
+		moveCounter = 100; //Starting number of moves the player has to beat the level
 		allDead = false;
 		pathClear = false;
 		System.out.println("\nThe Skeleton King has raised minions from the dead to");
