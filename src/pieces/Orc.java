@@ -39,7 +39,7 @@ public class Orc extends GamePiece implements Moveable{
 		Point playerLocation = player.getLocation();
 
 		if (playerLocation.getX() == getLocation().getX() && playerLocation.getY() == getLocation().getY()) {
-			health--; //An interaction injures the orc regardless of cooldown
+			health--;
 			System.out.println("The orc cries out in pain from the sharp cut of your blade!");
 			System.out.println("He strikes you back with his monstrous claws!");
 
