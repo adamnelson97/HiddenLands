@@ -7,6 +7,15 @@ import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
 
+/**
+ * <h1>Artifact</h1>
+ * This entity is a mysterious relic containing a spirit. It
+ * can either kill the player or advance them to the next level.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ * 
+ */
 public class Artifact extends GamePiece {
 
 	/*
@@ -16,10 +25,21 @@ public class Artifact extends GamePiece {
 	 * 
 	 * Interaction: ADVANCE/KILL. Has a 50% chance of either interaction.
 	 */
+	
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Artifact(char symbol, Point location) {
 		super(symbol, location);
 	}
 
+	/**
+	 * Randomly kills or advances the player if they are at the same location.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
