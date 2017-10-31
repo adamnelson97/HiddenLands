@@ -6,6 +6,15 @@ import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
 
+/**
+ * <h1>Dragon</h1>
+ * This entity is a fire breathing dragon that kills players who
+ * disturb it too many times.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Dragon extends GamePiece {
 
 	/*
@@ -19,11 +28,22 @@ public class Dragon extends GamePiece {
 
 	int counter;
 
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Dragon(char symbol, Point location) {
 		super(symbol, location);
 		counter = 0;
 	}
 
+	/**
+	 * Only interacts on the same spot. The first interaction wakes the dragon,
+	 * the second kills the player.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
