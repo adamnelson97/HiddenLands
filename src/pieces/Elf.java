@@ -55,40 +55,25 @@ public class Elf extends GamePiece implements Moveable {
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();
 		int n = rand.nextInt(4) + 1;
+		int x = 0;
+		int y = 0;
 
 		try {
-			if (n == 1) {
-				//Corresponds to moving Right
-
-				if (getLocation().getY() + 1 != playerLocation.getY()
-						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() + 1] == null) {
-
-					movePiece(0, 1, pieces);
-				}
+			switch(n) {
+			case 1:
+				y = 1; break;
+			case 2:
+				y = -1; break;
+			case 3:
+				x = 1; break;
+			case 4:
+				x = -1; break;
 			}
-			else if (n == 2) {
-				//Corresponds to moving Left
-				if (getLocation().getY() - 1 != playerLocation.getY()
-						&& pieces[(int) getLocation().getX()][(int) getLocation().getY() - 1] == null) {
 
-					movePiece(0, -1, pieces);
-				}
-			}
-			else if (n == 3) {
-				//Corresponds to moving Up
-				if (getLocation().getX() - 1 != playerLocation.getX()
-						&& pieces[(int) getLocation().getX() - 1][(int) getLocation().getY()] == null) {
-
-					movePiece(-1, 0, pieces);
-				}
-			}
-			else if (n == 4) {
-				//Corresponds to moving Down
-				if (getLocation().getX() + 1 != playerLocation.getX()
-						&& pieces[(int) getLocation().getX() + 1][(int) getLocation().getY()] == null) {
-
-					movePiece(1, 0, pieces);
-				}
+			if (getLocation().getX() + x != playerLocation.getX()
+					&& getLocation().getY() + y != playerLocation.getY()
+					&& pieces[(int) getLocation().getX() + x][(int) getLocation().getY() + y] == null) {
+				movePiece(x, y, pieces);
 			}
 
 		} catch (ArrayIndexOutOfBoundsException e) {}
