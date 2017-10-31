@@ -52,7 +52,7 @@ public class SkeletonKing extends GamePiece {
 		
 		if (allDead) {
 			Point playerLocation = player.getLocation();
-			if (playerLocation.getX() == 1 && playerLocation.getY() == 7) {
+			if (playerLocation.getX() == 0 && playerLocation.getY() == 7) {
 				System.out.println("\nSummiting the cliff, you draw back your bow.");
 				System.out.println("With your last arrow, you shoot the weakened");
 				System.out.println("Skeleton King and destroy him!");
