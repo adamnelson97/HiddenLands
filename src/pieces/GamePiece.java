@@ -63,13 +63,13 @@ public abstract class GamePiece implements Drawable {
 		 * NOTE: This only works for translating around the board. To set a brand new location from scratch,
 		 * you must do it 'manually'. See the Knight move method for an example.
 		 */
-		System.out.println("Current Location: " + getLocation().getX() + "," + getLocation().getY());
+		//System.out.println("Current Location: " + getLocation().getX() + "," + getLocation().getY());
 		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = null; //Clears old location on the board
 		Point temp = getLocation(); //Copies location to new point
 		temp.translate(x, y); //Moves the new point in the desired direction
 		setLocation(pieces, temp); //If the new point is valid, the piece is moved. Otherwise, it stays put.
 		pieces[(int) getLocation().getX()][(int) getLocation().getY()] = this; //Moves piece to new location on the board
-		System.out.println("New Location: " + getLocation().getX() + "," + getLocation().getY());
+		//System.out.println("New Location: " + getLocation().getX() + "," + getLocation().getY());
 	}
 
 	public void setSymbol(char x) {

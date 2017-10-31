@@ -99,14 +99,14 @@ public class GameEngine {
 
 	public void movePieces() {
 		for (Moveable piece : movingPieces) {
-			System.out.println("Moving: " + piece.toString()); //Debugging
+			//System.out.println("Moving: " + piece.toString()); //Debugging
 			piece.move(pieces, player.getLocation());		
 		}	
 	}
 
 	public void interaction() {
 		for (GamePiece piece : interactingPieces) {
-			System.out.println("Interacting with: " + piece.toString()); //Debugging
+			//System.out.println("Interacting with: " + piece.toString()); //Debugging
 			InteractionResult result = piece.interact(pieces, player);		
 			if (result == InteractionResult.GET_POINT) {
 				player.addPoint(); 
