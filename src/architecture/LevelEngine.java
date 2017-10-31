@@ -490,6 +490,7 @@ public class LevelEngine {
 		 * Friendlies
 		 */
 		levelPieces[10][7] = new Maiden('M', new Point(10,7));
+		levelPieces[2][7] = new Maiden('M', new Point(2,7));
 
 		/*
 		 * Enemies
