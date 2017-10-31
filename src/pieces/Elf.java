@@ -8,6 +8,13 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Elf</h1>
+ * This entity is a friendly wood elf that doesn't do much.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ */
 public class Elf extends GamePiece implements Moveable {
 
 	/*
@@ -18,11 +25,20 @@ public class Elf extends GamePiece implements Moveable {
 	 * Interaction: NONE.
 	 */
 
-	//Constructor
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Elf(char symbol, Point location) {
 		super(symbol, location);
 	}
 
+	/**
+	 * Prints an output message if at the same location as the player.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -31,6 +47,11 @@ public class Elf extends GamePiece implements Moveable {
 		return InteractionResult.NONE;
 	}
 
+	/**
+	 * Randomly moves up, down, left, or right.
+	 * @param pieces The game board.
+	 * @param player The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();
 		int n = rand.nextInt(4) + 1;
