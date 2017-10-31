@@ -74,35 +74,23 @@ public class Skeleton extends GamePiece implements Moveable {
 				int n = rand.nextInt(9)+1; //Generates a random number between 1 and 9 inclusive
 				switch(n) {
 				case 1: //Down and Left
-					x = 1;
-					y = -1;
-					break;
+					x = 1; y = -1; break;
 				case 2: //Down
-					x = 1;
-					break;
+					x = 1; break;
 				case 3: //Down and Right
-					x = 1;
-					y = 1;
-					break;
+					x = 1; y = 1; break;
 				case 4: //Left
-					y = -1;
-					break;
+					y = -1; break;
 				case 5: //Stay Put
 					break;
 				case 6: //Right
-					y = 1;
-					break;
+					y = 1; break;
 				case 7: //Up and Left
-					x = -1;
-					y = -1;
-					break;
+					x = -1;	y = -1;	break;
 				case 8: //Up
-					x = -1;
-					break;
+					x = -1;	break;
 				case 9: //Up and Right
-					x = -1;
-					y = 1;
-					break;
+					x = -1;	y = 1; break;
 				}
 
 				//Check to make sure new location is in the Skeleton's bounds
