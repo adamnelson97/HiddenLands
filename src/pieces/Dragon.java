@@ -43,6 +43,7 @@ public class Dragon extends GamePiece {
 	 * the second kills the player.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult Either NONE or KILL if the player has already interacted with the Dragon.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
