@@ -7,6 +7,15 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Unicorn</h1>
+ * This majestic creature rarely appears, but when it does it both
+ * heals the player and gives them a point.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Unicorn extends GamePiece implements Moveable {
 
 
@@ -21,11 +30,23 @@ public class Unicorn extends GamePiece implements Moveable {
 
 	private int present;
 
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Unicorn(char symbol, Point location) {
 		super(symbol, location);
 		present = 0;
 	}
 
+	/**
+	 * If the player is on the same location and the Unicorn is on the board, they are
+	 * healed and get a point.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult GET_POINT if on same space, otherwise NONE.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -48,6 +69,11 @@ public class Unicorn extends GamePiece implements Moveable {
 		return InteractionResult.NONE; //Returns none if player does not interact or unicorn is not 'present'
 	}
 
+	/**
+	 * While the Unicorn does not change location, it is only on the board once every four turns.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		if (present == 3) {
 			present = 0;
