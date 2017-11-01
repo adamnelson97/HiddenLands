@@ -11,6 +11,8 @@ import architecture.Player;
  * <h1>GamePiece</h1>
  * This is the abstract class that all other pieces are derived from.
  * It includes an abstract method, getters and setters, and other methods.
+ * 
+ * Includes legacy code from school project.
  * @author Mark Baldwin, Cyndi Rader, Adam Nelson
  * @version 2.0
  * @since 2017-10-31
