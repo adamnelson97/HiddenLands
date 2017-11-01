@@ -14,6 +14,17 @@ import pieces.GamePiece;
  * and other methods that establish/change the game from a high level. 
  */
 
+/**
+ * <h1>GameEngine</h1>
+ * This class is the heart of the game. It calls new levels, prints
+ * the board, and moves the pieces around after each turn.
+ * 
+ * Includes legacy code from school project.
+ * @author Mark Baldwin, Cyndi Rader, Adam Nelson
+ * @version 2.0
+ * @since 2017-10-31
+ *
+ */
 public class GameEngine {
 
 	/*
@@ -39,12 +50,21 @@ public class GameEngine {
 	//GameEngine has one instance of Player
 	private Player player;
 
-	//Constructor
+	/**
+	 * Constructor creates a LevelEngine object used to populate the board
+	 * with new pieces every level.
+	 */
 	public GameEngine() {
 		levels = new LevelEngine();
 	}
 
 	//Methods
+	
+	/**
+	 * Calls a new level from the level engine, and updates the board
+	 * and lists of interacting/moving pieces.
+	 * @param levelNum The current level the player is about to play.
+	 */
 	public void setupLevel(int levelNum) {
 		// LevelEngine needs to create the specified level
 		levels.createLevel(levelNum);
@@ -57,6 +77,9 @@ public class GameEngine {
 		player.resetLevel(levels.getPlayerStartLoc());
 	}
 
+	/**
+	 * Prints out the contents of the board to the console.
+	 */
 	public void displayBoard() {
 		printTitle(currentLevel);
 		System.out.println(" ______________________________");
@@ -80,6 +103,10 @@ public class GameEngine {
 		System.out.println(" ------------------------------");
 	}
 
+	/**
+	 * Simple method to print the title of the current level before printing the board.
+	 * @param numLevel The current level.
+	 */
 	public void printTitle(int numLevel) {
 		switch(numLevel) {
 		case 1:
@@ -97,6 +124,9 @@ public class GameEngine {
 		}
 	}
 
+	/**
+	 * Calls the move method for each piece.
+	 */
 	public void movePieces() {
 		for (Moveable piece : movingPieces) {
 			//System.out.println("Moving: " + piece.toString()); //Debugging
@@ -104,6 +134,11 @@ public class GameEngine {
 		}	
 	}
 
+	/**
+	 * Calls the interact method for each piece. Changes the status of the player
+	 * after each interaction. HIT injures the player by one point, GET_POINT gives the player
+	 * one point, KILL ends the game, and ADVANCE sends the player to the next level.
+	 */
 	public void interaction() {
 		for (GamePiece piece : interactingPieces) {
 			//System.out.println("Interacting with: " + piece.toString()); //Debugging
@@ -140,6 +175,12 @@ public class GameEngine {
 		}			
 	}
 
+	/**
+	 * If the player has beaten the level, they are sent to the next one.
+	 * If they have died, the game is over.
+	 * If they have beaten all levels, the game is over.
+	 * @return boolean Whether the game is over or if the player can advance to the next level.
+	 */
 	public boolean levelFinished() {
 		if (player.canAdvance()) {
 			if (currentLevel <  numLevels)
@@ -152,6 +193,10 @@ public class GameEngine {
 		return false;	
 	}
 
+	/**
+	 * Sets the number of levels that need to be completed based off the difficulty.
+	 * @param player The player object.
+	 */
 	public void setNumLevels(Player player) {
 		Difficulty diff = player.getDifficulty();
 		switch(diff) {
@@ -170,6 +215,10 @@ public class GameEngine {
 		}
 	}
 
+	/**
+	 * This method performs a 'turn' consisting of moving the player, interacting with
+	 * pieces, and then moving the other pieces, until the player dies or the level is beaten.
+	 */
 	public void doOneLevel() {
 		while (!levelFinished()) {
 			displayBoard();
@@ -180,6 +229,9 @@ public class GameEngine {
 		}
 	}
 	
+	/**
+	 * If the player knows a cheatcode they can skip to a certain level.
+	 */
 	public void cheatcode() {
 		System.out.print("Do you have a cheatcode? If not, just hit enter: ");
 		Scanner in = new Scanner(System.in);
@@ -200,6 +252,10 @@ public class GameEngine {
 		//in.close(); Do NOT close the scanner! It produces lots of errors
 	}
 
+	/**
+	 * Creates a new player object for the game, determines the required number of levels, asks for
+	 * a cheatcode, and then begins gameplay until all levels are beaten or if the player dies.
+	 */
 	public void playGame() {
 		System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
 		// Give player a default location of (0,0)
@@ -283,6 +339,9 @@ public class GameEngine {
 		System.exit(0);
 	}
 
+	/**
+	 * Simple method just prints expositional text.
+	 */
 	public void intro() {
 		System.out.println("\n=====H I D D E N  L A N D S=====");
 		System.out.println("   ------by Adam Nelson------");
@@ -310,6 +369,10 @@ public class GameEngine {
 		System.out.println("COLLECT POINTS/KILL MONSTERS TO BEAT EACH LEVEL");
 	}
 
+	/**
+	 * Creates a new GameEngine and begins gameplay.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		GameEngine game = new GameEngine();
 		game.intro(); //Prints opening text, does not affect gameplay
