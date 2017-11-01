@@ -8,6 +8,15 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Knight</h1>
+ * The Knight is an honorable soldier who is always willing to assist a
+ * noble warrior on a quest.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-20-31
+ *
+ */
 public class Knight extends GamePiece implements Moveable {
 
 	/*
@@ -22,10 +31,21 @@ public class Knight extends GamePiece implements Moveable {
 	 * Interaction: ADVANCE. Only interacts on same space.
 	 */
 
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Knight(char symbol, Point location) {
 		super(symbol, location);
 	}
 
+	/**
+	 * Advances the player to the next level if they are on the same space.
+	 * @param pieces The game board.
+	 * @param player The player's location.
+	 * @return InteractionResult ADVANCE if on same space, otherwise NONE.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -38,6 +58,17 @@ public class Knight extends GamePiece implements Moveable {
 		}
 	}
 
+	/**
+	 * The Knight tries to moves in the following order, stopping when it can move to a valid location:
+	 * 1) Tries to move one space left.
+	 * 2) If the space immediately left is occupied by a Trap, it tries to move two spaces to the left.
+	 * 3) Tries to move one space up.
+	 * 4) If the space immediately up is occupied by a Trap, it tries to move two spaces up.
+	 * 5) If the Knight is on the very left edge of the board, it is moved to the far right edge.
+	 * 6) If the Knight is on the very top edge of the board, it is moved to the far bottom edge.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		try {
 			//Move Left
