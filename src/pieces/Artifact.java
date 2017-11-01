@@ -9,7 +9,7 @@ import architecture.Player;
 
 /**
  * <h1>Artifact</h1>
- * This entity is a mysterious relic containing a spirit. It
+ * The Artifact is a mysterious relic containing a spirit. It
  * can either kill the player or advance them to the next level.
  * @author Adam Nelson
  * @version 1.0
