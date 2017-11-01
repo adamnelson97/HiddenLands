@@ -10,7 +10,7 @@ import architecture.Player;
 
 /**
  * <h1>Dwarf</h1>
- * This entity is a friendly dwarf who helps the player advance by
+ * The Dwarf is a friendly pal who helps the player advance by
  * exchanging points for ale!
  * @author AdamN
  * @version 1.0
