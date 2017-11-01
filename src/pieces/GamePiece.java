@@ -7,12 +7,15 @@ import architecture.GameEngine;
 import architecture.InteractionResult;
 import architecture.Player;
 
-/*
- * Abstract class that defines the information and methods that unique child pieces will use
+/**
+ * <h1>GamePiece</h1>
+ * This is the abstract class that all other pieces are derived from.
+ * It includes an abstract method, getters and setters, and other methods.
+ * @author Mark Baldwin, Cyndi Rader, Adam Nelson
+ * @version 2.0
+ * @since 2017-10-31
+ *
  */
-
-//This is an abstract class because it contains an abstract 
-//method AND an instance variable
 public abstract class GamePiece implements Drawable {
 	// Interfaces cannot have instance variables
 	private char symbol;
@@ -20,24 +23,44 @@ public abstract class GamePiece implements Drawable {
 	// with the player. 
 	private Point location;
 
+	/**
+	 * Constructor that all pieces use.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
+	
 	public GamePiece(char symbol, Point location) {
 		super();
 		this.symbol = symbol;
 		this.location = location;
 	}
 
-	// Abstract classes can have concrete/defined methods
+	/**
+	 * Prints the symbol for the object onto the game board.
+	 */
 	public void draw() {
 		System.out.print(symbol);
 	}
 
-	// Abstract classes should have at least one abstract method
+	/**
+	 * Abstract method, each piece interacts with the player differently.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult Either NONE, GET_POINT, HIT, KILL, or ADVANCE.
+	 */
 	public abstract InteractionResult interact(Drawable [][] pieces, Player player);
 
+	
 	public Point getLocation() {
 		return location;
 	}
 
+	/**
+	 * Determines if the new location trying to be passed is a valid. The location is only
+	 * changed if it is still on the board. This changes where the piece "thinks" it is located.
+	 * @param pieces The game board.
+	 * @param newLocation The desired new location.
+	 */
 	public void setLocation(Drawable[][] pieces, Point newLocation) {
 		//Ensure the new location is still on the board
 		if (newLocation.getX() >= 0 && newLocation.getX() < GameEngine.BOARD_SIZE
@@ -46,6 +69,13 @@ public abstract class GamePiece implements Drawable {
 		}
 	}
 
+	/**
+	 * This method changes the location of the piece on the board, and changes where it will
+	 * actually be drawn. This changes where the piece "is actually" located.
+	 * @param x The distance to be translated up or down on the board.
+	 * @param y The distance to be translated left or right on the board.
+	 * @param pieces The game board.
+	 */
 	public void movePiece(int x, int y, Drawable[][] pieces) {
 		/*
 		 * Alright, here is how this insanity works:
