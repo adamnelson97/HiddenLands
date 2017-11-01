@@ -39,6 +39,7 @@ public class Artifact extends GamePiece {
 	 * Randomly kills or advances the player if they are at the same location.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult Either KILL or ADVANCE depending on the randomly generated number.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
