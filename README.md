@@ -7,7 +7,9 @@ If you want to help develop this project or offer feedback please test it, and s
 to adamnelson97@gmail.com!
 
 To run the game (after cloning the repository):
+
 Windows: Just double-click HiddenLands.cmd
+
 For all systems, on the command line/terminal run: java -jar HiddenLands.jar
 
 *Note, you must have a Java Runtime Environment (JRE) installed on your device.
