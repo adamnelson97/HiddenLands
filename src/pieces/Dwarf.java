@@ -46,6 +46,7 @@ public class Dwarf extends GamePiece implements Moveable {
 	 * Gives the player a point each interaction up to a certain set number.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult GET_POINT if the player has not yet received the max number of points. Otherwise NONE.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
