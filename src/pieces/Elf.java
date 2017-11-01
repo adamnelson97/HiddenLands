@@ -8,6 +8,15 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Elf</h1>
+ * The Elf is a friendly woodland creature that generally ignores
+ * what is happening around it.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Elf extends GamePiece implements Moveable {
 
 	/*
@@ -18,11 +27,21 @@ public class Elf extends GamePiece implements Moveable {
 	 * Interaction: NONE.
 	 */
 
-	//Constructor
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Elf(char symbol, Point location) {
 		super(symbol, location);
 	}
 
+	/**
+	 * The Elf ignores everything and gives no interaction.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult Always returns NONE.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -31,6 +50,11 @@ public class Elf extends GamePiece implements Moveable {
 		return InteractionResult.NONE;
 	}
 
+	/**
+	 * Randomly moves the Elf one space left, right, up, or down.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();
 		int n = rand.nextInt(4) + 1;
