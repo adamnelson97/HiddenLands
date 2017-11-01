@@ -28,7 +28,7 @@ public class SkeletonKing extends GamePiece {
 	private boolean pathClear; //Tracks whether the path to the end space is clear or not
 
 	/**
-	 * Constructor with output message. 
+	 * Constructor with output message. Sets the maximum number of moves the player has. 
 	 * @param symbol The actual symbol attached to the object.
 	 * @param location The location of the object on the array.
 	 */
@@ -43,8 +43,8 @@ public class SkeletonKing extends GamePiece {
 	}
 
 	/**
-	 * Depending on the status of the level, either advances, kills, or does
-	 * nothing to the player.
+	 * If the level is clear of Skeletons, the path to the end of the level is cleared.
+	 * Decrements the turn counter, and if the counter equals zero the player is killed.
 	 * @param pieces The game board.
 	 * @param player The player object.
 	 */
