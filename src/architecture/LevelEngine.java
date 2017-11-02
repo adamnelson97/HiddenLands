@@ -30,6 +30,15 @@ import pieces.Wizard;
  * randomly generated levels. 
  */
 
+/**
+ * <h1>LevelEngine</h1>
+ * This class contains all the data for each level setup.
+ * Uses legacy code from school project.
+ * @author Mark Baldwin, Cyndi Rader, Adam Nelson
+ * @version 2.0
+ * @since 2017-10-31
+ *
+ */
 public class LevelEngine {
 
 	//Attributes
@@ -39,11 +48,17 @@ public class LevelEngine {
 	private ArrayList<GamePiece> interactingPieces;
 	private Point startingLocation;
 
-	//Constructor
+	/**
+	 * Constructor
+	 */
 	public LevelEngine() {
 		super();
 	}
 
+	/**
+	 * Calls data for the next level.
+	 * @param levelNum The next level.
+	 */
 	public void createLevel(int levelNum) {
 		switch (levelNum) {
 		case 1:
@@ -82,6 +97,9 @@ public class LevelEngine {
 
 	//Level Constructors
 
+	/**
+	 * Level One is a simple level where the player explores the basic mechanics of the game.
+	 */
 	public void levelOne() {
 		System.out.println("\nThe old man says the monster has a lair in the nearby to the West");
 		System.out.println("so you head to the Ehrlain Mountains, a region known for troublesome");
@@ -182,6 +200,10 @@ public class LevelEngine {
 
 	}
 
+	/**
+	 * Level Two is more difficult, offering multiple opportunities for the player to advance
+	 * but also posing more danger.
+	 */
 	public void levelTwo() {
 		System.out.println("\nYou have made sufficient progress on your journey. You have faced");
 		System.out.println("formidable monsters, but greater threats lay ahead.");
@@ -300,6 +322,10 @@ public class LevelEngine {
 		}
 	}
 
+	/**
+	 * Level Three is the first boss level where the player must attack an enemy to advance
+	 * rather than avoiding them.
+	 */
 	public void levelThree() {
 		System.out.println("\nYou have made admirable progress along your journey. Word has begun");
 		System.out.println("to spread that a warrior is going to brave the beast. You can see");
@@ -385,8 +411,10 @@ public class LevelEngine {
 		}
 	}
 
-	//TODO: Write levelFour();
-
+	/**
+	 * Level Four is the final level and the second boss level. It is the first level to limit
+	 * the number of turns the player has to complete the level.
+	 */
 	public void levelFour() {
 		System.out.println("\nYou have slayed the mighty beast! Huzzah! You begin the long walk");
 		System.out.println("back to the village to inform the people of the good news...");
