@@ -12,7 +12,7 @@ import architecture.Player;
  * <h1>Dwarf</h1>
  * The Dwarf is a friendly pal who helps the player advance by
  * exchanging points for ale!
- * @author AdamN
+ * @author Adam Nelson
  * @version 1.0
  * @since 2017-10-31
  *
