@@ -6,6 +6,16 @@ import java.awt.Point;
  * Moveable extends Drawable because ALL pieces must be able to
  * be shown. 
  */
+
+/**
+ * <h1>Moveable Interface</h1>
+ * Interface that calls the move method, which is different for each piece.
+ * Uses legacy code from school project.
+ * @author Mark Baldwin, Cyndi Rader, Adam Nelson
+ * @version 2.0
+ * @since 2017-10-31
+ *
+ */
 public interface Moveable extends Drawable{
 	/*
 	 * move takes the list of pieces and the player's location and 
