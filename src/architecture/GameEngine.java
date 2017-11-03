@@ -371,7 +371,7 @@ public class GameEngine {
 
 	/**
 	 * Creates a new GameEngine and begins gameplay.
-	 * @param args
+	 * @param args No arguments used for main method.
 	 */
 	public static void main(String[] args) {
 		GameEngine game = new GameEngine();
