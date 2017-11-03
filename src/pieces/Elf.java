@@ -10,10 +10,12 @@ import architecture.Player;
 
 /**
  * <h1>Elf</h1>
- * This entity is a friendly wood elf that doesn't do much.
+ * The Elf is a friendly woodland creature that generally ignores
+ * what is happening around it.
  * @author Adam Nelson
  * @version 1.0
  * @since 2017-10-31
+ *
  */
 public class Elf extends GamePiece implements Moveable {
 
@@ -35,9 +37,10 @@ public class Elf extends GamePiece implements Moveable {
 	}
 
 	/**
-	 * Prints an output message if at the same location as the player.
+	 * The Elf ignores everything and gives no interaction.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult Always returns NONE.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
@@ -48,9 +51,9 @@ public class Elf extends GamePiece implements Moveable {
 	}
 
 	/**
-	 * Randomly moves up, down, left, or right.
+	 * Randomly moves the Elf one space left, right, up, or down.
 	 * @param pieces The game board.
-	 * @param player The player's location.
+	 * @param playerLocation The player's location.
 	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();

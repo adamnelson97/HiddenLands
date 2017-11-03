@@ -9,7 +9,7 @@ import architecture.Player;
 
 /**
  * <h1>Artifact</h1>
- * This entity is a mysterious relic containing a spirit. It
+ * The Artifact is a mysterious relic containing a spirit. It
  * can either kill the player or advance them to the next level.
  * @author Adam Nelson
  * @version 1.0
@@ -39,6 +39,7 @@ public class Artifact extends GamePiece {
 	 * Randomly kills or advances the player if they are at the same location.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult Either KILL or ADVANCE depending on the randomly generated number.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {

@@ -8,6 +8,14 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Sage</h1>
+ * The Sage is a wise old man who gives advice to the player if they have enough experience.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Sage extends GamePiece implements Moveable {
 
 	/*
@@ -19,11 +27,22 @@ public class Sage extends GamePiece implements Moveable {
 	 * if they have at least two points.
 	 */
 
-	//Constructor
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Sage(char symbol, Point location) {
 		super(symbol, location);
 	}
 
+	/**
+	 * If the player has the required number of points, the Sage talks to them.
+	 * Otherwise it ignores them.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult Always NONE.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -59,6 +78,12 @@ public class Sage extends GamePiece implements Moveable {
 		return InteractionResult.NONE;
 	}
 
+	/**
+	 * Moves in the same way as the Elf.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 * @see Elf
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		Random rand = new Random();
 		int n = rand.nextInt(4) + 1;

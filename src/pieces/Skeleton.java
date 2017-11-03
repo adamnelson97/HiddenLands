@@ -8,6 +8,14 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Skeleton</h1>
+ * The Skeleton is a gruesome enemy that strikes the player when it dies!
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Skeleton extends GamePiece implements Moveable {
 
 	/*
@@ -25,6 +33,11 @@ public class Skeleton extends GamePiece implements Moveable {
 	private int startX; //Stores the initial location of the skeleton which limits its movements
 	private int startY;
 
+	/**
+	 * Default GamePiece Constructor. Sets the health of the Skeleton and that is is currently "alive."
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Skeleton(char symbol, Point location) {
 		super(symbol, location);
 		health = 3;
@@ -33,6 +46,13 @@ public class Skeleton extends GamePiece implements Moveable {
 		startY = (int) location.getY();
 	}
 
+	/**
+	 * Each interaction injures the Skeleton. Once it runs out of health it hits
+	 * the player and is then removed from the board.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult NONE until it dies, then HIT.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		if (living) { //Only interacts if the skeleton is still alive
@@ -57,6 +77,12 @@ public class Skeleton extends GamePiece implements Moveable {
 		return InteractionResult.NONE;
 	}
 
+	/**
+	 * The Skeleton randomly moves around a 3x3 grid, the bounds of which are determined
+	 * by the location it is constructed with.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		if (living) { //Skeleton only moves if it is still alive
 			//Tracks whether the Skeleton has moved this turn. The Skeleton

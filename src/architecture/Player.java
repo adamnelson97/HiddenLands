@@ -13,6 +13,17 @@ import architecture.GameEngine;
  * This class contains all data and methods relative to the player,
  * such as health, status, and location.
  */
+
+/**
+ * <h1>Player</h1>
+ * This class stores all the information relevant to the player, such as their
+ * health and location.
+ * Uses legacy code from school project.
+ * @author Mark Baldwin, Cyndi Rader, Adam Nelson
+ * @version 2.0
+ * @since 2017-10-31
+ *
+ */
 public class Player implements Drawable {
 
 	public static final int POINTS_TO_ADVANCE = 8;
@@ -29,12 +40,20 @@ public class Player implements Drawable {
 
 	private static Difficulty difficulty;
 
+	/**
+	 * Constructor that gives the player an initial location and asks for their name
+	 * and the desire game difficulty.
+	 * @param location The starting location for the player.
+	 */
 	public Player(Point location) {
 		//Constructor calls method to reset player stats each level
 		setNameDiff();
 		resetLevel(location);
 	}
 
+	/**
+	 * Asks the player for their name and asks them to choose a difficulty.
+	 */
 	private void setNameDiff() {
 		System.out.print("What is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
@@ -70,6 +89,10 @@ public class Player implements Drawable {
 		return difficulty;
 	}
 
+	/**
+	 * Resets player stats at the beginning of each level.
+	 * @param location The new location for the player.
+	 */
 	public void resetLevel(Point location) {
 		//Called every level to reset player stats
 		playerStatus = PlayerStatus.OK;
@@ -78,11 +101,17 @@ public class Player implements Drawable {
 		advancePoints = 0;
 	}
 
-	//Drawable Method
+	/**
+	 * Prints the player onto the board.
+	 */
 	public void draw() {
 		System.out.print('P');
 	}
 
+	/**
+	 * Returns whether the player has enough points to advance or if a piece has given them an ADVANCE.
+	 * @return boolean Ability to advance to the next level.
+	 */
 	public boolean canAdvance() {
 		if (advancePoints >= POINTS_TO_ADVANCE || playerStatus == PlayerStatus.ADVANCING) {
 			return true;
@@ -90,14 +119,24 @@ public class Player implements Drawable {
 		return false;
 	}
 
+	/**
+	 * Returns whether the player has taken enough damage to die or if a piece has KILLed them.
+	 * @return boolean Whether the player is still living.
+	 */
 	public boolean isDead() {
 		return (playerStatus == PlayerStatus.DEAD || damagePoints >= POINTS_TO_DIE);
 	}
 
+	/**
+	 * Increases the player's score when they get a GET_POINT interaction.
+	 */
 	public void addPoint() {
 		advancePoints++;
 	}
 
+	/**
+	 * Increases the player's damage when they get a HIT interaction.
+	 */
 	public void takeDamage() {
 		damagePoints++;
 	}
@@ -111,6 +150,12 @@ public class Player implements Drawable {
 	}
 
 	//The remaining methods pertain to changing the player's location
+	
+	/**
+	 * Asks the player for a direction to move to, asking until they select an option
+	 * that is still on the board and not blocked by landscape.
+	 * @param pieces The game board.
+	 */
 	public void doMove(Drawable[][] pieces) {
 		boolean moved = false;
 		while (!moved) {
@@ -122,6 +167,11 @@ public class Player implements Drawable {
 	/*
 	 * This method is private because it will only be called from
 	 * within doMove.
+	 */
+	
+	/**
+	 * Records the player's desired direction of movement.
+	 * @return int This number corresponds to a specific direction.
 	 */
 	private int getPlayerChoice() {
 
@@ -148,6 +198,9 @@ public class Player implements Drawable {
 	}
 
 	//This method is private because it will only be called from within getPlayerChoice
+	/**
+	 * Simply prints movement options.
+	 */
 	private void displayMenu() {
 		System.out.println();
 		System.out.println("7: Up and Left    8: Up       9: Up and Right");
@@ -157,6 +210,13 @@ public class Player implements Drawable {
 	}
 
 	//This method is private because it will only be called from within doMove
+	/**
+	 * Moves the player if the choose a valid direction. Otherwise it returns false
+	 * indicating they need to choose a different direction.
+	 * @param pieces The game board.
+	 * @param option The desired movement direction.
+	 * @return boolean Whether the player has moved or not.
+	 */
 	private boolean updatePlayerLocation(Drawable[][] pieces, int option) {
 		boolean moved = false;
 		int x = 0;

@@ -8,8 +8,8 @@ import architecture.Player;
 
 /**
  * <h1>Dragon</h1>
- * This entity is a fire breathing dragon that kills players who
- * disturb it too many times.
+ * The Dragon is a fire breathing creature that kills players who
+ * disturb it too many times!
  * @author Adam Nelson
  * @version 1.0
  * @since 2017-10-31
@@ -43,6 +43,7 @@ public class Dragon extends GamePiece {
 	 * the second kills the player.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult Either NONE or KILL if the player has already interacted with the Dragon.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {

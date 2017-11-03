@@ -6,6 +6,14 @@ import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
 
+/**
+ * <h1>Man</h1>
+ * The Man is a quite traveler who gives advice to the player.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Man extends GamePiece {
 
 	/*
@@ -17,11 +25,21 @@ public class Man extends GamePiece {
 	 * and the number of points they need to advance. Has a 1/3 chance of appearing somewhere on the board.
 	 */
 
-	//Constructor
+	/**
+	 * Default GamePiece Constructor.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Man(char symbol, Point location) {
 		super(symbol, location);
 	}
 
+	/**
+	 * Prints out a message.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult Always NONE.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();

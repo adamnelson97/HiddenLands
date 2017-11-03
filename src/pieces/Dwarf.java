@@ -10,9 +10,9 @@ import architecture.Player;
 
 /**
  * <h1>Dwarf</h1>
- * This entity is a friendly dwarf who helps the player advance by
+ * The Dwarf is a friendly pal who helps the player advance by
  * exchanging points for ale!
- * @author AdamN
+ * @author Adam Nelson
  * @version 1.0
  * @since 2017-10-31
  *
@@ -46,6 +46,7 @@ public class Dwarf extends GamePiece implements Moveable {
 	 * Gives the player a point each interaction up to a certain set number.
 	 * @param pieces The game board.
 	 * @param player The player object.
+	 * @return InteractionResult GET_POINT if the player has not yet received the max number of points. Otherwise NONE.
 	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {

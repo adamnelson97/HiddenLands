@@ -7,6 +7,15 @@ import architecture.InteractionResult;
 import architecture.Moveable;
 import architecture.Player;
 
+/**
+ * <h1>Orc</h1>
+ * The Orc is a fearsome monster! It is the first boss entity that the player
+ * must defeat.
+ * @author Adam Nelson
+ * @version 1.0
+ * @since 2017-10-31
+ *
+ */
 public class Orc extends GamePiece implements Moveable{
 
 	/*
@@ -20,6 +29,11 @@ public class Orc extends GamePiece implements Moveable{
 	int health;
 	boolean moved; //Ensures Orc moves every turn
 
+	/**
+	 * Default GamePiece Constructor. Prints out some messages.
+	 * @param symbol The symbol of the object on the board.
+	 * @param location The location of the object on the board.
+	 */
 	public Orc(char symbol, Point location) {
 		super(symbol, location);
 		health = 8;
@@ -34,6 +48,14 @@ public class Orc extends GamePiece implements Moveable{
 		System.out.println(); 
 	}
 
+	/**
+	 * Each time the player interacts with the Orc they are injured, but the Orc is
+	 * also injured. After a certain amount of hits, the Orc dies and the player has
+	 * beaten the level.
+	 * @param pieces The game board.
+	 * @param player The player object.
+	 * @return InteractionResult HIT if not dead yet, ADVANCE if dead, NONE if on different spaces.
+	 */
 	@Override
 	public InteractionResult interact(Drawable[][] pieces, Player player) {
 		Point playerLocation = player.getLocation();
@@ -51,6 +73,12 @@ public class Orc extends GamePiece implements Moveable{
 		}
 	}
 
+	/**
+	 * The Orc moves one space in one direction that it is furthest from the player.
+	 * If an object is blocking the Orc's initial path, it then moves in the opposite direction.
+	 * @param pieces The game board.
+	 * @param playerLocation The player's location.
+	 */
 	public void move(Drawable[][] pieces, Point playerLocation) {
 		double playerX = playerLocation.getX();
 		double playerY = playerLocation.getY();
