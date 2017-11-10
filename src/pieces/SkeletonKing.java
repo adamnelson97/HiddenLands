@@ -34,7 +34,7 @@ public class SkeletonKing extends GamePiece {
 	 */
 	public SkeletonKing(char symbol, Point location) {
 		super(symbol, location);
-		moveCounter = 60; //Starting number of moves the player has to beat the level
+		moveCounter = 65; //Starting number of moves the player has to beat the level
 		allDead = false;
 		pathClear = false;
 		System.out.println("\nThe Skeleton King has raised minions from the dead to");
@@ -62,7 +62,7 @@ public class SkeletonKing extends GamePiece {
 		//Clears the path if all Skeleton minions are dead
 		if (allDead && !pathClear) {
 			pieces[1][7] = null; //Removes the rock blocking the path to end space
-			pieces[0][7] = new Landscape('@', new Point(0, 7));
+			pieces[0][7] = new EndSpace('@', new Point(0, 7));
 			System.out.println("\nA path has appeared! Go to the top of the cliff");
 			System.out.println("and shoot the Skeleton King with your bow!");
 			pathClear = true; //Ensures this block only runs once
