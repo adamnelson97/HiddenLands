@@ -240,7 +240,7 @@ public class GameEngine {
 	 */
 	@SuppressWarnings("resource")
 	public void cheatcode() {
-		System.out.print("Do you have a cheatcode? If not, just hit enter: ");
+		System.out.print("\nDo you have a cheatcode? If not, just hit enter: ");
 		Scanner in = new Scanner(System.in);
 		String code = in.nextLine();
 
@@ -330,13 +330,13 @@ public class GameEngine {
 
 		switch(color) {
 		case 1: backgroundCol = ConsoleColors.BLACK_BACKGROUND; return;
-		case 2: backgroundCol = ConsoleColors.RED_BACKGROUND_BRIGHT; return;
-		case 3: backgroundCol = ConsoleColors.GREEN_BACKGROUND_BRIGHT; return;
-		case 4: backgroundCol = ConsoleColors.YELLOW_BACKGROUND_BRIGHT; return;
-		case 5: backgroundCol = ConsoleColors.BLUE_BACKGROUND_BRIGHT; return;
-		case 6: backgroundCol = ConsoleColors.PURPLE_BACKGROUND_BRIGHT; return;
-		case 7: backgroundCol = ConsoleColors.CYAN_BACKGROUND_BRIGHT; return;
-		case 8: backgroundCol = ConsoleColors.WHITE_BACKGROUND_BRIGHT; return;
+		case 2: backgroundCol = ConsoleColors.RED_BACKGROUND; return;
+		case 3: backgroundCol = ConsoleColors.GREEN_BACKGROUND; return;
+		case 4: backgroundCol = ConsoleColors.YELLOW_BACKGROUND; return;
+		case 5: backgroundCol = ConsoleColors.BLUE_BACKGROUND; return;
+		case 6: backgroundCol = ConsoleColors.PURPLE_BACKGROUND; return;
+		case 7: backgroundCol = ConsoleColors.CYAN_BACKGROUND; return;
+		case 8: backgroundCol = ConsoleColors.WHITE_BACKGROUND; return;
 
 		default: System.out.println("Please enter a valid color."); setBackgroundCol();
 		}
@@ -367,12 +367,12 @@ public class GameEngine {
 		setNumLevels(player);
 		cheatcode(); //Checks to see if the player knows any cheat codes. Also used for debugging
 		if (unix) {
-			System.out.println("NOTE: o = Rocks, "
+			System.out.println("\nNOTE: o = Rocks, "
 					+ ConsoleColors.GREEN + "#" + ConsoleColors.RESET + " = Trees, "
 					+ ConsoleColors.CYAN + "~" + ConsoleColors.RESET + " = Water, "
 					+ ConsoleColors.RED_BRIGHT + "$" + ConsoleColors.RESET + " = Fire, P = Player\n");
 		}
-		else System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
+		else System.out.println("\nNOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
 
 
 
