@@ -281,7 +281,7 @@ public class GameEngine {
 	 */
 	@SuppressWarnings("resource")
 	public void setForegroundCol() {
-		System.out.println("What color would you like for your player's foreground? Enter the corresponding number.");
+		System.out.println("\nWhat color would you like for your player's foreground? Enter the corresponding number.");
 		System.out.println("1. Black");
 		System.out.println("2. Red");
 		System.out.println("3. Green");
@@ -313,7 +313,7 @@ public class GameEngine {
 	 */
 	@SuppressWarnings("resource")
 	public void setBackgroundCol() {
-		System.out.println("What color would you like for your player's background? Enter the corresponding number.");
+		System.out.println("\nWhat color would you like for your player's background? Enter the corresponding number.");
 		System.out.println("1. Black");
 		System.out.println("2. Red");
 		System.out.println("3. Green");
