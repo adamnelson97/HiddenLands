@@ -39,16 +39,21 @@ public class Player implements Drawable {
 	private PlayerStatus playerStatus;
 
 	private static Difficulty difficulty;
+	
+	private String foreground;
+	private String background;
 
 	/**
 	 * Constructor that gives the player an initial location and asks for their name
 	 * and the desire game difficulty.
 	 * @param location The starting location for the player.
 	 */
-	public Player(Point location) {
+	public Player(Point location, String foregroundCol, String backgroundCol) {
 		//Constructor calls method to reset player stats each level
 		setNameDiff();
 		resetLevel(location);
+		foreground = foregroundCol;
+		background = backgroundCol;
 	}
 
 	/**
@@ -107,8 +112,8 @@ public class Player implements Drawable {
 	 * @param unix Determines whether to print in color.
 	 */
 	public void draw(boolean unix) {
-		if (unix) System.out.print('P');
-		else System.out.print(ConsoleColors.WHITE_BOLD + 'P' + ConsoleColors.RESET);
+		if (unix) System.out.print(foreground + background + 'P' + ConsoleColors.RESET);
+		else System.out.print('P');
 	}
 
 	/**
