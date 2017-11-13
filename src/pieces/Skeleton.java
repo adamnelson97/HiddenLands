@@ -3,6 +3,7 @@ package pieces;
 import java.awt.Point;
 import java.util.Random;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
@@ -17,16 +18,6 @@ import architecture.Player;
  *
  */
 public class Skeleton extends GamePiece implements Moveable {
-
-	/*
-	 * Symbol: 'X'
-	 * 
-	 * Motion: Randomly moves in a 9x9 square.
-	 * The Skeleton can also move onto the same space as the player.
-	 * 
-	 * Interaction: Has 3 health points. First two interactions are NONE.
-	 * Third interaction kills skeleton, and injures player by one point.
-	 */
 
 	private int health; //Health of the skeleton
 	private boolean living; //Determines whether the skeleton is still alive
@@ -137,6 +128,17 @@ public class Skeleton extends GamePiece implements Moveable {
 				
 			}
 		}
+	}
+	
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
 	}
 
 } //End of Class

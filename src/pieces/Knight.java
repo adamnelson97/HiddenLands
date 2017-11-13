@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.GameEngine;
 import architecture.InteractionResult;
@@ -18,18 +19,6 @@ import architecture.Player;
  *
  */
 public class Knight extends GamePiece implements Moveable {
-
-	/*
-	 * Symbol: 'K'
-	 * 
-	 * Motion: Moves Left one space every turn.
-	 * Skips a space if it is occupied by another piece.
-	 * If still occupied, moves one pace up.
-	 * Resets to right edge if at left edge.
-	 * Resets to bottom if at top edge.
-	 * 
-	 * Interaction: ADVANCE. Only interacts on same space.
-	 */
 
 	/**
 	 * Default GamePiece Constructor.
@@ -120,4 +109,16 @@ public class Knight extends GamePiece implements Moveable {
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {}
 	}
-}
+
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
+	}
+	
+} //End of class

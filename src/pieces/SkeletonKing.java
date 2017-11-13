@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.GameEngine;
 import architecture.InteractionResult;
@@ -16,12 +17,6 @@ import architecture.Player;
  * @since 2017-10-31
  */
 public class SkeletonKing extends GamePiece {
-	/*
-	 * Motion: None
-	 * 
-	 * Interaction: NONE interaction until a timer runs out. If the player
-	 * fails to beat the level in time, they die with KILL.
-	 */
 	
 	private int moveCounter; //Tracks the number of moves the player has left to beat the level
 	private boolean allDead; //Tracks whether all the Skeleton minions are dead
@@ -92,5 +87,16 @@ public class SkeletonKing extends GamePiece {
 		moveCounter--;
 		return InteractionResult.NONE;
 	}
+	
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
+	}
 
-}
+} //End of Class

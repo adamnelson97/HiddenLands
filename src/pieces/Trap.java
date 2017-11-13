@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
@@ -16,16 +17,6 @@ import architecture.Player;
  *
  */
 public class Trap extends GamePiece {
-
-	/*
-	 * Symbol: &
-	 * 
-	 * Motion: None
-	 * 
-	 * Interaction: Appears blank at first, but appears when player is within
-	 * +/- one space and adjacent to the player, blocking their way. Injures the player one point.
-	 * Kills the player if they are directly on it.
-	 */
 
 	boolean interacted;
 
@@ -71,5 +62,16 @@ public class Trap extends GamePiece {
 		}
 		return InteractionResult.NONE;
 	}
+	
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
+	}
 
-}
+} //End of Class

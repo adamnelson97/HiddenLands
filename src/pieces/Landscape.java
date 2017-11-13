@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 
 /**
@@ -14,13 +15,6 @@ import architecture.Drawable;
  *
  */
 public class Landscape implements Drawable {
-
-
-	/*
-	 * Symbol: Changes
-	 * 
-	 * No movement or interaction
-	 */
 
 	Point location;
 	char symbol;
@@ -36,10 +30,21 @@ public class Landscape implements Drawable {
 	}
 
 	/**
-	 * Prints the symbol for the Landscape object.
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
 	 */
-	public void draw() {
-		System.out.print(symbol);
+	public void draw(boolean unix) {
+		if (unix) {
+			switch(symbol) {
+			case 'o': System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET); break;
+			case '#': System.out.print(ConsoleColors.GREEN + symbol + ConsoleColors.RESET); break;
+			case '~': System.out.print(ConsoleColors.BLUE + symbol + ConsoleColors.RESET); break;
+			case '$': System.out.print(ConsoleColors.RED_BRIGHT + symbol + ConsoleColors.RESET); break;
+			default: System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET); break;
+			}
+		}
+		else System.out.print(symbol);
+		
 	}
 
 }

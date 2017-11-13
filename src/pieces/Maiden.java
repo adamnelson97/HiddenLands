@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
@@ -16,14 +17,6 @@ import architecture.Player;
  *
  */
 public class Maiden extends GamePiece {
-
-	/*
-	 * Symbol: 'M'
-	 * 
-	 * Motion: None
-	 * 
-	 * Interaction: NONE. Heals the player, then disappears.
-	 */
 
 	boolean interacted;
 	
@@ -62,4 +55,15 @@ public class Maiden extends GamePiece {
 		return InteractionResult.NONE;
 	}
 
-}
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.YELLOW + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
+	}
+	
+} //End of Class

@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
@@ -15,15 +16,6 @@ import architecture.Player;
  *
  */
 public class Man extends GamePiece {
-
-	/*
-	 * Symbol: 'M'
-	 * 
-	 * Motion: None
-	 * 
-	 * Interaction: NONE. The man tells the player the number of hits they can take,
-	 * and the number of points they need to advance. Has a 1/3 chance of appearing somewhere on the board.
-	 */
 
 	/**
 	 * Default GamePiece Constructor.
@@ -50,6 +42,17 @@ public class Man extends GamePiece {
 			System.out.println("     'You have currently taken " + player.getDamagePoints() + " hits and have " + player.getAdvancePoints() + " prizes.");
 		}
 		return InteractionResult.NONE;
+	}
+	
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.YELLOW + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
 	}
 
 } //End of Class

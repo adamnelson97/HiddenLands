@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
@@ -17,16 +18,6 @@ import architecture.Player;
  *
  */
 public class Unicorn extends GamePiece implements Moveable {
-
-
-	/*
-	 * Symbol: 'U'
-	 * 
-	 * Motion: Appears on board, disappears for three turns, then reappears on the fourth.
-	 * Repeat pattern.
-	 * 
-	 * Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
-	 */
 
 	private int present;
 
@@ -87,4 +78,15 @@ public class Unicorn extends GamePiece implements Moveable {
 		}
 	}
 
-}
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.BLUE_BRIGHT + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
+	}
+	
+} //End of Class

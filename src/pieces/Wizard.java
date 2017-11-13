@@ -2,6 +2,7 @@ package pieces;
 
 import java.awt.Point;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
@@ -16,16 +17,6 @@ import architecture.Player;
  *
  */
 public class Wizard extends GamePiece {
-
-
-	/* 
-	 * Symbol: 'W'. Used to confuse player as it is the same as the Witch.
-	 * 
-	 * Motion: None
-	 * 
-	 * Interaction: HIT. Has range of +/- 1 spaces from current space,
-	 * i.e. if the Wizard is on space 3, he can hit a target on spaces 1-5.
-	 */
 
 	/**
 	 * Default GamePiece Constructor.
@@ -61,4 +52,15 @@ public class Wizard extends GamePiece {
 		}
 	}
 
-}
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.RED + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
+	}
+	
+} //End of Class

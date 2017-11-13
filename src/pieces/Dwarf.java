@@ -3,6 +3,7 @@ package pieces;
 import java.awt.Point;
 import java.util.Random;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
@@ -18,15 +19,6 @@ import architecture.Player;
  *
  */
 public class Dwarf extends GamePiece implements Moveable {
-
-	/*
-	 * Symbol: 'D'
-	 * 
-	 * Motion: Randomly moves Right or Left two spaces the first turn.
-	 * Randomly moves Up or Down one space the next turn. Repeats pattern.
-	 * 
-	 * Interaction: GET_POINT.
-	 */
 
 	private int lastDirection; //0 is for L/R, 1 is for U/D
 	int numPoints; //Tracks the number of advance points the dwarf has given the player
@@ -116,6 +108,17 @@ public class Dwarf extends GamePiece implements Moveable {
 				lastDirection = 1;
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {}
+	}
+	
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.PURPLE_BRIGHT + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
 	}
 
 } //End of Class

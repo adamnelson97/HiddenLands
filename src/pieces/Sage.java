@@ -3,6 +3,7 @@ package pieces;
 import java.awt.Point;
 import java.util.Random;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Moveable;
@@ -17,15 +18,6 @@ import architecture.Player;
  *
  */
 public class Sage extends GamePiece implements Moveable {
-
-	/*
-	 * Symbol: 'S'
-	 * 
-	 * Motion: Randomly chooses a direction and moves one space.
-	 * 
-	 * Interaction: NONE. Randomly informs player about other pieces' interaction results
-	 * if they have at least two points.
-	 */
 
 	/**
 	 * Default GamePiece Constructor.
@@ -122,6 +114,17 @@ public class Sage extends GamePiece implements Moveable {
 				}
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {}
+	}
+	
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.CYAN + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
 	}
 
 } //End of Class
