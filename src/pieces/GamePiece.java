@@ -20,7 +20,7 @@ import architecture.Player;
  */
 public abstract class GamePiece implements Drawable {
 	// Interfaces cannot have instance variables
-	private char symbol;
+	protected char symbol;
 	// Stores the piece location, which will be needed to interact
 	// with the player. 
 	private Point location;
