@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import pieces.Landscape;
@@ -39,7 +40,7 @@ public class Player implements Drawable {
 	private PlayerStatus playerStatus;
 
 	private static Difficulty difficulty;
-	
+
 	private String foreground;
 	private String background;
 
@@ -52,29 +53,41 @@ public class Player implements Drawable {
 	 */
 	public Player(Point location, String foregroundCol, String backgroundCol) {
 		//Constructor calls method to reset player stats each level
-		setNameDiff();
+		setName();
+		setDiff();
 		resetLevel(location);
 		foreground = foregroundCol;
 		background = backgroundCol;
 	}
 
 	/**
-	 * Asks the player for their name and asks them to choose a difficulty.
+	 * Asks the player for their name.
 	 */
 	@SuppressWarnings("resource")
-	private void setNameDiff() {
+	private void setName() {
 		System.out.print("\nWhat is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
 		name = scan.next();
+	}
 
+	/**
+	 * Asks the player to select a difficulty.
+	 */
+	@SuppressWarnings("resource")
+	private void setDiff() {
+		Scanner scan = new Scanner(System.in);
 		int playerChoice = 0;
 
+		System.out.println();
+		System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
+		System.out.print("Choose a Difficulty: ");
 		do {
-			System.out.println();
-			System.out.println("1: Easy\n2: Medium\n3: Hard\n4: HARDCORE");
-			System.out.print("Choose a Difficulty: ");
+			while (!scan.hasNextInt()) {
+				scan.next();
+				System.out.print("Invalid option. Please retry: ");
+			}
 			playerChoice = scan.nextInt();
-			if (playerChoice < 1 || playerChoice > 4) System.out.println("Invalid option. Please retry.");
+			if (playerChoice < 1 || playerChoice > 4) System.out.print("Invalid option. Please retry: ");
 		} while(playerChoice < 1 || playerChoice > 4);
 
 		switch(playerChoice) {
@@ -160,7 +173,7 @@ public class Player implements Drawable {
 	}
 
 	//The remaining methods pertain to changing the player's location
-	
+
 	/**
 	 * Asks the player for a direction to move to, asking until they select an option
 	 * that is still on the board and not blocked by landscape.
@@ -178,7 +191,7 @@ public class Player implements Drawable {
 	 * This method is private because it will only be called from
 	 * within doMove.
 	 */
-	
+
 	/**
 	 * Records the player's desired direction of movement.
 	 * @return int This number corresponds to a specific direction.
@@ -244,7 +257,7 @@ public class Player implements Drawable {
 		if (option == 3	&& location.getY() < GameEngine.BOARD_SIZE-1 && location.getX() < GameEngine.BOARD_SIZE-1) { x = 1; y = 1;}
 		//Stay put
 		if (option == 5) { moved = true; x = 0; y = 0;}
-		
+
 		if (pieces[(int) getLocation().getX() + x][(int) getLocation().getY() + y] instanceof Landscape) {
 		} //Does nothing if the player is attempting to move onto landscape
 		else {
