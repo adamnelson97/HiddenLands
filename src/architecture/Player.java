@@ -103,9 +103,11 @@ public class Player implements Drawable {
 
 	/**
 	 * Prints the player onto the board.
+	 * @param unix Determines whether to print in color.
 	 */
-	public void draw() {
-		System.out.print('P');
+	public void draw(boolean unix) {
+		if (unix) System.out.print('P');
+		else System.out.print(ConsoleColors.WHITE_BOLD + 'P' + ConsoleColors.RESET);
 	}
 
 	/**
