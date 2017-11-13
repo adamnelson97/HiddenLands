@@ -92,7 +92,7 @@ public class GameEngine {
 				Point temp = new Point(i, j);
 				if (temp.getLocation().getX() == player.getLocation().getX()
 						&& temp.getLocation().getY() == player.getLocation().getY()) 
-					player.draw();
+					player.draw(unix);
 				else if (pieces[i][j] == null)
 					System.out.print(' ');
 				else
