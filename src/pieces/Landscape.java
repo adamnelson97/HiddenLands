@@ -38,7 +38,7 @@ public class Landscape implements Drawable {
 			switch(symbol) {
 			case 'o': System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET); break;
 			case '#': System.out.print(ConsoleColors.GREEN + symbol + ConsoleColors.RESET); break;
-			case '~': System.out.print(ConsoleColors.BLUE + symbol + ConsoleColors.RESET); break;
+			case '~': System.out.print(ConsoleColors.BLUE_BRIGHT + symbol + ConsoleColors.RESET); break;
 			case '$': System.out.print(ConsoleColors.RED_BRIGHT + symbol + ConsoleColors.RESET); break;
 			default: System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET); break;
 			}

@@ -116,7 +116,7 @@ public class Knight extends GamePiece implements Moveable {
 	 */
 	@Override
 	public void draw(boolean unix) {
-		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		if (unix) System.out.print(ConsoleColors.WHITE_BRIGHT + symbol + ConsoleColors.RESET);
 		else System.out.print(symbol);
 		
 	}

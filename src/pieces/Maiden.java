@@ -61,7 +61,7 @@ public class Maiden extends GamePiece {
 	 */
 	@Override
 	public void draw(boolean unix) {
-		if (unix) System.out.print(ConsoleColors.YELLOW + symbol + ConsoleColors.RESET);
+		if (unix) System.out.print(ConsoleColors.YELLOW_BRIGHT + symbol + ConsoleColors.RESET);
 		else System.out.print(symbol);
 		
 	}

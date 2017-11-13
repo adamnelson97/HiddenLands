@@ -136,7 +136,7 @@ public class Skeleton extends GamePiece implements Moveable {
 	 */
 	@Override
 	public void draw(boolean unix) {
-		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		if (unix) System.out.print(ConsoleColors.YELLOW + symbol + ConsoleColors.RESET);
 		else System.out.print(symbol);
 		
 	}

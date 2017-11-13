@@ -122,7 +122,7 @@ public class Sage extends GamePiece implements Moveable {
 	 */
 	@Override
 	public void draw(boolean unix) {
-		if (unix) System.out.print(ConsoleColors.CYAN + symbol + ConsoleColors.RESET);
+		if (unix) System.out.print(ConsoleColors.CYAN_BRIGHT + symbol + ConsoleColors.RESET);
 		else System.out.print(symbol);
 		
 	}
