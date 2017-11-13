@@ -284,7 +284,7 @@ public class GameEngine {
 			System.out.println("NOTE: o = Rocks, "
 					+ ConsoleColors.GREEN + "#" + ConsoleColors.RESET + " = Trees, "
 					+ ConsoleColors.BLUE + "~" + ConsoleColors.RESET + " = Water, "
-					+ ConsoleColors.RED + "$" + ConsoleColors.RESET + " = Fire, P = Player\n");
+					+ ConsoleColors.RED_BRIGHT + "$" + ConsoleColors.RESET + " = Fire, P = Player\n");
 		}
 		else System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
 
