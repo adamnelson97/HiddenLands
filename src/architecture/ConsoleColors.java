@@ -1,3 +1,9 @@
+/**
+* <h1> ConsoleColors</h1>
+* This class sets up constants to print text in different colors to the console.
+* @author shakram02
+* @since 2017-08-01
+*/
 public class ConsoleColors {
     // Reset
     public static final String RESET = "\033[0m";  // Text Reset
