@@ -61,7 +61,7 @@ public class GameEngine {
 	}
 
 	//Methods
-	
+
 	/**
 	 * Calls a new level from the level engine, and updates the board
 	 * and lists of interacting/moving pieces.
@@ -230,7 +230,7 @@ public class GameEngine {
 			movePieces();
 		}
 	}
-	
+
 	/**
 	 * If the player knows a cheatcode they can skip to a certain level.
 	 */
@@ -238,7 +238,7 @@ public class GameEngine {
 		System.out.print("Do you have a cheatcode? If not, just hit enter: ");
 		Scanner in = new Scanner(System.in);
 		String code = in.nextLine();
-		
+
 		if (code.equalsIgnoreCase("Gimli")) {
 			currentLevel = 1;
 			System.out.println("\nSkipping to Level Two...");
@@ -253,7 +253,7 @@ public class GameEngine {
 		}
 		//in.close(); Do NOT close the scanner! It produces lots of errors
 	}
-	
+
 	/**
 	 * Sets whether the player is playing on a unix-based shell, allowing for color printing to the console.
 	 */
@@ -261,7 +261,7 @@ public class GameEngine {
 		System.out.print("Are you playing on a Unix based shell? (Yes/No) ");
 		Scanner in = new Scanner(System.in);
 		String response = in.nextLine();
-		
+
 		if (response.equalsIgnoreCase("YES")) unix = true;
 		else if (response.equalsIgnoreCase("NO")) unix = false;
 		else {
@@ -275,12 +275,19 @@ public class GameEngine {
 	 * a cheatcode, and then begins gameplay until all levels are beaten or if the player dies.
 	 */
 	public void playGame() {
-		System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
 		setNumLevels(player);
 		cheatcode(); //Checks to see if the player knows any cheat codes. Also used for debugging
 		setUnix(); //Sets whether the player is playing on a unix based shell.
+		if (unix) {
+			System.out.println("NOTE: o = Rocks, "
+					+ ConsoleColors.GREEN + "#" + ConsoleColors.RESET + " = Trees, "
+					+ ConsoleColors.BLUE + "~" + ConsoleColors.RESET + " = Water, "
+					+ ConsoleColors.RED + "$" + ConsoleColors.RESET + " = Fire, P = Player\n");
+		}
+		else System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
+
 		while (currentLevel < numLevels && !player.isDead()) {
 			currentLevel++;
 			setupLevel(currentLevel);
