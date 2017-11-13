@@ -183,22 +183,15 @@ public class Player implements Drawable {
 	 * Records the player's desired direction of movement.
 	 * @return int This number corresponds to a specific direction.
 	 */
+	@SuppressWarnings("resource")
 	private int getPlayerChoice() {
 
 		int playerChoice = 0;
 
 		do {
 			displayMenu();
-			String input = null;
-			try {
-				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-				input = bufferedReader.readLine();
-				playerChoice = Integer.parseInt(input);
-			} catch (NumberFormatException ex) {
-				System.out.println("Invalid option. Please retry.");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			Scanner in = new Scanner(System.in);
+			playerChoice = in.nextInt();
 			if (playerChoice < 1 || playerChoice > 9) System.out.println("Invalid option. Please retry.");
 		} while(playerChoice < 1 || playerChoice > 9);
 		//scan.close();
