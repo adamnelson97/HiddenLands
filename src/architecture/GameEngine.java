@@ -51,6 +51,10 @@ public class GameEngine {
 	private Player player;
 	//Determine if the user is playing on a unix-based shell
 	private boolean unix;
+	//Store the color of the player's foreground
+	private String foregroundCol;
+	//Store the color of the player's background
+	private String backgroundCol;
 
 	/**
 	 * Constructor creates a LevelEngine object used to populate the board
@@ -273,16 +277,57 @@ public class GameEngine {
 	}
 
 	/**
+	 * User sets the foreground color for their player.
+	 */
+	@SuppressWarnings("resource")
+	public void setForegroundCol() {
+		System.out.println("What color would you like for your player's foreground? Enter the corresponding number.");
+		System.out.println("1. Black");
+		System.out.println("2. Red");
+		System.out.println("3. Green");
+		System.out.println("4. Yellow");
+		System.out.println("5. Blue");
+		System.out.println("6. Purple");
+		System.out.println("7. Cyan");
+		System.out.println("8. White");
+		
+		Scanner in = new Scanner(System.in);
+		int color = in.nextInt();
+		
+		switch(color) {
+		case 1: foregroundCol = ConsoleColors.BLACK_BRIGHT;
+		case 2: foregroundCol = ConsoleColors.RED_BRIGHT;
+		case 3: foregroundCol = ConsoleColors.GREEN_BRIGHT;
+		case 4: foregroundCol = ConsoleColors.YELLOW_BRIGHT;
+		case 5: foregroundCol = ConsoleColors.BLUE_BRIGHT;
+		case 6: foregroundCol = ConsoleColors.PURPLE_BRIGHT;
+		case 7: foregroundCol = ConsoleColors.CYAN_BRIGHT;
+		case 8: foregroundCol = ConsoleColors.WHITE_BRIGHT;
+
+		default: System.out.println("Please enter a valid color."); setForegroundCol();
+		}
+	}
+	
+	/**
 	 * Creates a new player object for the game, determines the required number of levels, asks for
 	 * a cheatcode, and then begins gameplay until all levels are beaten or if the player dies.
 	 */
 	@SuppressWarnings({ "unused", "resource" })
 	public void playGame() {
+		/*
+		 * Determine if using unix-based shell, set up the player,
+		 * establish the difficulty,
+		 * and prompt for a cheat code.
+		 */
+		setUnix(); //Sets whether the player is playing on a unix based shell.
+		if (unix) {
+			setForegroundCol();
+			setBackgroundCol();
+		}
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
 		setNumLevels(player);
 		cheatcode(); //Checks to see if the player knows any cheat codes. Also used for debugging
-		setUnix(); //Sets whether the player is playing on a unix based shell.
 		if (unix) {
 			System.out.println("NOTE: o = Rocks, "
 					+ ConsoleColors.GREEN + "#" + ConsoleColors.RESET + " = Trees, "
@@ -291,11 +336,18 @@ public class GameEngine {
 		}
 		else System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
 
+		
+		
+		/*
+		 * Loop creates and runs levels as long as the player is alive.
+		 */
 		while (currentLevel < numLevels && !player.isDead()) {
 			currentLevel++;
 			setupLevel(currentLevel);
 			doOneLevel();
 		}
+		
+		
 		// If reach this point, either all levels were completed OR
 		// player is dead
 		if (player.isDead())
