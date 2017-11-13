@@ -54,6 +54,7 @@ public class Player implements Drawable {
 	/**
 	 * Asks the player for their name and asks them to choose a difficulty.
 	 */
+	@SuppressWarnings("resource")
 	private void setNameDiff() {
 		System.out.print("What is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);

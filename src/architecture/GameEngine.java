@@ -234,6 +234,7 @@ public class GameEngine {
 	/**
 	 * If the player knows a cheatcode they can skip to a certain level.
 	 */
+	@SuppressWarnings("resource")
 	public void cheatcode() {
 		System.out.print("Do you have a cheatcode? If not, just hit enter: ");
 		Scanner in = new Scanner(System.in);
@@ -257,6 +258,7 @@ public class GameEngine {
 	/**
 	 * Sets whether the player is playing on a unix-based shell, allowing for color printing to the console.
 	 */
+	@SuppressWarnings("resource")
 	public void setUnix() {
 		System.out.print("\nAre you playing on a Unix based shell? (Yes/No) ");
 		Scanner in = new Scanner(System.in);
@@ -274,6 +276,7 @@ public class GameEngine {
 	 * Creates a new player object for the game, determines the required number of levels, asks for
 	 * a cheatcode, and then begins gameplay until all levels are beaten or if the player dies.
 	 */
+	@SuppressWarnings({ "unused", "resource" })
 	public void playGame() {
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
