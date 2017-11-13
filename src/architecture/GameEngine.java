@@ -290,10 +290,10 @@ public class GameEngine {
 		System.out.println("6. Purple");
 		System.out.println("7. Cyan");
 		System.out.println("8. White");
-		
+
 		Scanner in = new Scanner(System.in);
 		int color = in.nextInt();
-		
+
 		switch(color) {
 		case 1: foregroundCol = ConsoleColors.BLACK_BRIGHT;
 		case 2: foregroundCol = ConsoleColors.RED_BRIGHT;
@@ -307,7 +307,39 @@ public class GameEngine {
 		default: System.out.println("Please enter a valid color."); setForegroundCol();
 		}
 	}
-	
+
+	/**
+	 * User sets the background color for their player.
+	 */
+	@SuppressWarnings("resource")
+	public void setBackgroundCol() {
+		System.out.println("What color would you like for your player's background? Enter the corresponding number.");
+		System.out.println("1. Black");
+		System.out.println("2. Red");
+		System.out.println("3. Green");
+		System.out.println("4. Yellow");
+		System.out.println("5. Blue");
+		System.out.println("6. Purple");
+		System.out.println("7. Cyan");
+		System.out.println("8. White");
+
+		Scanner in = new Scanner(System.in);
+		int color = in.nextInt();
+
+		switch(color) {
+		case 1: backgroundCol = ConsoleColors.BLACK_BACKGROUND_BRIGHT;
+		case 2: backgroundCol = ConsoleColors.RED_BACKGROUND_BRIGHT;
+		case 3: backgroundCol = ConsoleColors.GREEN_BACKGROUND_BRIGHT;
+		case 4: backgroundCol = ConsoleColors.YELLOW_BACKGROUND_BRIGHT;
+		case 5: backgroundCol = ConsoleColors.BLUE_BACKGROUND_BRIGHT;
+		case 6: backgroundCol = ConsoleColors.PURPLE_BACKGROUND_BRIGHT;
+		case 7: backgroundCol = ConsoleColors.CYAN_BACKGROUND_BRIGHT;
+		case 8: backgroundCol = ConsoleColors.WHITE_BACKGROUND_BRIGHT;
+
+		default: System.out.println("Please enter a valid color."); setBackgroundCol();
+		}
+	}
+
 	/**
 	 * Creates a new player object for the game, determines the required number of levels, asks for
 	 * a cheatcode, and then begins gameplay until all levels are beaten or if the player dies.
@@ -324,6 +356,10 @@ public class GameEngine {
 			setForegroundCol();
 			setBackgroundCol();
 		}
+		else {
+			foregroundCol = ConsoleColors.WHITE_BRIGHT;
+			backgroundCol = ConsoleColors.BLACK_BACKGROUND;
+		}
 		// Give player a default location of (0,0)
 		player = new Player(new Point(0,0));
 		setNumLevels(player);
@@ -336,8 +372,8 @@ public class GameEngine {
 		}
 		else System.out.println("NOTE: o = Rocks, # = Trees, ~ = Water, $ = Fire, P = Player\n");
 
-		
-		
+
+
 		/*
 		 * Loop creates and runs levels as long as the player is alive.
 		 */
@@ -346,8 +382,8 @@ public class GameEngine {
 			setupLevel(currentLevel);
 			doOneLevel();
 		}
-		
-		
+
+
 		// If reach this point, either all levels were completed OR
 		// player is dead
 		if (player.isDead())
