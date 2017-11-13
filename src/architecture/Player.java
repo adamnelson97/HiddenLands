@@ -63,7 +63,7 @@ public class Player implements Drawable {
 	 */
 	@SuppressWarnings("resource")
 	private void setNameDiff() {
-		System.out.print("What is your name, Adventurer? : ");
+		System.out.print("\nWhat is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
 		name = scan.next();
 
