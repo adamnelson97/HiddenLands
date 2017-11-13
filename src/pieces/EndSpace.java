@@ -36,7 +36,7 @@ public class EndSpace implements Drawable {
 	 * @param unix Determines whether to print the piece in color.
 	 */
 	public void draw(boolean unix) {
-		if (unix) System.out.print(ConsoleColors.WHITE + symbol + ConsoleColors.RESET);
+		if (unix) System.out.print(ConsoleColors.WHITE_BRIGHT + ConsoleColors.PURPLE_BACKGROUND + symbol + ConsoleColors.RESET);
 		else System.out.print(symbol);
 		
 	}
