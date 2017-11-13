@@ -46,24 +46,27 @@ public class Player implements Drawable {
 	 * @param location The starting location for the player.
 	 * @param foregroundCol The foreground display color.
 	 * @param backgroundCol The background display color.
+	 * @param unix Whether the shell is unix based or not.
 	 */
-	public Player(Point location, String foregroundCol, String backgroundCol) {
+	public Player(Point location, String foregroundCol, String backgroundCol, boolean unix) {
 		//Constructor calls method to reset player stats each level
-		setName();
-		setDiff();
-		resetLevel(location);
 		foreground = foregroundCol;
 		background = backgroundCol;
+		setName(unix);
+		setDiff();
+		resetLevel(location);
 	}
 
 	/**
 	 * Asks the player for their name.
+	 * @param unix If true, the name will be set with the player's chosen colors.
 	 */
 	@SuppressWarnings("resource")
-	private void setName() {
+	private void setName(boolean unix) {
 		System.out.print("\nWhat is your name, Adventurer? : ");
 		Scanner scan = new Scanner(System.in);
-		name = scan.next();
+		if (unix) name = foreground + background + scan.next() + ConsoleColors.RESET;
+		else name = scan.next();
 	}
 
 	/**

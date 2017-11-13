@@ -363,7 +363,7 @@ public class GameEngine {
 			backgroundCol = ConsoleColors.BLACK_BACKGROUND;
 		}
 		// Give player a default location of (0,0)
-		player = new Player(new Point(0,0), foregroundCol, backgroundCol);
+		player = new Player(new Point(0,0), foregroundCol, backgroundCol, unix);
 		setNumLevels(player);
 		cheatcode(); //Checks to see if the player knows any cheat codes. Also used for debugging
 		if (unix) {
