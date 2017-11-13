@@ -49,6 +49,8 @@ public class GameEngine {
 	private ArrayList<GamePiece> interactingPieces;
 	//GameEngine has one instance of Player
 	private Player player;
+	//Determine if the user is playing on a unix-based shell
+	private boolean unix;
 
 	/**
 	 * Constructor creates a LevelEngine object used to populate the board
@@ -251,6 +253,22 @@ public class GameEngine {
 		}
 		//in.close(); Do NOT close the scanner! It produces lots of errors
 	}
+	
+	/**
+	 * Sets whether the player is playing on a unix-based shell, allowing for color printing to the console.
+	 */
+	public void setUnix() {
+		System.out.print("Are you playing on a Unix based shell? (Yes/No) ");
+		Scanner in = new Scanner(System.in);
+		String response = in.nextLine();
+		
+		if (response.equalsIgnoreCase("YES")) unix = true;
+		else if (response.equalsIgnoreCase("NO")) unix = false;
+		else {
+			System.out.println("Please enter a correct option.");
+			setUnix();
+		}
+	}
 
 	/**
 	 * Creates a new player object for the game, determines the required number of levels, asks for
@@ -262,6 +280,7 @@ public class GameEngine {
 		player = new Player(new Point(0,0));
 		setNumLevels(player);
 		cheatcode(); //Checks to see if the player knows any cheat codes. Also used for debugging
+		setUnix(); //Sets whether the player is playing on a unix based shell.
 		while (currentLevel < numLevels && !player.isDead()) {
 			currentLevel++;
 			setupLevel(currentLevel);
