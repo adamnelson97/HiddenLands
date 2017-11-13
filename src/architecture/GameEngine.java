@@ -290,7 +290,8 @@ public class GameEngine {
 		System.out.println("6. Purple");
 		System.out.println("7. Cyan");
 		System.out.println("8. White");
-
+		System.out.print("Choice: ");
+		
 		Scanner in = new Scanner(System.in);
 		int color = in.nextInt();
 
@@ -322,6 +323,7 @@ public class GameEngine {
 		System.out.println("6. Purple");
 		System.out.println("7. Cyan");
 		System.out.println("8. White");
+		System.out.print("Choice: ");
 
 		Scanner in = new Scanner(System.in);
 		int color = in.nextInt();
