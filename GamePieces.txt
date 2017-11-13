@@ -123,4 +123,11 @@ rocks, intialized with different symbols
  Motion: None
  Interaction: NONE interaction until a timer runs out. If the player
  fails to beat the level in time, they die with KILL.
+ 
+ Trap
+Symbol: &
+Motion: None
+Interaction: Appears blank at first, but appears when player is within
++/- one space and adjacent to the player, blocking their way. Injures the player one point.
+Kills the player if they are directly on it.
 ------------------------------------------------------------
