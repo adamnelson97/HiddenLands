@@ -1,3 +1,4 @@
+package architecture;
 /**
 * <h1> ConsoleColors</h1>
 * This class sets up constants to print text in different colors to the console.
