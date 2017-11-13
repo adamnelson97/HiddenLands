@@ -96,7 +96,7 @@ public class GameEngine {
 				else if (pieces[i][j] == null)
 					System.out.print(' ');
 				else
-					pieces[i][j].draw();
+					pieces[i][j].draw(unix);
 				System.out.print(' ');
 			}
 			System.out.print('|');
