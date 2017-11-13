@@ -181,6 +181,7 @@ public class Player implements Drawable {
 	 */
 	public void doMove(Drawable[][] pieces) {
 		boolean moved = false;
+		displayMenu();
 		while (!moved) {
 			int choice = getPlayerChoice();
 			moved = updatePlayerLocation(pieces, choice);
@@ -198,18 +199,17 @@ public class Player implements Drawable {
 	 */
 	@SuppressWarnings("resource")
 	private int getPlayerChoice() {
-
+		Scanner scan = new Scanner(System.in);
 		int playerChoice = 0;
 
 		do {
-			displayMenu();
-			Scanner in = new Scanner(System.in);
-			playerChoice = in.nextInt();
-			if (playerChoice < 1 || playerChoice > 9) System.out.println("Invalid option. Please retry.");
+			while (!scan.hasNextInt()) {
+				scan.next();
+				System.out.print("Invalid option. Please retry: ");
+			}
+			playerChoice = scan.nextInt();
+			if (playerChoice < 1 || playerChoice > 9) System.out.print("Invalid option. Please retry: ");
 		} while(playerChoice < 1 || playerChoice > 9);
-		//scan.close();
-		System.out.println();
-		System.out.println();
 		return playerChoice;
 	}
 
@@ -266,7 +266,7 @@ public class Player implements Drawable {
 		}
 
 		if (!moved) {
-			System.out.println("Invalid option, please retry");
+			System.out.print("Invalid option, please retry: ");
 			return false;
 		}
 
