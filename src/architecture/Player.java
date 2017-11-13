@@ -47,6 +47,8 @@ public class Player implements Drawable {
 	 * Constructor that gives the player an initial location and asks for their name
 	 * and the desire game difficulty.
 	 * @param location The starting location for the player.
+	 * @param foregroundCol The foreground display color.
+	 * @param backgroundCol The background display color.
 	 */
 	public Player(Point location, String foregroundCol, String backgroundCol) {
 		//Constructor calls method to reset player stats each level

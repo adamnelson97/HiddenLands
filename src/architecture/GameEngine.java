@@ -327,7 +327,7 @@ public class GameEngine {
 		int color = in.nextInt();
 
 		switch(color) {
-		case 1: backgroundCol = ConsoleColors.BLACK_BACKGROUND_BRIGHT;
+		case 1: backgroundCol = ConsoleColors.BLACK_BACKGROUND;
 		case 2: backgroundCol = ConsoleColors.RED_BACKGROUND_BRIGHT;
 		case 3: backgroundCol = ConsoleColors.GREEN_BACKGROUND_BRIGHT;
 		case 4: backgroundCol = ConsoleColors.YELLOW_BACKGROUND_BRIGHT;
