@@ -18,14 +18,6 @@ import architecture.Player;
  * 
  */
 public class Artifact extends GamePiece {
-
-	/*
-	 * Symbol: 'A'
-	 * 
-	 * Motion: None
-	 * 
-	 * Interaction: ADVANCE/KILL. Has a 50% chance of either interaction.
-	 */
 	
 	/**
 	 * Default GamePiece Constructor.

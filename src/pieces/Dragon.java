@@ -18,15 +18,6 @@ import architecture.Player;
  */
 public class Dragon extends GamePiece {
 
-	/*
-	 * Symbol: 'F'. Uses 'F' for 'Fire' since Dwarves use 'D'.
-	 * 
-	 * Motion: None
-	 * 
-	 * Interaction: KILL. Dragon is initially sleeping, and gives warning.
-	 * If the player lands on that space again they die.
-	 */
-
 	int counter;
 
 	/**
