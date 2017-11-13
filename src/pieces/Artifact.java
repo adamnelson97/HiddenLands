@@ -3,6 +3,7 @@ package pieces;
 import java.awt.Point;
 import java.util.Random;
 
+import architecture.ConsoleColors;
 import architecture.Drawable;
 import architecture.InteractionResult;
 import architecture.Player;
@@ -63,6 +64,17 @@ public class Artifact extends GamePiece {
 			}
 		}
 		return InteractionResult.NONE; //If playerLocation != getLocation()
+	}
+
+	/**
+	 * Prints the symbol for the piece.
+	 * @param unix Determines whether to print the piece in color.
+	 */
+	@Override
+	public void draw(boolean unix) {
+		if (unix) System.out.print(ConsoleColors.PURPLE + symbol + ConsoleColors.RESET);
+		else System.out.print(symbol);
+		
 	}
 
 } //End of Class
