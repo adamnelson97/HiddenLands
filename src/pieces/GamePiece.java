@@ -38,11 +38,11 @@ public abstract class GamePiece implements Drawable {
 	}
 
 	/**
-	 * Prints the symbol for the object onto the game board.
+	 * Abstract method, prints the symbol for the object onto the game board.
+	 * If the player is using a unix-based shell, it prints in color.
+	 * @param unix Whether the player is using a unix-based shell.
 	 */
-	public void draw() {
-		System.out.print(symbol);
-	}
+	public abstract void draw(boolean unix);
 
 	/**
 	 * Abstract method, each piece interacts with the player differently.
