@@ -296,14 +296,14 @@ public class GameEngine {
 		int color = in.nextInt();
 
 		switch(color) {
-		case 1: foregroundCol = ConsoleColors.BLACK_BRIGHT;
-		case 2: foregroundCol = ConsoleColors.RED_BRIGHT;
-		case 3: foregroundCol = ConsoleColors.GREEN_BRIGHT;
-		case 4: foregroundCol = ConsoleColors.YELLOW_BRIGHT;
-		case 5: foregroundCol = ConsoleColors.BLUE_BRIGHT;
-		case 6: foregroundCol = ConsoleColors.PURPLE_BRIGHT;
-		case 7: foregroundCol = ConsoleColors.CYAN_BRIGHT;
-		case 8: foregroundCol = ConsoleColors.WHITE_BRIGHT;
+		case 1: foregroundCol = ConsoleColors.BLACK_BRIGHT; return;
+		case 2: foregroundCol = ConsoleColors.RED_BRIGHT; return;
+		case 3: foregroundCol = ConsoleColors.GREEN_BRIGHT; return;
+		case 4: foregroundCol = ConsoleColors.YELLOW_BRIGHT; return;
+		case 5: foregroundCol = ConsoleColors.BLUE_BRIGHT; return;
+		case 6: foregroundCol = ConsoleColors.PURPLE_BRIGHT; return;
+		case 7: foregroundCol = ConsoleColors.CYAN_BRIGHT; return;
+		case 8: foregroundCol = ConsoleColors.WHITE_BRIGHT; return;
 
 		default: System.out.println("Please enter a valid color."); setForegroundCol();
 		}
@@ -329,14 +329,14 @@ public class GameEngine {
 		int color = in.nextInt();
 
 		switch(color) {
-		case 1: backgroundCol = ConsoleColors.BLACK_BACKGROUND;
-		case 2: backgroundCol = ConsoleColors.RED_BACKGROUND_BRIGHT;
-		case 3: backgroundCol = ConsoleColors.GREEN_BACKGROUND_BRIGHT;
-		case 4: backgroundCol = ConsoleColors.YELLOW_BACKGROUND_BRIGHT;
-		case 5: backgroundCol = ConsoleColors.BLUE_BACKGROUND_BRIGHT;
-		case 6: backgroundCol = ConsoleColors.PURPLE_BACKGROUND_BRIGHT;
-		case 7: backgroundCol = ConsoleColors.CYAN_BACKGROUND_BRIGHT;
-		case 8: backgroundCol = ConsoleColors.WHITE_BACKGROUND_BRIGHT;
+		case 1: backgroundCol = ConsoleColors.BLACK_BACKGROUND; return;
+		case 2: backgroundCol = ConsoleColors.RED_BACKGROUND_BRIGHT; return;
+		case 3: backgroundCol = ConsoleColors.GREEN_BACKGROUND_BRIGHT; return;
+		case 4: backgroundCol = ConsoleColors.YELLOW_BACKGROUND_BRIGHT; return;
+		case 5: backgroundCol = ConsoleColors.BLUE_BACKGROUND_BRIGHT; return;
+		case 6: backgroundCol = ConsoleColors.PURPLE_BACKGROUND_BRIGHT; return;
+		case 7: backgroundCol = ConsoleColors.CYAN_BACKGROUND_BRIGHT; return;
+		case 8: backgroundCol = ConsoleColors.WHITE_BACKGROUND_BRIGHT; return;
 
 		default: System.out.println("Please enter a valid color."); setBackgroundCol();
 		}
