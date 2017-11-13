@@ -7,9 +7,10 @@ the piece (that is to be moved) stays put and waits to move next turn.
 ----Landscape----
 ------------------------------------------------------------
 
-Rock: o
-Tree: #
-Water: ~
+Rock: o, Color = White
+Tree: #, Color = Green
+Water: ~, Color = Blue
+Fire: $, Color = Red
 
 ------------------------------------------------------------
 ----Neutral Pieces---
@@ -17,11 +18,13 @@ Water: ~
 
 Elf:
 Symbol: 'E'
+Color: Green
 Motion: Randomly chooses a direction and moves one space.
 Interaction: NONE
 
 Man:
 Symbol: 'M'
+Color: Yellow
 Motion: None
 Interaction: NONE. The man tells the player the number of hits they
 can take, and the number of points they need to advance. Has a 1/3
@@ -29,11 +32,13 @@ chance of appearing somewhere on the board.
 
 Maiden:
 Symbol: 'M'
+Color: Yellow
 Motion: None
 Interaction: NONE. Heals the player, then disappears.
 
 Sage:
 Symbol: 'S'
+Color: Cyan
 Motion: Randomly chooses a direction and moves one space.
 Interaction: NONE. Randomly informs player about the other pieces'
 interaction results if they have at least two points.
@@ -44,12 +49,14 @@ interaction results if they have at least two points.
 
 Dwarf:
 Symbol: 'D'
+Color: Bright Purple
 Motion: Randomly moves Right or Left two spaces the first turn.
 Randomly moves Up or Down one space the next turn. Repeats pattern.
 Interaction: GET_POINT.
 
 Knight:
 Symbol: 'K'
+Color: White
 Motion: Moves Left one space every turn. Skips a space if it is occupied
 by another piece. If still occupied, moves one pace up. Resets to right
 edge if at left edge. Resets to bottom if at top edge.
@@ -57,11 +64,13 @@ Interaction: ADVANCE. Only interacts on same space.
 
 Artifact:
 Symbol: 'A'
+Color: Purple
 Motion: None
 Interaction: ADVANCE/KILL. Has a 50% chance of either interaction.
 
 Unicorn:
 Symbol: 'U'
+Color: Bright Blue
 Motion: Appears on board, disappears for three turns, then reappears on the fourth.
 Repeat pattern.
 Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
@@ -72,28 +81,33 @@ Interaction: GET_POINT/HEAL. Gives both one point and heals one point of damage.
 
 Wizard:
 Symbol: 'W'. Used to confuse player as it is the same as the Witch.
+Color: Red
 Motion: None
 Interaction: HIT. Has range of +/- 1 spaces from current space.
 
 Witch:
 Symbol: 'W'. Used to confuse player as it is the same as the Wizard.
+Color: Red
 Motion: None
 Interaction: KILL. Has range of +/- 1 space from current space.
 Gives a warning from 2 spaces away.
 
 Dragon:
 Symbol: 'F'. Uses 'F' for 'Fire' since Dwarves use 'D'.
+Color: Red
 Motion: None
 Interaction: KILL. Dragon is initially sleeping, and gives warning.
 If the player lands on that space again they die.
 
 Orc:
 Symbol: 'O'
+Color: Green
 Motion: Moves one space in direction furthest from the player.
 Interaction: HIT.
 
 Skeleton:
 Symbol: 'X'
+Color: Yellow
 Motion: Randomly moves in a 9x9 square.
 The Skeleton can also move onto the same space as the player.
 Interaction: Has 3 health points. First two interactions are NONE.
@@ -105,6 +119,7 @@ rocks, intialized with different symbols
 /```\
 \+.+/
  \#/
+ Color: White
  Motion: None
  Interaction: NONE interaction until a timer runs out. If the player
  fails to beat the level in time, they die with KILL.
