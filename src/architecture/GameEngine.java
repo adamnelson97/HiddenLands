@@ -258,7 +258,7 @@ public class GameEngine {
 	 * Sets whether the player is playing on a unix-based shell, allowing for color printing to the console.
 	 */
 	public void setUnix() {
-		System.out.print("Are you playing on a Unix based shell? (Yes/No) ");
+		System.out.print("\nAre you playing on a Unix based shell? (Yes/No) ");
 		Scanner in = new Scanner(System.in);
 		String response = in.nextLine();
 
